@@ -1,0 +1,10 @@
+streamlit
+pandas
+tabulate
+fpdf2==2.8.1
+sqlalchemy==2.0.36
+firebolt-sdk==1.5.1
+firebolt-sqlalchemy==1.0.3
+boto3
+xmltodict
+setuptools

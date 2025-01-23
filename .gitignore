@@ -2,4 +2,7 @@ venv/
 __pycache__/
 */.DS_Store
 .DS_Store
-*.txt
+gender_results.txt
+class_results.txt
+teams_results.txt
+season_gender_results.txt
