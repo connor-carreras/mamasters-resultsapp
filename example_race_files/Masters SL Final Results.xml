@@ -1,0 +1,2369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SST_USSA_FIS_Race>
+  <CurrentSex>Men</CurrentSex>
+  <Men>
+    <NumberComps>57</NumberComps>
+    <Header>
+      <Country>USA</Country>
+      <GoverningBody>U.S. SKI &amp; SNOWBOARD</GoverningBody>
+      <LGB>NAT</LGB>
+      <ClubName>MID-ATLANTIC MASTERS</ClubName>
+      <SkiAreaName>GORE MOUNTAIN</SkiAreaName>
+      <Division>Eastern</Division>
+      <State>NY</State>
+      <TimingEquipment>ALGE TIMY3 WP</TimingEquipment>
+      <RaceName>MID-ATLANTIC MASTERS  FINALS - GORE - SL (M/W)</RaceName>
+      <USSARaceCode>M0175</USSARaceCode>
+      <USSARaceCodeF>M0174</USSARaceCodeF>
+      <RaceDate>44990</RaceDate>
+      <RaceType>2</RaceType>
+      <RaceLevel>U</RaceLevel>
+      <RaceLocation>ECHO FIS SL</RaceLocation>
+      <StartElev>735</StartElev>
+      <FinishElev>620</FinishElev>
+      <Weather>CLOUDY</Weather>
+      <Snow>NEW GROOM</Snow>
+      <StartTemp>1</StartTemp>
+      <NumRuns>2</NumRuns>
+      <NumInTopSeed>30</NumInTopSeed>
+      <NumToReverse>30</NumToReverse>
+      <SnowboardNumJudges>5</SnowboardNumJudges>
+      <HalfPJudgeFunction1>Motion</HalfPJudgeFunction1>
+      <HalfPJudgeFunction2>Rotation</HalfPJudgeFunction2>
+      <HalfPJudgeFunction3>Amplitude</HalfPJudgeFunction3>
+      <HalfPJudgeFunction4>Overall Impression</HalfPJudgeFunction4>
+      <HalfPJudgeFunction5>Overall Impression</HalfPJudgeFunction5>
+      <HalfPJudgeFunction6>Overall Impression</HalfPJudgeFunction6>
+      <Masters>Y</Masters>
+      <USCSAVideoOutput>Y</USCSAVideoOutput>
+      <Graphic1Name>west start list logo.jpg</Graphic1Name>
+      <Graphic2Name>milton cat start logo.jpg</Graphic2Name>
+      <Graphic3Name>RR start list.jpg</Graphic3Name>
+    </Header>
+    <Officials>
+      <TD>
+        <Name>Bill Bolte           (USA)</Name>
+        <USSANum>5108444</USSANum>
+      </TD>
+      <Ref>
+        <Name>Holmes, Darnell      (USA)</Name>
+        <USSANum>5946751</USSANum>
+      </Ref>
+      <AsstRef>
+        <Name>                     (USA)</Name>
+      </AsstRef>
+      <ChiefOfRace>
+        <Name>Marsac, Lincoln      (USA)</Name>
+        <USSANum>6821270             *    </USSANum>
+      </ChiefOfRace>
+      <ChiefOfCrs>
+        <Name>Burnley, Richard     (USA)</Name>
+        <USSANum>4838231             *    </USSANum>
+      </ChiefOfCrs>
+      <StartRef>
+        <Name>Gaechter, Steven     (USA)</Name>
+        <USSANum>6262504             *    </USSANum>
+      </StartRef>
+      <FinishRef>
+        <Name>Byrne, Gay           (USA)</Name>
+        <USSANum>6449487             *    </USSANum>
+      </FinishRef>
+      <RaceAdmin>
+        <Name>Gaechter, Tanya      (USA)</Name>
+        <USSANum>6401836</USSANum>
+      </RaceAdmin>
+      <ChiefOfTC>
+        <Name>Landau, Mark         (USA)</Name>
+        <USSANum>5802558             *    </USSANum>
+      </ChiefOfTC>
+      <PacketAssembler>
+        <Name>Gaechter, Tanya      (USA)</Name>
+      </PacketAssembler>
+      <CrsSetter1>
+        <Name>Burnley, Rich        (USA)</Name>
+        <USSANum>4838231             *    </USSANum>
+      </CrsSetter1>
+      <CrsSetter2>
+        <Name>BURNley, Richard     (USA)</Name>
+        <USSANum>4838231             *    </USSANum>
+      </CrsSetter2>
+      <PacketAssemblerPhone>5182512825</PacketAssemblerPhone>
+    </Officials>
+    <RunData1>
+      <Forunner1>
+        <Name>Donohue, Sean        (USA)</Name>
+      </Forunner1>
+      <ForunnerTimes1>
+        <Status>1</Status>
+        <MicroStart>45684745800</MicroStart>
+        <MicroFinish>45727272300</MicroFinish>
+        <SystemStart>45684000</SystemStart>
+        <StartSequence>447</StartSequence>
+        <FinishSequence>448</FinishSequence>
+        <Audit1>527A50624241745C635B070810721642655947444D75456D504574407A581912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </ForunnerTimes1>
+      <Forunner2>
+        <Name>                     (USA)</Name>
+      </Forunner2>
+      <ForunnerTimes2>
+        <Status>1</Status>
+        <MicroStart>45737418300</MicroStart>
+        <MicroFinish>45779480100</MicroFinish>
+        <SystemStart>45737000</SystemStart>
+        <StartSequence>449</StartSequence>
+        <FinishSequence>451</FinishSequence>
+        <Audit1>527A50624241745C635B0708107216476B5947444D75456D504574407F5C1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </ForunnerTimes2>
+      <ForunnerTimes3>
+        <Status>1</Status>
+        <MicroStart>45773766500</MicroStart>
+        <MicroFinish>45814240100</MicroFinish>
+        <SystemStart>45774000</SystemStart>
+        <StartSequence>450</StartSequence>
+        <FinishSequence>453</FinishSequence>
+        <Audit1>527A50624241745C635B070810731641665947444D75456D504576407B5D1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </ForunnerTimes3>
+      <ForunnerTimes4>
+        <Status>1</Status>
+        <MicroStart>45808696000</MicroStart>
+        <MicroFinish>45847544300</MicroFinish>
+        <SystemStart>45808000</SystemStart>
+        <StartSequence>452</StartSequence>
+        <FinishSequence>454</FinishSequence>
+        <Audit1>527A50624241745C635B070810741642655947444D75456D50427E40775E1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </ForunnerTimes4>
+      <Homologation>14849/12/22</Homologation>
+      <StartTime>45900</StartTime>
+      <NumGates>39</NumGates>
+      <NumDirChanges>38</NumDirChanges>
+    </RunData1>
+    <RunData2>
+      <Forunner1>
+        <Name>Donohue, Sean        (USA)</Name>
+      </Forunner1>
+      <ForunnerTimes1>
+        <Status>1</Status>
+        <MicroStart>45405517600</MicroStart>
+        <MicroFinish>45421090000</MicroFinish>
+        <SystemStart>45405000</SystemStart>
+        <StartSequence>184</StartSequence>
+        <FinishSequence>185</FinishSequence>
+        <Audit1>527A5D624241745E635B070817771642635947444D75456D504073407A5D1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+        <Audit2>664A755F43765C7F4604001E701E48634C17590C79456D5051725D615A041E04054017310D45460F3C066D24182B0B6F42435B45607F1B3C1E5B4C41160A380202234E1B03585B4A2705</Audit2>
+      </ForunnerTimes1>
+      <Forunner2>
+        <Name>                     (USA)</Name>
+      </Forunner2>
+      <ForunnerTimes2>
+        <Status>1</Status>
+        <MicroStart>43350354900</MicroStart>
+        <MicroFinish>43393124400</MicroFinish>
+        <SystemStart>43350000</SystemStart>
+        <StartSequence>105</StartSequence>
+        <FinishSequence>106</FinishSequence>
+        <Audit1>527A5D624241745E635B070814731643615947444D75456D50457440785C1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </ForunnerTimes2>
+      <StartTime>47700</StartTime>
+      <NumGates>39</NumGates>
+      <NumDirChanges>38</NumDirChanges>
+    </RunData2>
+    <FFactors>
+      <FNumber1>1250</FNumber1>
+      <FNumber2>720</FNumber2>
+      <FNumber3>980</FNumber3>
+      <FNumber4>1080</FNumber4>
+      <FNumber5>1150</FNumber5>
+      <FNumber6>850</FNumber6>
+      <USSAMaxSeed1>820</USSAMaxSeed1>
+      <USSAMaxSeed2>360</USSAMaxSeed2>
+      <USSAMaxSeed3>530</USSAMaxSeed3>
+      <USSAMaxSeed4>660</USSAMaxSeed4>
+      <USSAMaxSeed5>660</USSAMaxSeed5>
+      <USSAMaxSeed6>660</USSAMaxSeed6>
+      <FISMaxSeed1>310</FISMaxSeed1>
+      <FISMaxSeed2>145</FISMaxSeed2>
+      <FISMaxSeed3>200</FISMaxSeed3>
+      <FISMaxSeed4>250</FISMaxSeed4>
+      <FISMaxSeed5>250</FISMaxSeed5>
+      <FISMaxSeed6>250</FISMaxSeed6>
+      <MastersSeedListUsed1>MAS423.CSV</MastersSeedListUsed1>
+      <MastersSeedListUsed5>NLO0918</MastersSeedListUsed5>
+      <XCFNumber1>800</XCFNumber1>
+      <XCFNumber2>1000</XCFNumber2>
+      <XCFNumber3>600</XCFNumber3>
+    </FFactors>
+    <RTData>
+      <RTCountry>USA</RTCountry>
+      <RTState>New York</RTState>
+      <RTResort>Gore Mountain</RTResort>
+      <RTRaceName>Gore Mountain Mid-ATL SL</RTRaceName>
+      <RTUserID> </RTUserID>
+      <RTRaceType>Slalom</RTRaceType>
+      <RTSex>Masters</RTSex>
+      <RTDate>44990</RTDate>
+      <RTTime>43200</RTTime>
+      <RTRaceID>250447</RTRaceID>
+      <RTLocationLogo>Mid Atlantic Masters live timing.jpg</RTLocationLogo>
+      <RTRaceLogo>NYSEF Gore.jpg</RTRaceLogo>
+    </RTData>
+    <FISLiveData>
+      <FISLiveWhoRegistered>1</FISLiveWhoRegistered>
+    </FISLiveData>
+    <Notes>
+      <CurrentPage>0</CurrentPage>
+    </Notes>
+    <Comp>
+      <Bib>20</Bib>
+      <Name>Peron, Didier</Name>
+      <StartNumber>1</StartNumber>
+      <USSANumber>E6401444</USSANumber>
+      <CompClass>11</CompClass>
+      <YearOfBirth>1943</YearOfBirth>
+      <ClubQuota>Jersey Boys</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44152016000</MicroStart>
+        <MicroFinish>44209790600</MicroFinish>
+        <SystemStart>44152000</SystemStart>
+        <StartSequence>463</StartSequence>
+        <FinishSequence>465</FinishSequence>
+        <Audit1>527A50624241745D635B070815761647625947444D75456D50447140785D1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>48604410600</MicroStart>
+        <MicroFinish>48671137700</MicroFinish>
+        <SystemStart>48604000</SystemStart>
+        <StartSequence>580</StartSequence>
+        <FinishSequence>582</FinishSequence>
+        <Audit1>527A50624241745D635B0F01157A1D4372095A0541755477404768597D46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>28</Bib>
+      <Name>Wise, David</Name>
+      <StartNumber>2</StartNumber>
+      <USSANumber>E6851604</USSANumber>
+      <CompClass>10</CompClass>
+      <YearOfBirth>1951</YearOfBirth>
+      <ClubQuota>Ski Dawgs</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44268930100</MicroStart>
+        <MicroFinish>44318242600</MicroFinish>
+        <SystemStart>44269000</SystemStart>
+        <StartSequence>467</StartSequence>
+        <FinishSequence>468</FinishSequence>
+        <Audit1>527A50624241745D635B0708157816416A5947444D75456D50457F407C5B1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>48641735500</MicroStart>
+        <MicroFinish>48693681500</MicroFinish>
+        <SystemStart>48641000</SystemStart>
+        <StartSequence>581</StartSequence>
+        <FinishSequence>584</FinishSequence>
+        <Audit1>527A50624241745D635B0F01157A1F4172095A054175456D454068577B46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>60</Bib>
+      <Name>Ziegenfelder, Dale</Name>
+      <StartNumber>4</StartNumber>
+      <USSANumber>E6294014</USSANumber>
+      <CompClass>10</CompClass>
+      <YearOfBirth>1951</YearOfBirth>
+      <ClubQuota>Ski Dawgs</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44195851000</MicroStart>
+        <MicroFinish>44246320200</MicroFinish>
+        <SystemStart>44196000</SystemStart>
+        <StartSequence>464</StartSequence>
+        <FinishSequence>466</FinishSequence>
+        <Audit1>527A50624241745D635B070815771640645947444D75456D504476407B5C1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>48691503200</MicroStart>
+        <MicroFinish>48743438800</MicroFinish>
+        <SystemStart>48691000</SystemStart>
+        <StartSequence>583</StartSequence>
+        <FinishSequence>586</FinishSequence>
+        <Audit1>527A50624241745D635B0F01167A1E4172095A054175456D454068577C46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>559</Bib>
+      <Name>Huttlinger, John</Name>
+      <StartNumber>3</StartNumber>
+      <USSANumber>E5837034</USSANumber>
+      <CompClass>10</CompClass>
+      <YearOfBirth>1951</YearOfBirth>
+      <MastersSex>M</MastersSex>
+    </Comp>
+    <Comp>
+      <Bib>558</Bib>
+      <Name>Swanson, Lj</Name>
+      <StartNumber>5</StartNumber>
+      <USSANumber>E7012234</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1957</YearOfBirth>
+      <MastersSex>F</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44365483500</MicroStart>
+        <MicroFinish>44416829800</MicroFinish>
+        <SystemStart>44365000</SystemStart>
+        <StartSequence>469</StartSequence>
+        <FinishSequence>471</FinishSequence>
+        <Audit1>527A50624241745D635B070816701643655947444D75456D504477407C5E1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>48725353100</MicroStart>
+        <MicroFinish>48780246000</MicroFinish>
+        <SystemStart>48725000</SystemStart>
+        <StartSequence>585</StartSequence>
+        <FinishSequence>588</FinishSequence>
+        <Audit1>527A50624241745D635B0F01177A1C4272095A054175456D454568567646157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>7</Bib>
+      <Name>Hart, Kathy</Name>
+      <StartNumber>6</StartNumber>
+      <USSANumber>E6762423</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1956</YearOfBirth>
+      <ClubQuota>Wilmington</ClubQuota>
+      <MastersSex>F</MastersSex>
+    </Comp>
+    <Comp>
+      <Bib>69</Bib>
+      <Name>Tomassetti, Carol</Name>
+      <StartNumber>9</StartNumber>
+      <USSANumber>E5926332</USSANumber>
+      <CompClass>8</CompClass>
+      <YearOfBirth>1959</YearOfBirth>
+      <ClubQuota>Ski Dawgs</ClubQuota>
+      <MastersSex>F</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44401247600</MicroStart>
+        <MicroFinish>44459166600</MicroFinish>
+        <SystemStart>44401000</SystemStart>
+        <StartSequence>470</StartSequence>
+        <FinishSequence>473</FinishSequence>
+        <Audit1>527A50624241745D635B0708167016476B5947444D75456D50447140765B1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>48796211000</MicroStart>
+        <MicroFinish>48853257700</MicroFinish>
+        <SystemStart>48796000</SystemStart>
+        <StartSequence>589</StartSequence>
+        <FinishSequence>592</FinishSequence>
+        <Audit1>527A50624241745D635B0F01107A1D4172095A054175456D4546685E7B46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>128</Bib>
+      <Name>Brueckner, Marti</Name>
+      <StartNumber>8</StartNumber>
+      <USSANumber>E6839135</USSANumber>
+      <CompClass>8</CompClass>
+      <YearOfBirth>1962</YearOfBirth>
+      <ClubQuota>Ramapo</ClubQuota>
+      <MastersSex>F</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44438906500</MicroStart>
+        <MicroFinish>44497549700</MicroFinish>
+        <SystemStart>44439000</SystemStart>
+        <StartSequence>472</StartSequence>
+        <FinishSequence>475</FinishSequence>
+        <Audit1>527A50624241745D635B070816711641655947444D75456D50447E40795E1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>48760781000</MicroStart>
+        <MicroFinish>48819049400</MicroFinish>
+        <SystemStart>48760000</SystemStart>
+        <StartSequence>587</StartSequence>
+        <FinishSequence>590</FinishSequence>
+        <Audit1>527A50624241745D635B0F01177A1F4B72095A054175456D4549685C7946157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>77</Bib>
+      <Name>Moller, Jane</Name>
+      <StartNumber>7</StartNumber>
+      <USSANumber>E6766485</USSANumber>
+      <CompClass>8</CompClass>
+      <YearOfBirth>1959</YearOfBirth>
+      <MastersSex>F</MastersSex>
+    </Comp>
+    <Comp>
+      <Bib>13</Bib>
+      <Name>Maximuk, Susan</Name>
+      <StartNumber>10</StartNumber>
+      <USSANumber>E5386156</USSANumber>
+      <CompClass>7</CompClass>
+      <YearOfBirth>1967</YearOfBirth>
+      <ClubQuota>Wilmington</ClubQuota>
+      <MastersSex>F</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44479116700</MicroStart>
+        <MicroFinish>44533324400</MicroFinish>
+        <SystemStart>44479000</SystemStart>
+        <StartSequence>474</StartSequence>
+        <FinishSequence>477</FinishSequence>
+        <Audit1>527A50624241745D635B070816721643615947444D75456D504472407D5A1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>48839041700</MicroStart>
+        <MicroFinish>48893970500</MicroFinish>
+        <SystemStart>48839000</SystemStart>
+        <StartSequence>591</StartSequence>
+        <FinishSequence>594</FinishSequence>
+        <Audit1>527A50624241745D635B0F01107A194672095A054175456D454568577D46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>31</Bib>
+      <Name>Adams, Deborah</Name>
+      <StartNumber>11</StartNumber>
+      <USSANumber>E4682092</USSANumber>
+      <CompClass>6</CompClass>
+      <YearOfBirth>1971</YearOfBirth>
+      <ClubQuota>Tri-State</ClubQuota>
+      <MastersSex>F</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44521741400</MicroStart>
+        <MicroFinish>44570025400</MicroFinish>
+        <SystemStart>44522000</SystemStart>
+        <StartSequence>476</StartSequence>
+        <FinishSequence>479</FinishSequence>
+        <Audit1>527A50624241745D635B070816721647625947444D75456D50457E407D521912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>48878860800</MicroStart>
+        <MicroFinish>48927816600</MicroFinish>
+        <SystemStart>48879000</SystemStart>
+        <StartSequence>593</StartSequence>
+        <FinishSequence>596</FinishSequence>
+        <Audit1>527A50624241745D635B0F01117A1E4A72095A054175456D444968577A46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>11</Bib>
+      <Name>Hoyt, Kari</Name>
+      <StartNumber>12</StartNumber>
+      <USSANumber>E4942645</USSANumber>
+      <CompClass>5</CompClass>
+      <YearOfBirth>1975</YearOfBirth>
+      <ClubQuota>Rutgers</ClubQuota>
+      <MastersSex>F</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44557953300</MicroStart>
+        <MicroFinish>44611806700</MicroFinish>
+        <SystemStart>44558000</SystemStart>
+        <StartSequence>478</StartSequence>
+        <FinishSequence>481</FinishSequence>
+        <Audit1>527A50624241745D635B070816731641605947444D75456D50447540775F1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>48918035000</MicroStart>
+        <MicroFinish>48972332700</MicroFinish>
+        <SystemStart>48918000</SystemStart>
+        <StartSequence>595</StartSequence>
+        <FinishSequence>598</FinishSequence>
+        <Audit1>527A50624241745D635B0F01127A1D4072095A054175456D4545685C7646157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>12</Bib>
+      <Name>Mazzanti, Dawn</Name>
+      <StartNumber>13</StartNumber>
+      <USSANumber>E6810446</USSANumber>
+      <CompClass>4</CompClass>
+      <YearOfBirth>1979</YearOfBirth>
+      <ClubQuota>Jersey Boys</ClubQuota>
+      <MastersSex>F</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44596841500</MicroStart>
+        <MicroFinish>44648164600</MicroFinish>
+        <SystemStart>44597000</SystemStart>
+        <StartSequence>480</StartSequence>
+        <FinishSequence>483</FinishSequence>
+        <Audit1>527A50624241745D635B0708167416426A5947444D75456D504477407C581912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>48953937100</MicroStart>
+        <MicroFinish>49002887000</MicroFinish>
+        <SystemStart>48954000</SystemStart>
+        <StartSequence>597</StartSequence>
+        <FinishSequence>600</FinishSequence>
+        <Audit1>527A50624241745D635B0F01127A184172095A054175456D444968577B46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>563</Bib>
+      <Name>Carpenter, Leda</Name>
+      <StartNumber>14</StartNumber>
+      <USSANumber>E6934073</USSANumber>
+      <CompClass>3</CompClass>
+      <YearOfBirth>1983</YearOfBirth>
+      <ClubQuota>Ski Dawgs</ClubQuota>
+      <MastersSex>F</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44683792700</MicroStart>
+        <MicroFinish>44745463700</MicroFinish>
+        <SystemStart>44683000</SystemStart>
+        <StartSequence>484</StartSequence>
+        <FinishSequence>487</FinishSequence>
+        <Audit1>527A50624241745D635B070816751646675947444D75457C4A417740795D1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>48989669500</MicroStart>
+        <MicroFinish>49055044200</MicroFinish>
+        <SystemStart>48989000</SystemStart>
+        <StartSequence>599</StartSequence>
+        <FinishSequence>602</FinishSequence>
+        <Audit1>527A50624241745D635B0F01137A1F4772095A05417554774044685D7846157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>314</Bib>
+      <Name>Levy, Jacqueline</Name>
+      <StartNumber>15</StartNumber>
+      <USSANumber>E5684311</USSANumber>
+      <CompClass>3</CompClass>
+      <YearOfBirth>1986</YearOfBirth>
+      <ClubQuota>Ski Dawgs</ClubQuota>
+      <MastersSex>F</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44636090000</MicroStart>
+        <MicroFinish>44684721000</MicroFinish>
+        <SystemStart>44636000</SystemStart>
+        <StartSequence>482</StartSequence>
+        <FinishSequence>485</FinishSequence>
+        <Audit1>527A50624241745D635B070816741646665947444D75456D50457E4079591912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>2</Status>
+        <MicroStart>49030300300</MicroStart>
+        <SystemStart>49030000</SystemStart>
+        <StartSequence>601</StartSequence>
+        <Audit1>527A50624241745D635B0F011C7A1C4B72095A054175456D505102200946157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>126</Bib>
+      <Name>Knudsen, Hannah</Name>
+      <StartNumber>17</StartNumber>
+      <USSANumber>E7123109</USSANumber>
+      <CompClass>1</CompClass>
+      <YearOfBirth>1999</YearOfBirth>
+      <ClubQuota>Rutgers</ClubQuota>
+      <MastersSex>F</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44723916400</MicroStart>
+        <MicroFinish>44777226300</MicroFinish>
+        <SystemStart>44724000</SystemStart>
+        <StartSequence>486</StartSequence>
+        <FinishSequence>489</FinishSequence>
+        <Audit1>527A50624241745D635B070816761643655947444D75456D504475407C5A1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49105795900</MicroStart>
+        <MicroFinish>49158697900</MicroFinish>
+        <SystemStart>49105000</SystemStart>
+        <StartSequence>604</StartSequence>
+        <FinishSequence>607</FinishSequence>
+        <Audit1>527A50624241745D635B0F011D7A1D4A72095A054175456D454368577F46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>562</Bib>
+      <Name>Herling, Dayna</Name>
+      <StartNumber>16</StartNumber>
+      <USSANumber>E7254592</USSANumber>
+      <CompClass>1</CompClass>
+      <YearOfBirth>1995</YearOfBirth>
+      <MastersSex>F</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44767453000</MicroStart>
+        <MicroFinish>44828208000</MicroFinish>
+        <SystemStart>44767000</SystemStart>
+        <StartSequence>488</StartSequence>
+        <FinishSequence>491</FinishSequence>
+        <Audit1>527A50624241745D635B0708167716426A5947444D75457C4A417640785F1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49065397600</MicroStart>
+        <MicroFinish>49126506300</MicroFinish>
+        <SystemStart>49065000</SystemStart>
+        <StartSequence>603</StartSequence>
+        <FinishSequence>605</FinishSequence>
+        <Audit1>527A50624241745D635B0F011C7A184472095A05417554774040685F7F46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>56</Bib>
+      <Name>George, Mark</Name>
+      <StartNumber>19</StartNumber>
+      <USSANumber>E5740410</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1954</YearOfBirth>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45106634800</MicroStart>
+        <MicroFinish>45149978900</MicroFinish>
+        <SystemStart>45106000</SystemStart>
+        <StartSequence>506</StartSequence>
+        <FinishSequence>509</FinishSequence>
+        <Audit1>527A50624241745D635B070817721641625947444D75456D504575407C5E1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49192845900</MicroStart>
+        <MicroFinish>49235038000</MicroFinish>
+        <SystemStart>49193000</SystemStart>
+        <StartSequence>608</StartSequence>
+        <FinishSequence>611</FinishSequence>
+        <Audit1>527A50624241745D635B0F06147A1F4772095A054175456D4443685F7646157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>54</Bib>
+      <Name>Renaud, Vincent</Name>
+      <StartNumber>20</StartNumber>
+      <USSANumber>X6534515</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1956</YearOfBirth>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45069014400</MicroStart>
+        <MicroFinish>45116624100</MicroFinish>
+        <SystemStart>45069000</SystemStart>
+        <StartSequence>504</StartSequence>
+        <FinishSequence>507</FinishSequence>
+        <Audit1>527A50624241745D635B070817711647645947444D75456D50457140795A1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49227687800</MicroStart>
+        <MicroFinish>49275699200</MicroFinish>
+        <SystemStart>49227000</SystemStart>
+        <StartSequence>610</StartSequence>
+        <FinishSequence>613</FinishSequence>
+        <Audit1>527A50624241745D635B0F06157A1D4772095A054175456D4449685E7E46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>481</Bib>
+      <Name>Sparkowski, Edward</Name>
+      <StartNumber>26</StartNumber>
+      <USSANumber>E5159256</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1955</YearOfBirth>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44891098600</MicroStart>
+        <MicroFinish>44940063400</MicroFinish>
+        <SystemStart>44891000</SystemStart>
+        <StartSequence>494</StartSequence>
+        <FinishSequence>497</FinishSequence>
+        <Audit1>527A50624241745D635B070816791642625947444D75456D50457E40765C1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49407037100</MicroStart>
+        <MicroFinish>49455518700</MicroFinish>
+        <SystemStart>49407000</SystemStart>
+        <StartSequence>620</StartSequence>
+        <FinishSequence>623</FinishSequence>
+        <Audit1>527A50624241745D635B0F06107A1D4772095A054175456D4449685A7746157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>84</Bib>
+      <Name>Van Zoeren, Tad</Name>
+      <StartNumber>18</StartNumber>
+      <USSANumber>E6851512</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1956</YearOfBirth>
+      <ClubQuota>Tri-State</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45139919800</MicroStart>
+        <MicroFinish>45192234700</MicroFinish>
+        <SystemStart>45140000</SystemStart>
+        <StartSequence>508</StartSequence>
+        <FinishSequence>511</FinishSequence>
+        <Audit1>527A50624241745D635B070817731643605947444D75456D504474407C5B1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49152607700</MicroStart>
+        <MicroFinish>49203456000</MicroFinish>
+        <SystemStart>49152000</SystemStart>
+        <StartSequence>606</StartSequence>
+        <FinishSequence>609</FinishSequence>
+        <Audit1>527A50624241745D635B0F06147A1C4172095A054175456D454168567B46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>32</Bib>
+      <Name>Konsza, Ronald</Name>
+      <StartNumber>28</StartNumber>
+      <USSANumber>E5242250</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1957</YearOfBirth>
+      <ClubQuota>Wilmington</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44815264500</MicroStart>
+        <MicroFinish>44866138300</MicroFinish>
+        <SystemStart>44815000</SystemStart>
+        <StartSequence>490</StartSequence>
+        <FinishSequence>493</FinishSequence>
+        <Audit1>527A50624241745D635B070816771646645947444D75456D50447640775D1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49494002700</MicroStart>
+        <MicroFinish>49546950300</MicroFinish>
+        <SystemStart>49494000</SystemStart>
+        <StartSequence>624</StartSequence>
+        <FinishSequence>626</FinishSequence>
+        <Audit1>527A50624241745D635B0F06117A184572095A054175456D454368577B46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>149</Bib>
+      <Name>Andrews, Donald W K</Name>
+      <StartNumber>24</StartNumber>
+      <USSANumber>E5205661</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1955</YearOfBirth>
+      <ClubQuota>Albany</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44962383700</MicroStart>
+        <MicroFinish>45020861200</MicroFinish>
+        <SystemStart>44962000</SystemStart>
+        <StartSequence>498</StartSequence>
+        <FinishSequence>501</FinishSequence>
+        <Audit1>527A50624241745D635B070817701640635947444D75456D50447E407B5D1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49332966100</MicroStart>
+        <MicroFinish>49379389400</MicroFinish>
+        <SystemStart>49333000</SystemStart>
+        <StartSequence>616</StartSequence>
+        <FinishSequence>619</FinishSequence>
+        <Audit1>527A50624241745D635B0F06167A194B72095A054175456D4447685A7D46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>5</Bib>
+      <Name>Fowser, Paul</Name>
+      <StartNumber>25</StartNumber>
+      <USSANumber>E5216866</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1957</YearOfBirth>
+      <ClubQuota>Wilmington</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44927603700</MicroStart>
+        <MicroFinish>44979725900</MicroFinish>
+        <SystemStart>44927000</SystemStart>
+        <StartSequence>496</StartSequence>
+        <FinishSequence>499</FinishSequence>
+        <Audit1>527A50624241745D635B070816791646625947444D75456D504474407E581912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49370253000</MicroStart>
+        <MicroFinish>49424519600</MicroFinish>
+        <SystemStart>49370000</SystemStart>
+        <StartSequence>618</StartSequence>
+        <FinishSequence>621</FinishSequence>
+        <Audit1>527A50624241745D635B0F06177A184672095A054175456D4545685C7946157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>52</Bib>
+      <Name>Parker, Peter</Name>
+      <StartNumber>21</StartNumber>
+      <USSANumber>E5805254</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1955</YearOfBirth>
+      <ClubQuota>Tri-State</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45033913300</MicroStart>
+        <MicroFinish>45089247200</MicroFinish>
+        <SystemStart>45034000</SystemStart>
+        <StartSequence>502</StartSequence>
+        <FinishSequence>505</FinishSequence>
+        <Audit1>527A50624241745D635B0708177116406B5947444D75456D504473407C591912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49261536900</MicroStart>
+        <MicroFinish>49315265500</MicroFinish>
+        <SystemStart>49261000</SystemStart>
+        <StartSequence>612</StartSequence>
+        <FinishSequence>615</FinishSequence>
+        <Audit1>527A50624241745D635B0F06157A194772095A054175456D454268597D46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>10</Bib>
+      <Name>Zilli, Steve</Name>
+      <StartNumber>22</StartNumber>
+      <USSANumber>E5266911</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1956</YearOfBirth>
+      <ClubQuota>Wilmington</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44997238800</MicroStart>
+        <MicroFinish>45054322200</MicroFinish>
+        <SystemStart>44997000</SystemStart>
+        <StartSequence>500</StartSequence>
+        <FinishSequence>503</FinishSequence>
+        <Audit1>527A50624241745D635B070817701647665947444D75456D504471407F521912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49294471300</MicroStart>
+        <MicroFinish>49352884900</MicroFinish>
+        <SystemStart>49294000</SystemStart>
+        <StartSequence>614</StartSequence>
+        <FinishSequence>617</FinishSequence>
+        <Audit1>527A50624241745D635B0F06167A1F4172095A054175456D4549685A7E46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>39</Bib>
+      <Name>Gallup, Gregory</Name>
+      <StartNumber>29</StartNumber>
+      <USSANumber>E6532774</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1954</YearOfBirth>
+      <ClubQuota>Jersey Boys</ClubQuota>
+      <MastersSex>M</MastersSex>
+    </Comp>
+    <Comp>
+      <Bib>95</Bib>
+      <Name>Zimmerman, William</Name>
+      <StartNumber>23</StartNumber>
+      <USSANumber>E4630018</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1955</YearOfBirth>
+      <ClubQuota>Albany</ClubQuota>
+      <MastersSex>M</MastersSex>
+    </Comp>
+    <Comp>
+      <Bib>125</Bib>
+      <Name>Smigelski, Alex</Name>
+      <StartNumber>27</StartNumber>
+      <USSANumber>E6606404</USSANumber>
+      <CompClass>9</CompClass>
+      <YearOfBirth>1957</YearOfBirth>
+      <ClubQuota>Jersey Boys</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>44852065200</MicroStart>
+        <MicroFinish>44902178700</MicroFinish>
+        <SystemStart>44852000</SystemStart>
+        <StartSequence>492</StartSequence>
+        <FinishSequence>495</FinishSequence>
+        <Audit1>527A50624241745D635B070816781640605947444D75456D504476407E5B1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>2</Status>
+        <MicroStart>49441622300</MicroStart>
+        <SystemStart>49441000</SystemStart>
+        <StartSequence>622</StartSequence>
+        <Audit1>527A50624241745D635B0F06107A1F4172095A054175456D505102200946157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>492</Bib>
+      <Name>Westcott, Jason</Name>
+      <StartNumber>30</StartNumber>
+      <USSANumber>E5183843</USSANumber>
+      <CompClass>8</CompClass>
+      <YearOfBirth>1960</YearOfBirth>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45424349400</MicroStart>
+        <MicroFinish>45469198300</MicroFinish>
+        <SystemStart>45424000</SystemStart>
+        <StartSequence>524</StartSequence>
+        <FinishSequence>527</FinishSequence>
+        <Audit1>527A50624241745D635B0708177716466B5947444D75456D50457240775E1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49533550000</MicroStart>
+        <MicroFinish>49577671200</MicroFinish>
+        <SystemStart>49534000</SystemStart>
+        <StartSequence>625</StartSequence>
+        <FinishSequence>628</FinishSequence>
+        <Audit1>527A50624241745D635B0F06127A1D4572095A054175456D4445685F7D46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>22</Bib>
+      <Name>Sevack, Lloyd</Name>
+      <StartNumber>33</StartNumber>
+      <USSANumber>4612925</USSANumber>
+      <CompClass>8</CompClass>
+      <YearOfBirth>1961</YearOfBirth>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45317891700</MicroStart>
+        <MicroFinish>45364319700</MicroFinish>
+        <SystemStart>45318000</SystemStart>
+        <StartSequence>518</StartSequence>
+        <FinishSequence>521</FinishSequence>
+        <Audit1>527A50624241745D635B070817761642665947444D75456D504570407B581912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49643531300</MicroStart>
+        <MicroFinish>49688880900</MicroFinish>
+        <SystemStart>49643000</SystemStart>
+        <StartSequence>631</StartSequence>
+        <FinishSequence>634</FinishSequence>
+        <Audit1>527A50624241745D635B0F061C7A1C4B72095A054175456D4444685D7B46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>96</Bib>
+      <Name>Tomassetti, Jim</Name>
+      <StartNumber>32</StartNumber>
+      <USSANumber>E5795513</USSANumber>
+      <CompClass>8</CompClass>
+      <YearOfBirth>1961</YearOfBirth>
+      <ClubQuota>Ski Dawgs</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45350865600</MicroStart>
+        <MicroFinish>45398082000</MicroFinish>
+        <SystemStart>45351000</SystemStart>
+        <StartSequence>520</StartSequence>
+        <FinishSequence>523</FinishSequence>
+        <Audit1>527A50624241745D635B0708177616416A5947444D75456D504571407D5B1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49605418500</MicroStart>
+        <MicroFinish>49650819100</MicroFinish>
+        <SystemStart>49605000</SystemStart>
+        <StartSequence>629</StartSequence>
+        <FinishSequence>632</FinishSequence>
+        <Audit1>527A50624241745D635B0F06137A1F4372095A054175456D4444685A7F46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>79</Bib>
+      <Name>McMahon, Gerald</Name>
+      <StartNumber>35</StartNumber>
+      <USSANumber>E5579917</USSANumber>
+      <CompClass>8</CompClass>
+      <YearOfBirth>1958</YearOfBirth>
+      <ClubQuota>Tri-State</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45244173200</MicroStart>
+        <MicroFinish>45291878800</MicroFinish>
+        <SystemStart>45244000</SystemStart>
+        <StartSequence>514</StartSequence>
+        <FinishSequence>517</FinishSequence>
+        <Audit1>527A50624241745D635B070817741647605947444D75456D50457140785A1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49718793200</MicroStart>
+        <MicroFinish>49765814700</MicroFinish>
+        <SystemStart>49718000</SystemStart>
+        <StartSequence>635</StartSequence>
+        <FinishSequence>638</FinishSequence>
+        <Audit1>527A50624241745D635B0F061D7A1E4472095A054175456D4446685E7D46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>75</Bib>
+      <Name>Strang, David</Name>
+      <StartNumber>36</StartNumber>
+      <USSANumber>E4850772</USSANumber>
+      <CompClass>8</CompClass>
+      <YearOfBirth>1958</YearOfBirth>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45210389400</MicroStart>
+        <MicroFinish>45261352300</MicroFinish>
+        <SystemStart>45210000</SystemStart>
+        <StartSequence>512</StartSequence>
+        <FinishSequence>515</FinishSequence>
+        <Audit1>527A50624241745D635B070817741640635947444D75456D50447640765C1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49756539100</MicroStart>
+        <MicroFinish>49805957300</MicroFinish>
+        <SystemStart>49756000</SystemStart>
+        <StartSequence>637</StartSequence>
+        <FinishSequence>640</FinishSequence>
+        <Audit1>527A50624241745D635B0F07147A1C4472095A054175456D4448685A7E46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>109</Bib>
+      <Name>Kincaid, Russell</Name>
+      <StartNumber>31</StartNumber>
+      <USSANumber>E6232407</USSANumber>
+      <CompClass>8</CompClass>
+      <YearOfBirth>1960</YearOfBirth>
+      <ClubQuota>Wilmington</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45388054500</MicroStart>
+        <MicroFinish>45439411200</MicroFinish>
+        <SystemStart>45388000</SystemStart>
+        <StartSequence>522</StartSequence>
+        <FinishSequence>525</FinishSequence>
+        <Audit1>527A50624241745D635B0708177716436B5947444D75456D504477407C5F1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49572044500</MicroStart>
+        <MicroFinish>49621807100</MicroFinish>
+        <SystemStart>49572000</SystemStart>
+        <StartSequence>627</StartSequence>
+        <FinishSequence>630</FinishSequence>
+        <Audit1>527A50624241745D635B0F06137A1C4372095A054175456D444868597946157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>483</Bib>
+      <Name>Marley, Gregory</Name>
+      <StartNumber>34</StartNumber>
+      <USSANumber>E6935191</USSANumber>
+      <CompClass>8</CompClass>
+      <YearOfBirth>1959</YearOfBirth>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45281358100</MicroStart>
+        <MicroFinish>45338558500</MicroFinish>
+        <SystemStart>45281000</SystemStart>
+        <StartSequence>516</StartSequence>
+        <FinishSequence>519</FinishSequence>
+        <Audit1>527A50624241745D635B0708177516416A5947444D75456D504471407D5A1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49681563400</MicroStart>
+        <MicroFinish>49738073900</MicroFinish>
+        <SystemStart>49681000</SystemStart>
+        <StartSequence>633</StartSequence>
+        <FinishSequence>636</FinishSequence>
+        <Audit1>527A50624241745D635B0F061C7A194A72095A054175456D4547685B7E46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>35</Bib>
+      <Name>Allison, Rob</Name>
+      <StartNumber>37</StartNumber>
+      <USSANumber>E6804186</USSANumber>
+      <CompClass>8</CompClass>
+      <YearOfBirth>1959</YearOfBirth>
+      <ClubQuota>Tri-State</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45173905700</MicroStart>
+        <MicroFinish>45224346900</MicroFinish>
+        <SystemStart>45174000</SystemStart>
+        <StartSequence>510</StartSequence>
+        <FinishSequence>513</FinishSequence>
+        <Audit1>527A50624241745D635B070817731646665947444D75456D504476407B5E1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>4</Status>
+        <MicroStart>49791565000</MicroStart>
+        <MicroFinish>49840862300</MicroFinish>
+        <SystemStart>49791000</SystemStart>
+        <StartSequence>639</StartSequence>
+        <FinishSequence>642</FinishSequence>
+        <Audit1>527A50624241745D63580F03127A184072095A054175456D5051664E6F4A716175600C521518434C4175456D405D662B2B034112672F4102370D5E5D0E27</Audit1>
+        <Audit2>664A785F43765C7C46040811701646635947444D75456D50457F407D531912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit2>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>485</Bib>
+      <Name>Motai, Yuichi</Name>
+      <StartNumber>39</StartNumber>
+      <USSANumber>E7171215</USSANumber>
+      <CompClass>7</CompClass>
+      <YearOfBirth>1967</YearOfBirth>
+      <ClubQuota>Independent</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45580858800</MicroStart>
+        <MicroFinish>45636232400</MicroFinish>
+        <SystemStart>45580000</SystemStart>
+        <StartSequence>531</StartSequence>
+        <FinishSequence>533</FinishSequence>
+        <Audit1>527A50624241745D635B070810701641645947444D75456D504473407C5D1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49872064100</MicroStart>
+        <MicroFinish>49926820800</MicroFinish>
+        <SystemStart>49872000</SystemStart>
+        <StartSequence>643</StartSequence>
+        <FinishSequence>646</FinishSequence>
+        <Audit1>527A50624241745D635B0F07167A1C4572095A054175456D454568597A46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>58</Bib>
+      <Name>Star, David</Name>
+      <StartNumber>38</StartNumber>
+      <USSANumber>7256530</USSANumber>
+      <CompClass>7</CompClass>
+      <YearOfBirth>1964</YearOfBirth>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45618613000</MicroStart>
+        <MicroFinish>45676294400</MicroFinish>
+        <SystemStart>45618000</SystemStart>
+        <StartSequence>532</StartSequence>
+        <FinishSequence>535</FinishSequence>
+        <Audit1>527A50624241745D635B070810711643645947444D75456D5044714079521912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49836520300</MicroStart>
+        <MicroFinish>49891544300</MicroFinish>
+        <SystemStart>49836000</SystemStart>
+        <StartSequence>641</StartSequence>
+        <FinishSequence>644</FinishSequence>
+        <Audit1>527A50624241745D635B0F07157A1F4372095A054175456D4544685E7D46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>142</Bib>
+      <Name>Rannestad, John</Name>
+      <StartNumber>41</StartNumber>
+      <USSANumber>E4786547</USSANumber>
+      <CompClass>7</CompClass>
+      <YearOfBirth>1963</YearOfBirth>
+      <ClubQuota>Albany</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45497450800</MicroStart>
+        <MicroFinish>45567896200</MicroFinish>
+        <SystemStart>45497000</SystemStart>
+        <StartSequence>528</StartSequence>
+        <FinishSequence>530</FinishSequence>
+        <Audit1>527A50624241745D635B0708177916406A5947444D75457C4A4076407B5E1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49914571200</MicroStart>
+        <MicroFinish>49961040300</MicroFinish>
+        <SystemStart>49914000</SystemStart>
+        <StartSequence>645</StartSequence>
+        <FinishSequence>648</FinishSequence>
+        <Audit1>527A50624241745D635B0F07167A184372095A054175456D4447685A7946157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>165</Bib>
+      <Name>Baldwin, Breck</Name>
+      <StartNumber>42</StartNumber>
+      <USSANumber>E6932414</USSANumber>
+      <CompClass>7</CompClass>
+      <YearOfBirth>1963</YearOfBirth>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45459959000</MicroStart>
+        <MicroFinish>45518643300</MicroFinish>
+        <SystemStart>45460000</SystemStart>
+        <StartSequence>526</StartSequence>
+        <FinishSequence>529</FinishSequence>
+        <Audit1>527A50624241745D635B0708177816416A5947444D75456D50447E4079521912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49959180800</MicroStart>
+        <MicroFinish>50020525900</MicroFinish>
+        <SystemStart>49959000</SystemStart>
+        <StartSequence>647</StartSequence>
+        <FinishSequence>650</FinishSequence>
+        <Audit1>527A50624241745D635B0F07177A184272095A05417554774040685D7B46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>183</Bib>
+      <Name>Karp, Matthew</Name>
+      <StartNumber>40</StartNumber>
+      <USSANumber>E5778253</USSANumber>
+      <CompClass>7</CompClass>
+      <YearOfBirth>1963</YearOfBirth>
+      <MastersSex>M</MastersSex>
+    </Comp>
+    <Comp>
+      <Bib>163</Bib>
+      <Name>Manoylovich, Igor</Name>
+      <StartNumber>45</StartNumber>
+      <USSANumber>E6951889</USSANumber>
+      <CompClass>6</CompClass>
+      <YearOfBirth>1969</YearOfBirth>
+      <ClubQuota>Rutgers</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45657142300</MicroStart>
+        <MicroFinish>45704473800</MicroFinish>
+        <SystemStart>45657000</SystemStart>
+        <StartSequence>534</StartSequence>
+        <FinishSequence>537</FinishSequence>
+        <Audit1>527A50624241745D635B070810711646665947444D75456D504571407C591912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>50087798100</MicroStart>
+        <MicroFinish>50133602500</MicroFinish>
+        <SystemStart>50087000</SystemStart>
+        <StartSequence>653</StartSequence>
+        <FinishSequence>655</FinishSequence>
+        <Audit1>527A50624241745D635B0F07117A1F4172095A054175456D444468567F46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>561</Bib>
+      <Name>Schoner, Bernd</Name>
+      <StartNumber>44</StartNumber>
+      <USSANumber>E7069547</USSANumber>
+      <CompClass>6</CompClass>
+      <YearOfBirth>1969</YearOfBirth>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45695459800</MicroStart>
+        <MicroFinish>45757685900</MicroFinish>
+        <SystemStart>45695000</SystemStart>
+        <StartSequence>536</StartSequence>
+        <FinishSequence>538</FinishSequence>
+        <Audit1>527A50624241745D635B070810721641655947444D75457C4A4174407D581912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>50037211200</MicroStart>
+        <MicroFinish>50088856700</MicroFinish>
+        <SystemStart>50037000</SystemStart>
+        <StartSequence>651</StartSequence>
+        <FinishSequence>654</FinishSequence>
+        <Audit1>527A50624241745D635B0F07107A184A72095A054175456D454068587B46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>197</Bib>
+      <Name>Hurchalla, Gregory</Name>
+      <StartNumber>43</StartNumber>
+      <USSANumber>E7009046</USSANumber>
+      <CompClass>6</CompClass>
+      <YearOfBirth>1970</YearOfBirth>
+      <ClubQuota>Ski Dawgs</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45881742000</MicroStart>
+        <MicroFinish>45941009700</MicroFinish>
+        <SystemStart>45881000</SystemStart>
+        <StartSequence>539</StartSequence>
+        <FinishSequence>541</FinishSequence>
+        <Audit1>527A50624241745D635B070810751646635947444D75456D50447F407D5C1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>49994802400</MicroStart>
+        <MicroFinish>50053839700</MicroFinish>
+        <SystemStart>49994000</SystemStart>
+        <StartSequence>649</StartSequence>
+        <FinishSequence>652</FinishSequence>
+        <Audit1>527A50624241745D635B0F07107A1D4672095A054175456D4548685E7C46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>140</Bib>
+      <Name>Kramer, Aaron</Name>
+      <StartNumber>46</StartNumber>
+      <USSANumber>E7009945</USSANumber>
+      <CompClass>4</CompClass>
+      <YearOfBirth>1979</YearOfBirth>
+      <ClubQuota>Ski Dawgs</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45955120300</MicroStart>
+        <MicroFinish>46004430000</MicroFinish>
+        <SystemStart>45955000</SystemStart>
+        <StartSequence>542</StartSequence>
+        <FinishSequence>545</FinishSequence>
+        <Audit1>527A50624241745D635B070810761646665947444D75456D50457F407C5A1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>50235217200</MicroStart>
+        <MicroFinish>50285112800</MicroFinish>
+        <SystemStart>50235000</SystemStart>
+        <StartSequence>656</StartSequence>
+        <FinishSequence>658</FinishSequence>
+        <Audit1>527A50624241745D635B0F071C7A1C4772095A054175456D444868567646157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>102</Bib>
+      <Name>Carpenter, Zack</Name>
+      <StartNumber>47</StartNumber>
+      <USSANumber>E6836445</USSANumber>
+      <CompClass>4</CompClass>
+      <YearOfBirth>1981</YearOfBirth>
+      <ClubQuota>Ski Dawgs</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45920676400</MicroStart>
+        <MicroFinish>45964438700</MicroFinish>
+        <SystemStart>45920000</SystemStart>
+        <StartSequence>540</StartSequence>
+        <FinishSequence>543</FinishSequence>
+        <Audit1>527A50624241745D635B070810761642665947444D75456D50457540785C1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>2</Status>
+        <MicroStart>50270633300</MicroStart>
+        <SystemStart>50270000</SystemStart>
+        <StartSequence>657</StartSequence>
+        <Audit1>527A50624241745D635B0F071C7A1F4372095A054175456D505102200946157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>130</Bib>
+      <Name>Madarasz, J P</Name>
+      <StartNumber>48</StartNumber>
+      <USSANumber>E5929955</USSANumber>
+      <CompClass>3</CompClass>
+      <YearOfBirth>1985</YearOfBirth>
+      <ClubQuota>Ramapo</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>45987608800</MicroStart>
+        <MicroFinish>46036155600</MicroFinish>
+        <SystemStart>45987000</SystemStart>
+        <StartSequence>544</StartSequence>
+        <FinishSequence>547</FinishSequence>
+        <Audit1>527A50624241745D635B070810771643645947444D75456D50457E407A5E1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>50308441900</MicroStart>
+        <MicroFinish>50355585400</MicroFinish>
+        <SystemStart>50308000</SystemStart>
+        <StartSequence>659</StartSequence>
+        <FinishSequence>661</FinishSequence>
+        <Audit1>527A50624241745D635B0F071D7A1D4772095A054175456D4446685F7B46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>179</Bib>
+      <Name>Migliori, Giacomo</Name>
+      <StartNumber>49</StartNumber>
+      <USSANumber>X7122520</USSANumber>
+      <CompClass>2</CompClass>
+      <YearOfBirth>1988</YearOfBirth>
+      <ClubQuota>Albany</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>46100170300</MicroStart>
+        <MicroFinish>46141369200</MicroFinish>
+        <SystemStart>46100000</SystemStart>
+        <StartSequence>550</StartSequence>
+        <FinishSequence>553</FinishSequence>
+        <Audit1>527A50624241745D635B070810791642635947444D75456D504577407E531912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>50349167500</MicroStart>
+        <MicroFinish>50389518900</MicroFinish>
+        <SystemStart>50349000</SystemStart>
+        <StartSequence>660</StartSequence>
+        <FinishSequence>663</FinishSequence>
+        <Audit1>527A50624241745D635B0F071D7A184B72095A054175456D4441685D7A46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>88</Bib>
+      <Name>Scuderi, Daniel</Name>
+      <StartNumber>51</StartNumber>
+      <USSANumber>E5849161</USSANumber>
+      <CompClass>2</CompClass>
+      <YearOfBirth>1988</YearOfBirth>
+      <ClubQuota>Albany</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>46025454500</MicroStart>
+        <MicroFinish>46072456600</MicroFinish>
+        <SystemStart>46025000</SystemStart>
+        <StartSequence>546</StartSequence>
+        <FinishSequence>549</FinishSequence>
+        <Audit1>527A50624241745D635B070810771647605947444D75456D504571407F5A1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>50417641000</MicroStart>
+        <MicroFinish>50464282000</MicroFinish>
+        <SystemStart>50418000</SystemStart>
+        <StartSequence>664</StartSequence>
+        <FinishSequence>666</FinishSequence>
+        <Audit1>527A50624241745D63580F02157A1C4672095A054175456D444768587B46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>191</Bib>
+      <Name>Kent, Ryan</Name>
+      <StartNumber>50</StartNumber>
+      <USSANumber>E7141536</USSANumber>
+      <CompClass>2</CompClass>
+      <YearOfBirth>1990</YearOfBirth>
+      <ClubQuota>Albany</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>46060105000</MicroStart>
+        <MicroFinish>46109912200</MicroFinish>
+        <SystemStart>46060000</SystemStart>
+        <StartSequence>548</StartSequence>
+        <FinishSequence>551</FinishSequence>
+        <Audit1>527A50624241745D635B070810781641625947444D75456D50457F40775A1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>50380961500</MicroStart>
+        <MicroFinish>50429003000</MicroFinish>
+        <SystemStart>50381000</SystemStart>
+        <StartSequence>662</StartSequence>
+        <FinishSequence>665</FinishSequence>
+        <Audit1>527A50624241745D63580F02147A1E4B72095A054175456D4449685E7B46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>117</Bib>
+      <Name>Vitiello, Eric</Name>
+      <StartNumber>52</StartNumber>
+      <USSANumber>E6183727</USSANumber>
+      <CompClass>1</CompClass>
+      <YearOfBirth>1994</YearOfBirth>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>46370755800</MicroStart>
+        <MicroFinish>46414415300</MicroFinish>
+        <SystemStart>46370000</SystemStart>
+        <StartSequence>562</StartSequence>
+        <FinishSequence>563</FinishSequence>
+        <Audit1>527A50624241745D635B070811731641665947444D75456D50457540795F1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>50469523100</MicroStart>
+        <MicroFinish>50511161000</MicroFinish>
+        <SystemStart>50469000</SystemStart>
+        <StartSequence>667</StartSequence>
+        <FinishSequence>668</FinishSequence>
+        <Audit1>527A50624241745D63580F02157A194372095A054175456D444068587C46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>135</Bib>
+      <Name>Stevenson, Jesse</Name>
+      <StartNumber>55</StartNumber>
+      <USSANumber>E7075179</USSANumber>
+      <CompClass>1</CompClass>
+      <YearOfBirth>1997</YearOfBirth>
+      <ClubQuota>Jersey Boys</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>46242551700</MicroStart>
+        <MicroFinish>46289041900</MicroFinish>
+        <SystemStart>46242000</SystemStart>
+        <StartSequence>556</StartSequence>
+        <FinishSequence>559</FinishSequence>
+        <Audit1>527A50624241745D635B0708117116406B5947444D75456D504570407B531912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>50555563600</MicroStart>
+        <MicroFinish>50601555800</MicroFinish>
+        <SystemStart>50555000</SystemStart>
+        <StartSequence>670</StartSequence>
+        <FinishSequence>672</FinishSequence>
+        <Audit1>527A50624241745D63580F02177A1E4372095A054175456D444468577646157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>143</Bib>
+      <Name>Holmes, Darnell</Name>
+      <StartNumber>56</StartNumber>
+      <USSANumber>E5946751</USSANumber>
+      <CompClass>1</CompClass>
+      <YearOfBirth>1994</YearOfBirth>
+      <ClubQuota>Tri-State</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>46206604200</MicroStart>
+        <MicroFinish>46255166100</MicroFinish>
+        <SystemStart>46206000</SystemStart>
+        <StartSequence>555</StartSequence>
+        <FinishSequence>557</FinishSequence>
+        <Audit1>527A50624241745D635B070811701647675947444D75456D50457E407A5C1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>50595713100</MicroStart>
+        <MicroFinish>50640001700</MicroFinish>
+        <SystemStart>50595000</SystemStart>
+        <StartSequence>671</StartSequence>
+        <FinishSequence>673</FinishSequence>
+        <Audit1>527A50624241745D63580F02107A1C4272095A054175456D4445685C7746157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>556</Bib>
+      <Name>Hurchalla, Charlie</Name>
+      <StartNumber>57</StartNumber>
+      <USSANumber>E6656307</USSANumber>
+      <CompClass>1</CompClass>
+      <YearOfBirth>2003</YearOfBirth>
+      <ClubQuota>Ski Dawgs</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>46139350500</MicroStart>
+        <MicroFinish>46186311700</MicroFinish>
+        <SystemStart>46139000</SystemStart>
+        <StartSequence>552</StartSequence>
+        <FinishSequence>554</FinishSequence>
+        <Audit1>527A50624241745D635B070810791646645947444D75456D50457040765C1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>1</Status>
+        <MicroStart>50660664300</MicroStart>
+        <MicroFinish>50707315500</MicroFinish>
+        <SystemStart>50660000</SystemStart>
+        <StartSequence>674</StartSequence>
+        <FinishSequence>675</FinishSequence>
+        <Audit1>527A50624241745D63580F02117A1C4572095A054175456D444768587A46157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+    <Comp>
+      <Bib>188</Bib>
+      <Name>Ancillotti, Thomas</Name>
+      <StartNumber>53</StartNumber>
+      <USSANumber>E7073703</USSANumber>
+      <CompClass>1</CompClass>
+      <YearOfBirth>1995</YearOfBirth>
+      <ClubQuota>Ramapo</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>2</Status>
+        <MicroStart>46310242500</MicroStart>
+        <SystemStart>46310000</SystemStart>
+        <StartSequence>560</StartSequence>
+        <Audit1>527A50624241745D635B070811721640645947444D75456D5051662A012C1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+    </Comp>
+    <Comp>
+      <Bib>176</Bib>
+      <Name>Moya, Liam</Name>
+      <StartNumber>54</StartNumber>
+      <USSANumber>E6668645</USSANumber>
+      <CompClass>1</CompClass>
+      <YearOfBirth>1997</YearOfBirth>
+      <ClubQuota>Rutgers</ClubQuota>
+      <MastersSex>M</MastersSex>
+      <Time1>
+        <Status>1</Status>
+        <MicroStart>46277180900</MicroStart>
+        <MicroFinish>46328193000</MicroFinish>
+        <SystemStart>46277000</SystemStart>
+        <StartSequence>558</StartSequence>
+        <FinishSequence>561</FinishSequence>
+        <Audit1>527A50624241745D635B0708117216426A5947444D75456D504477407F5B1912612C4911260B584708364519191C234E671C5C530413451C35155209223A103F0314663A26075C5C4369</Audit1>
+      </Time1>
+      <Time2>
+        <Status>2</Status>
+        <MicroStart>50520642900</MicroStart>
+        <SystemStart>50520000</SystemStart>
+        <StartSequence>669</StartSequence>
+        <Audit1>527A50624241745D63580F02167A194272095A054175456D505102200946157748254F0620165940027531241D14664639035412772942153E1C176A0E20173E1551120722035B550D</Audit1>
+      </Time2>
+    </Comp>
+  </Men>
+  <Women>
+    <NumberComps>0</NumberComps>
+    <Header>
+      <Country>USA</Country>
+      <GoverningBody>U.S. SKI &amp; SNOWBOARD</GoverningBody>
+      <LGB>NAT</LGB>
+      <Division>Eastern</Division>
+      <RaceDate>43118</RaceDate>
+      <RaceType>2</RaceType>
+      <RaceLevel>U</RaceLevel>
+      <NumRuns>2</NumRuns>
+      <NumInTopSeed>30</NumInTopSeed>
+      <NumToReverse>30</NumToReverse>
+      <ScoredRace>Y</ScoredRace>
+      <USCSAVideoOutput>Y</USCSAVideoOutput>
+    </Header>
+    <Officials>
+    </Officials>
+    <RunData1>
+      <StartTime>18000</StartTime>
+    </RunData1>
+    <RunData2>
+      <StartTime>18000</StartTime>
+    </RunData2>
+    <FFactors>
+      <FNumber1>1250</FNumber1>
+      <FNumber2>720</FNumber2>
+      <FNumber3>980</FNumber3>
+      <FNumber4>1080</FNumber4>
+      <FNumber5>1150</FNumber5>
+      <FNumber6>850</FNumber6>
+      <USSAMaxSeed1>820</USSAMaxSeed1>
+      <USSAMaxSeed2>360</USSAMaxSeed2>
+      <USSAMaxSeed3>530</USSAMaxSeed3>
+      <USSAMaxSeed4>660</USSAMaxSeed4>
+      <USSAMaxSeed5>660</USSAMaxSeed5>
+      <USSAMaxSeed6>660</USSAMaxSeed6>
+      <FISMaxSeed1>310</FISMaxSeed1>
+      <FISMaxSeed2>145</FISMaxSeed2>
+      <FISMaxSeed3>200</FISMaxSeed3>
+      <FISMaxSeed4>250</FISMaxSeed4>
+      <FISMaxSeed5>250</FISMaxSeed5>
+      <FISMaxSeed6>250</FISMaxSeed6>
+    </FFactors>
+    <RTData>
+      <RTCountry></RTCountry>
+      <RTState></RTState>
+      <RTResort></RTResort>
+      <RTRaceType></RTRaceType>
+      <RTSex></RTSex>
+      <RTDate>0</RTDate>
+      <RTTime>0</RTTime>
+    </RTData>
+    <FISLiveData>
+    </FISLiveData>
+    <Notes>
+      <CurrentPage>0</CurrentPage>
+    </Notes>
+  </Women>
+    <TimingLog>
+      <Log>                                                                                </Log>
+      <Log>Starting timing session, run 1, MASTERS                                         </Log>
+      <Log>                                                                                </Log>
+      <Log>Bib FA   start assigned 12:41:24.745800 run 1                                   </Log>
+      <Log>Bib FA   finish assigned 12:42:07.272300 run 1                                  </Log>
+      <Log>Bib FA   elapsed    42.52                                                       </Log>
+      <Log>Bib FB   start assigned 12:42:17.418300 run 1                                   </Log>
+      <Log>Bib FC   start assigned 12:42:53.766500 run 1                                   </Log>
+      <Log>Bib FB   finish assigned 12:42:59.480100 run 1                                  </Log>
+      <Log>Bib FB   elapsed    42.06                                                       </Log>
+      <Log>Bib FD   start assigned 12:43:28.696000 run 1                                   </Log>
+      <Log>Bib FC   finish assigned 12:43:34.240100 run 1                                  </Log>
+      <Log>Bib FC   elapsed    40.47                                                       </Log>
+      <Log>Bib FD   finish assigned 12:44:07.544300 run 1                                  </Log>
+      <Log>Bib FD   elapsed    38.84                                                       </Log>
+      <Log>Bib 76   start assigned 12:44:29.608900 run 1                                   </Log>
+      <Log>Bib 20   start assigned 12:45:17.273500 run 1                                   </Log>
+      <Log>Bib 76   finish assigned 12:45:23.543600 run 1                                  </Log>
+      <Log>Bib 76   elapsed    53.93                                                       </Log>
+      <Log>Bib 68   start assigned 12:45:56.559800 run 1                                   </Log>
+      <Log>Bib 20   finish assigned 12:46:18.141300 run 1                                  </Log>
+      <Log>Bib 20   elapsed  1:00.86                                                       </Log>
+      <Log>Bib 100  start assigned 12:46:41.576100 run 1                                   </Log>
+      <Log>Bib 68   finish assigned 12:47:03.573400 run 1                                  </Log>
+      <Log>Bib 68   elapsed  1:07.01                                                       </Log>
+      <Log>Bib 36   start assigned 12:47:45.607400 run 1                                   </Log>
+      <Log>Bib 100  finish assigned 12:48:04.073600 run 1                                  </Log>
+      <Log>Bib 100  elapsed  1:22.49                                                       </Log>
+      <Log>Bib 149  start assigned 12:48:26.099300 run 1                                   </Log>
+      <Log>Bib 36   finish assigned 12:48:44.269300 run 1                                  </Log>
+      <Log>Bib 36   elapsed    58.66                                                       </Log>
+      <Log>Bib 60   start assigned 12:49:12.012700 run 1                                   </Log>
+      <Log>Bib 149  finish assigned 12:49:20.973700 run 1                                  </Log>
+      <Log>Bib 149  elapsed    54.87                                                       </Log>
+      <Log>Bib 28   start assigned 12:49:50.092100 run 1                                   </Log>
+      <Log>Bib 60   finish assigned 12:50:07.836200 run 1                                  </Log>
+      <Log>Bib 60   elapsed    55.82                                                       </Log>
+      <Log>Bib 7    start assigned 12:50:20.545800 run 1                                   </Log>
+      <Log>Bib 28   finish assigned 12:50:40.793800 run 1                                  </Log>
+      <Log>Bib 28   elapsed    50.70                                                       </Log>
+      <Log>Bib 148  start assigned 12:50:51.294000 run 1                                   </Log>
+      <Log>Bib 7    finish assigned 12:51:22.878700 run 1                                  </Log>
+      <Log>Bib 7    elapsed  1:02.33                                                       </Log>
+      <Log>Bib 69   start assigned 12:51:32.063900 run 1                                   </Log>
+      <Log>Bib 148  finish assigned 12:51:55.676400 run 1                                  </Log>
+      <Log>Bib 148  elapsed  1:04.38                                                       </Log>
+      <Log>Bib 485  start assigned 12:52:20.232900 run 1                                   </Log>
+      <Log>Bib 69   finish assigned 12:52:26.950600 run 1                                  </Log>
+      <Log>Bib 69   elapsed    54.88                                                       </Log>
+      <Log>Bib 31   start assigned 12:52:53.649000 run 1                                   </Log>
+      <Log>Bib 485  finish assigned 12:53:09.715200 run 1                                  </Log>
+      <Log>Bib 485  elapsed    49.48                                                       </Log>
+      <Log>Bib 34   start assigned 12:53:28.017300 run 1                                   </Log>
+      <Log>Bib 31   finish assigned 12:53:42.763800 run 1                                  </Log>
+      <Log>Bib 31   elapsed    49.11                                                       </Log>
+      <Log>Bib 141  start assigned 12:54:03.728600 run 1                                   </Log>
+      <Log>Bib 34   finish assigned 12:54:41.416900 run 1                                  </Log>
+      <Log>Bib 34   elapsed  1:13.39                                                       </Log>
+      <Log>Bib 11   start assigned 12:54:44.787700 run 1                                   </Log>
+      <Log>Bib 141  finish assigned 12:55:00.010600 run 1                                  </Log>
+      <Log>Bib 141  elapsed    56.28                                                       </Log>
+      <Log>Bib 11   finish assigned 12:55:37.742000 run 1                                  </Log>
+      <Log>Bib 11   elapsed    52.95                                                       </Log>
+      <Log>Bib 314  start assigned 12:57:10.775200 run 1                                   </Log>
+      <Log>Bib 126  start assigned 12:57:42.966300 run 1                                   </Log>
+      <Log>Bib 314  finish assigned 12:57:59.050900 run 1                                  </Log>
+      <Log>Bib 314  elapsed    48.27                                                       </Log>
+      <Log>Bib 10   start assigned 12:58:30.435000 run 1                                   </Log>
+      <Log>Bib 126  DNF run 1                                                              </Log>
+      <Log>Bib 52   start assigned 12:59:13.276000 run 1                                   </Log>
+      <Log>Bib 10   finish assigned 12:59:28.483400 run 1                                  </Log>
+      <Log>Bib 10   elapsed    58.04                                                       </Log>
+      <Log>Bib 58   start assigned 12:59:52.860100 run 1                                   </Log>
+      <Log>Bib 52   finish assigned 13:00:07.017000 run 1                                  </Log>
+      <Log>Bib 52   elapsed    53.74                                                       </Log>
+      <Log>Bib 84   start assigned 13:00:26.772200 run 1                                   </Log>
+      <Log>Bib 58   finish assigned 13:00:39.760900 run 1                                  </Log>
+      <Log>Bib 58   elapsed    46.90                                                       </Log>
+      <Log>Bib 483  start assigned 13:01:01.719300 run 1                                   </Log>
+      <Log>Bib 84   finish assigned 13:01:17.756800 run 1                                  </Log>
+      <Log>Bib 84   elapsed    50.98                                                       </Log>
+      <Log>Bib 39   start assigned 13:01:35.873900 run 1                                   </Log>
+      <Log>Bib 483  finish assigned 13:01:49.509800 run 1                                  </Log>
+      <Log>Bib 483  elapsed    47.79                                                       </Log>
+      <Log>Bib 9    start assigned 13:02:15.396500 run 1                                   </Log>
+      <Log>Bib 39   finish assigned 13:02:32.981600 run 1                                  </Log>
+      <Log>Bib 39   elapsed    57.10                                                       </Log>
+      <Log>Bib 56   start assigned 13:02:54.342600 run 1                                   </Log>
+      <Log>Bib 9    finish assigned 13:03:14.053100 run 1                                  </Log>
+      <Log>Bib 9    elapsed    58.65                                                       </Log>
+      <Log>Bib 497  start assigned 13:03:23.634900 run 1                                   </Log>
+      <Log>Bib 56   finish assigned 13:03:36.664500 run 1                                  </Log>
+      <Log>Bib 56   elapsed    42.32                                                       </Log>
+      <Log>Bib 96   start assigned 13:04:03.280400 run 1                                   </Log>
+      <Log>Bib 497  finish assigned 13:04:17.780000 run 1                                  </Log>
+      <Log>Bib 497  elapsed    54.14                                                       </Log>
+      <Log>Bib 177  start assigned 13:04:31.721800 run 1                                   </Log>
+      <Log>Bib 96   finish assigned 13:04:52.224900 run 1                                  </Log>
+      <Log>Bib 96   elapsed    48.94                                                       </Log>
+      <Log>Bib 177  DNF run 1                                                              </Log>
+      <Log>Bib 5    start assigned 13:06:50.826800 run 1                                   </Log>
+      <Log>Bib 109  start assigned 13:07:23.074800 run 1                                   </Log>
+      <Log>Bib 5    finish assigned 13:07:44.237500 run 1                                  </Log>
+      <Log>Bib 5    elapsed    53.41                                                       </Log>
+      <Log>Bib 32   start assigned 13:07:55.842300 run 1                                   </Log>
+      <Log>Bib 109  finish assigned 13:08:23.598200 run 1                                  </Log>
+      <Log>Bib 109  elapsed  1:00.52                                                       </Log>
+      <Log>Bib 142  start assigned 13:08:31.703800 run 1                                   </Log>
+      <Log>Bib 32   finish assigned 13:08:47.400800 run 1                                  </Log>
+      <Log>Bib 32   elapsed    51.55                                                       </Log>
+      <Log>Bib 142  DNF run 1                                                              </Log>
+      <Log>Bib 114  start assigned 13:09:34.513200 run 1                                   </Log>
+      <Log>Bib 486  start assigned 13:10:03.898200 run 1                                   </Log>
+      <Log>Bib 114  finish assigned 13:10:19.437500 run 1                                  </Log>
+      <Log>Bib 114  elapsed    44.92                                                       </Log>
+      <Log>Bib 163  start assigned 13:10:36.238300 run 1                                   </Log>
+      <Log>Bib 486  finish assigned 13:10:46.163700 run 1                                  </Log>
+      <Log>Bib 486  elapsed    42.26                                                       </Log>
+      <Log>Bib 490  start assigned 13:11:10.176800 run 1                                   </Log>
+      <Log>Bib 163  finish assigned 13:11:22.326300 run 1                                  </Log>
+      <Log>Bib 163  elapsed    46.08                                                       </Log>
+      <Log>Bib 481  start assigned 13:11:43.225200 run 1                                   </Log>
+      <Log>Bib 490  finish assigned 13:12:00.227400 run 1                                  </Log>
+      <Log>Bib 490  elapsed    50.05                                                       </Log>
+      <Log>Bib 161  start assigned 13:12:17.756200 run 1                                   </Log>
+      <Log>Bib 481  finish assigned 13:12:32.281100 run 1                                  </Log>
+      <Log>Bib 481  elapsed    49.05                                                       </Log>
+      <Log>Bib 140  start assigned 13:12:47.348000 run 1                                   </Log>
+      <Log>Bib 161  finish assigned 13:13:07.520600 run 1                                  </Log>
+      <Log>Bib 161  elapsed    49.76                                                       </Log>
+      <Log>Bib 102  start assigned 13:13:27.126300 run 1                                   </Log>
+      <Log>Bib 140  finish assigned 13:13:34.205100 run 1                                  </Log>
+      <Log>Bib 140  elapsed    46.85                                                       </Log>
+      <Log>Bib 83   start assigned 13:13:57.076200 run 1                                   </Log>
+      <Log>Bib 102  finish assigned 13:14:09.107100 run 1                                  </Log>
+      <Log>Bib 102  elapsed    41.98                                                       </Log>
+      <Log>Bib 193  start assigned 13:14:26.824600 run 1                                   </Log>
+      <Log>Bib 83   finish assigned 13:14:45.360600 run 1                                  </Log>
+      <Log>Bib 83   elapsed    48.28                                                       </Log>
+      <Log>Bib 492  start assigned 13:15:29.731000 run 1                                   </Log>
+      <Log>Bib 193  finish assigned 13:15:34.838300 run 1                                  </Log>
+      <Log>Bib 193  elapsed  1:08.01                                                       </Log>
+      <Log>Bib 88   start assigned 13:16:02.699000 run 1                                   </Log>
+      <Log>Bib 492  finish assigned 13:16:24.090500 run 1                                  </Log>
+      <Log>Bib 492  elapsed    54.35                                                       </Log>
+      <Log>Bib 491  start assigned 13:16:37.591200 run 1                                   </Log>
+      <Log>Bib 88   finish assigned 13:16:49.893200 run 1                                  </Log>
+      <Log>Bib 88   elapsed    47.19                                                       </Log>
+      <Log>Bib 135  start assigned 13:17:20.514600 run 1                                   </Log>
+      <Log>Bib 491  DNF run 1                                                              </Log>
+      <Log>Bib 117  start assigned 13:17:58.078700 run 1                                   </Log>
+      <Log>Bib 135  finish assigned 13:18:07.958600 run 1                                  </Log>
+      <Log>Bib 135  elapsed    47.44                                                       </Log>
+      <Log>Bib 188  start assigned 13:18:40.344000 run 1                                   </Log>
+      <Log>Bib 117  finish assigned 13:18:40.703600 run 1                                  </Log>
+      <Log>Bib 117  elapsed    42.62                                                       </Log>
+      <Log>Bib 188  DNF run 1                                                              </Log>
+      <Log>Bib 116  start assigned 13:20:49.576500 run 1                                   </Log>
+      <Log>Bib 116  finish assigned 13:21:31.505500 run 1                                  </Log>
+      <Log>Bib 116  elapsed    41.92                                                       </Log>
+      <Log>                                                                                </Log>
+      <Log>Starting timing session, run 2, MASTERS                                         </Log>
+      <Log>                                                                                </Log>
+      <Log>Bib FA   start assigned 14:03:43.003200 run 2                                   </Log>
+      <Log>Bib FB   start assigned 14:04:14.854300 run 2                                   </Log>
+      <Log>Bib FA   finish assigned 14:04:37.135600 run 2                                  </Log>
+      <Log>Bib FA   elapsed    54.13                                                       </Log>
+      <Log>Bib FC   start assigned 14:04:59.914900 run 2                                   </Log>
+      <Log>Bib FB   finish assigned 14:05:04.270200 run 2                                  </Log>
+      <Log>Bib FB   elapsed    49.41                                                       </Log>
+      <Log>Bib FD   start assigned 14:05:32.549700 run 2                                   </Log>
+      <Log>Bib FC   finish assigned 14:06:03.852000 run 2                                  </Log>
+      <Log>Bib FC   elapsed  1:03.93                                                       </Log>
+      <Log>Bib FD   finish assigned 14:06:21.582400 run 2                                  </Log>
+      <Log>Bib FD   elapsed    49.03                                                       </Log>
+      <Log>Bib 76   start assigned 14:06:50.253300 run 2                                   </Log>
+      <Log>Bib 20   start assigned 14:07:35.302300 run 2                                   </Log>
+      <Log>Bib 76   finish assigned 14:07:42.850700 run 2                                  </Log>
+      <Log>Bib 76   elapsed    52.59                                                       </Log>
+      <Log>Bib 100  start assigned 14:08:21.216400 run 2                                   </Log>
+      <Log>Bib 20   finish assigned 14:08:35.722300 run 2                                  </Log>
+      <Log>Bib 20   elapsed  1:00.42                                                       </Log>
+      <Log>Bib 68   start assigned 14:09:17.634600 run 2                                   </Log>
+      <Log>Bib 100  finish assigned 14:09:47.298000 run 2                                  </Log>
+      <Log>Bib 100  elapsed  1:26.08                                                       </Log>
+      <Log>Bib 68   finish assigned 14:10:26.976500 run 2                                  </Log>
+      <Log>Bib 68   elapsed  1:09.34                                                       </Log>
+      <Log>Bib 28   start assigned 14:10:28.211000 run 2                                   </Log>
+      <Log>Bib 60   start assigned 14:11:11.520100 run 2                                   </Log>
+      <Log>Bib 28   finish assigned 14:11:19.694700 run 2                                  </Log>
+      <Log>Bib 28   elapsed    51.48                                                       </Log>
+      <Log>Bib 149  start assigned 14:11:51.477100 run 2                                   </Log>
+      <Log>Bib 60   finish assigned 14:12:02.536900 run 2                                  </Log>
+      <Log>Bib 60   elapsed    51.01                                                       </Log>
+      <Log>Bib 36   start assigned 14:12:23.855100 run 2                                   </Log>
+      <Log>Bib 149  finish assigned 14:12:46.158600 run 2                                  </Log>
+      <Log>Bib 149  elapsed    54.68                                                       </Log>
+      <Log>Bib 148  start assigned 14:13:06.718100 run 2                                   </Log>
+      <Log>Bib 36   finish assigned 14:13:21.355700 run 2                                  </Log>
+      <Log>Bib 36   elapsed    57.50                                                       </Log>
+      <Log>Bib 7    start assigned 14:13:43.373700 run 2                                   </Log>
+      <Log>Bib 148  finish assigned 14:14:13.954400 run 2                                  </Log>
+      <Log>Bib 148  elapsed  1:07.23                                                       </Log>
+      <Log>Bib 485  start assigned 14:14:17.932700 run 2                                   </Log>
+      <Log>Bib 7    finish assigned 14:14:44.615400 run 2                                  </Log>
+      <Log>Bib 7    elapsed  1:01.24                                                       </Log>
+      <Log>Bib 69   start assigned 14:14:52.778700 run 2                                   </Log>
+      <Log>Bib 485  finish assigned 14:15:07.456200 run 2                                  </Log>
+      <Log>Bib 485  elapsed    49.52                                                       </Log>
+      <Log>Bib 141  start assigned 14:15:30.570900 run 2                                   </Log>
+      <Log>Bib 69   finish assigned 14:15:50.239600 run 2                                  </Log>
+      <Log>Bib 69   elapsed    57.46                                                       </Log>
+      <Log>Bib 34   start assigned 14:15:59.195800 run 2                                   </Log>
+      <Log>Bib 141  finish assigned 14:16:27.924000 run 2                                  </Log>
+      <Log>Bib 141  elapsed    57.35                                                       </Log>
+      <Log>Bib 31   start assigned 14:16:38.049400 run 2                                   </Log>
+      <Log>Bib 34   finish assigned 14:17:12.531000 run 2                                  </Log>
+      <Log>Bib 34   elapsed  1:13.33                                                       </Log>
+      <Log>Bib 11   start assigned 14:17:20.259000 run 2                                   </Log>
+      <Log>Bib 31   finish assigned 14:17:26.160200 run 2                                  </Log>
+      <Log>Bib 31   elapsed    48.11                                                       </Log>
+      <Log>Bib 314  start assigned 14:17:53.723100 run 2                                   </Log>
+      <Log>Bib 11   finish assigned 14:18:13.469200 run 2                                  </Log>
+      <Log>Bib 11   elapsed    53.21                                                       </Log>
+      <Log>Bib 126  start assigned 14:18:37.190700 run 2                                   </Log>
+      <Log>Bib 314  finish assigned 14:18:42.885800 run 2                                  </Log>
+      <Log>Bib 314  elapsed    49.16                                                       </Log>
+      <Log>Bib 56   start assigned 14:19:26.028100 run 2                                   </Log>
+      <Log>Bib 126  finish assigned 14:19:38.198900 run 2                                  </Log>
+      <Log>Bib 126  elapsed  1:01.00                                                       </Log>
+      <Log>Bib 9    start assigned 14:20:04.556500 run 2                                   </Log>
+      <Log>Bib 56   finish assigned 14:20:07.399100 run 2                                  </Log>
+      <Log>Bib 56   elapsed    41.37                                                       </Log>
+      <Log>Bib 39   start assigned 14:20:36.571100 run 2                                   </Log>
+      <Log>Bib 9    finish assigned 14:21:01.895900 run 2                                  </Log>
+      <Log>Bib 9    elapsed    57.33                                                       </Log>
+      <Log>Bib 39   DNF run 2                                                              </Log>
+      <Log>Bib 483  start assigned 14:21:49.837500 run 2                                   </Log>
+      <Log>Bib 84   start assigned 14:22:26.517600 run 2                                   </Log>
+      <Log>Bib 483  finish assigned 14:22:36.984300 run 2                                  </Log>
+      <Log>Bib 483  elapsed    47.14                                                       </Log>
+      <Log>Bib 58   start assigned 14:23:00.919400 run 2                                   </Log>
+      <Log>Bib 84   finish assigned 14:23:17.780100 run 2                                  </Log>
+      <Log>Bib 84   elapsed    51.26                                                       </Log>
+      <Log>Bib 52   start assigned 14:23:30.546000 run 2                                   </Log>
+      <Log>Bib 58   finish assigned 14:23:48.697400 run 2                                  </Log>
+      <Log>Bib 58   elapsed    47.77                                                       </Log>
+      <Log>Bib 10   start assigned 14:24:05.202200 run 2                                   </Log>
+      <Log>Bib 52   finish assigned 14:24:23.194500 run 2                                  </Log>
+      <Log>Bib 52   elapsed    52.64                                                       </Log>
+      <Log>Bib 32   start assigned 14:24:38.309600 run 2                                   </Log>
+      <Log>Bib 10   finish assigned 14:25:02.839200 run 2                                  </Log>
+      <Log>Bib 10   elapsed    57.63                                                       </Log>
+      <Log>Bib 109  start assigned 14:25:09.696200 run 2                                   </Log>
+      <Log>Bib 32   finish assigned 14:25:30.564100 run 2                                  </Log>
+      <Log>Bib 32   elapsed    52.25                                                       </Log>
+      <Log>Bib 5    start assigned 14:25:45.518900 run 2                                   </Log>
+      <Log>Bib 109  finish assigned 14:26:03.106000 run 2                                  </Log>
+      <Log>Bib 109  elapsed    53.40                                                       </Log>
+      <Log>Bib 177  start assigned 14:26:16.820600 run 2                                   </Log>
+      <Log>Bib 5    finish assigned 14:26:38.022100 run 2                                  </Log>
+      <Log>Bib 5    elapsed    52.50                                                       </Log>
+      <Log>Bib 96   start assigned 14:26:49.806700 run 2                                   </Log>
+      <Log>Bib 177  finish assigned 14:27:14.256400 run 2                                  </Log>
+      <Log>Bib 177  elapsed    57.43                                                       </Log>
+      <Log>Bib 497  start assigned 14:27:22.495700 run 2                                   </Log>
+      <Log>Bib 96   finish assigned 14:27:36.734000 run 2                                  </Log>
+      <Log>Bib 96   elapsed    46.92                                                       </Log>
+      <Log>Bib 486  start assigned 14:27:57.643800 run 2                                   </Log>
+      <Log>Bib 497  finish assigned 14:28:17.978500 run 2                                  </Log>
+      <Log>Bib 497  elapsed    55.48                                                       </Log>
+      <Log>Bib 114  start assigned 14:28:31.520800 run 2                                   </Log>
+      <Log>Bib 486  finish assigned 14:28:39.388700 run 2                                  </Log>
+      <Log>Bib 486  elapsed    41.74                                                       </Log>
+      <Log>Bib 142  start assigned 14:29:10.474600 run 2                                   </Log>
+      <Log>Bib 114  finish assigned 14:29:15.550200 run 2                                  </Log>
+      <Log>Bib 114  elapsed    44.02                                                       </Log>
+      <Log>Bib 142  finish assigned 14:29:53.974300 run 2                                  </Log>
+      <Log>Bib 142  elapsed    43.49                                                       </Log>
+      <Log>Bib 481  start assigned 14:30:26.702700 run 2                                   </Log>
+      <Log>Bib 481  finish assigned 14:31:14.462900 run 2                                  </Log>
+      <Log>Bib 481  elapsed    47.76                                                       </Log>
+      <Log>Bib 490  start assigned 14:31:27.063600 run 2                                   </Log>
+      <Log>Bib 163  start assigned 14:32:02.169800 run 2                                   </Log>
+      <Log>Bib 490  finish assigned 14:32:16.467400 run 2                                  </Log>
+      <Log>Bib 490  elapsed    49.40                                                       </Log>
+      <Log>Bib 161  start assigned 14:32:40.662500 run 2                                   </Log>
+      <Log>Bib 163  finish assigned 14:32:47.155500 run 2                                  </Log>
+      <Log>Bib 163  elapsed    44.98                                                       </Log>
+      <Log>Bib 102  start assigned 14:33:15.549500 run 2                                   </Log>
+      <Log>Bib 161  finish assigned 14:33:29.465600 run 2                                  </Log>
+      <Log>Bib 161  elapsed    48.80                                                       </Log>
+      <Log>Bib 140  start assigned 14:33:49.706000 run 2                                   </Log>
+      <Log>Bib 102  finish assigned 14:33:57.643800 run 2                                  </Log>
+      <Log>Bib 102  elapsed    42.09                                                       </Log>
+      <Log>Bib 83   start assigned 14:34:19.612000 run 2                                   </Log>
+      <Log>Bib 140  finish assigned 14:34:41.494500 run 2                                  </Log>
+      <Log>Bib 140  elapsed    51.78                                                       </Log>
+      <Log>Bib 83   finish assigned 14:35:06.380800 run 2                                  </Log>
+      <Log>Bib 83   elapsed    46.76                                                       </Log>
+      <Log>Bib 491  start assigned 14:36:43.506900 run 2                                   </Log>
+      <Log>Bib 88   start assigned 14:37:14.504000 run 2                                   </Log>
+      <Log>Bib 491  finish assigned 14:37:24.224900 run 2                                  </Log>
+      <Log>Bib 491  elapsed    40.71                                                       </Log>
+      <Log>Bib 88   finish assigned 14:38:01.206200 run 2                                  </Log>
+      <Log>Bib 88   elapsed    46.70                                                       </Log>
+      <Log>Bib 492  start assigned 14:38:03.465500 run 2                                   </Log>
+      <Log>Bib 193  start assigned 14:38:39.713200 run 2                                   </Log>
+      <Log>Bib 492  finish assigned 14:38:55.450100 run 2                                  </Log>
+      <Log>Bib 492  elapsed    51.98                                                       </Log>
+      <Log>Bib 116  start assigned 14:39:43.182300 run 2                                   </Log>
+      <Log>Bib 193  finish assigned 14:39:49.514200 run 2                                  </Log>
+      <Log>Bib 193  elapsed  1:09.80                                                       </Log>
+      <Log>Bib 116  finish assigned 14:40:24.140400 run 2                                  </Log>
+      <Log>Bib 116  elapsed    40.95                                                       </Log>
+      <Log>Bib 188  start assigned 14:40:24.565800 run 2                                   </Log>
+      <Log>Bib 188  DNF run 2                                                              </Log>
+      <Log>Bib 117  start assigned 14:40:56.822000 run 2                                   </Log>
+      <Log>Bib 117  finish assigned 14:41:37.861600 run 2                                  </Log>
+      <Log>Bib 117  elapsed    41.03                                                       </Log>
+      <Log>Bib 135  start assigned 14:42:07.756500 run 2                                   </Log>
+      <Log>Bib 135  finish assigned 14:42:54.483600 run 2                                  </Log>
+      <Log>Bib 135  elapsed    46.72                                                       </Log>
+      <Log>                                                                                </Log>
+      <Log>Starting timing session, run 1, MASTERS                                         </Log>
+      <Log>                                                                                </Log>
+      <Log>                                                                                </Log>
+      <Log>Starting timing session, run 1, MASTERS                                         </Log>
+      <Log>                                                                                </Log>
+      <Log>Bib FA   start assigned 12:14:00.421000 run 1                                   </Log>
+      <Log>Bib FA   finish assigned 12:14:39.870700 run 1                                  </Log>
+      <Log>Bib FA   elapsed    39.44                                                       </Log>
+      <Log>Bib 20   start assigned 12:15:52.016000 run 1                                   </Log>
+      <Log>Bib 60   start assigned 12:16:35.851000 run 1                                   </Log>
+      <Log>Bib 20   finish assigned 12:16:49.790600 run 1                                  </Log>
+      <Log>Bib 20   elapsed    57.77                                                       </Log>
+      <Log>Bib 60   finish assigned 12:17:26.320200 run 1                                  </Log>
+      <Log>Bib 60   elapsed    50.46                                                       </Log>
+      <Log>Bib 28   start assigned 12:17:48.930100 run 1                                   </Log>
+      <Log>Bib 28   finish assigned 12:18:38.242600 run 1                                  </Log>
+      <Log>Bib 28   elapsed    49.31                                                       </Log>
+      <Log>Bib 558  start assigned 12:19:25.483500 run 1                                   </Log>
+      <Log>Bib 69   start assigned 12:20:01.247600 run 1                                   </Log>
+      <Log>Bib 558  finish assigned 12:20:16.829800 run 1                                  </Log>
+      <Log>Bib 558  elapsed    51.34                                                       </Log>
+      <Log>Bib 128  start assigned 12:20:38.906500 run 1                                   </Log>
+      <Log>Bib 69   finish assigned 12:20:59.166600 run 1                                  </Log>
+      <Log>Bib 69   elapsed    57.91                                                       </Log>
+      <Log>Bib 13   start assigned 12:21:19.116700 run 1                                   </Log>
+      <Log>Bib 128  finish assigned 12:21:37.549700 run 1                                  </Log>
+      <Log>Bib 128  elapsed    58.64                                                       </Log>
+      <Log>Bib 31   start assigned 12:22:01.741400 run 1                                   </Log>
+      <Log>Bib 13   finish assigned 12:22:13.324400 run 1                                  </Log>
+      <Log>Bib 13   elapsed    54.20                                                       </Log>
+      <Log>Bib 11   start assigned 12:22:37.953300 run 1                                   </Log>
+      <Log>Bib 31   finish assigned 12:22:50.025400 run 1                                  </Log>
+      <Log>Bib 31   elapsed    48.28                                                       </Log>
+      <Log>Bib 12   start assigned 12:23:16.841500 run 1                                   </Log>
+      <Log>Bib 11   finish assigned 12:23:31.806700 run 1                                  </Log>
+      <Log>Bib 11   elapsed    53.85                                                       </Log>
+      <Log>Bib 314  start assigned 12:23:56.090000 run 1                                   </Log>
+      <Log>Bib 12   finish assigned 12:24:08.164600 run 1                                  </Log>
+      <Log>Bib 12   elapsed    51.32                                                       </Log>
+      <Log>Bib 563  start assigned 12:24:43.792700 run 1                                   </Log>
+      <Log>Bib 314  finish assigned 12:24:44.721000 run 1                                  </Log>
+      <Log>Bib 314  elapsed    48.63                                                       </Log>
+      <Log>Bib 126  start assigned 12:25:23.916400 run 1                                   </Log>
+      <Log>Bib 563  finish assigned 12:25:45.463700 run 1                                  </Log>
+      <Log>Bib 563  elapsed  1:01.67                                                       </Log>
+      <Log>Bib 562  start assigned 12:26:07.453000 run 1                                   </Log>
+      <Log>Bib 126  finish assigned 12:26:17.226300 run 1                                  </Log>
+      <Log>Bib 126  elapsed    53.30                                                       </Log>
+      <Log>Bib 32   start assigned 12:26:55.264500 run 1                                   </Log>
+      <Log>Bib 562  finish assigned 12:27:08.208000 run 1                                  </Log>
+      <Log>Bib 562  elapsed  1:00.75                                                       </Log>
+      <Log>Bib 125  start assigned 12:27:32.065200 run 1                                   </Log>
+      <Log>Bib 32   finish assigned 12:27:46.138300 run 1                                  </Log>
+      <Log>Bib 32   elapsed    50.87                                                       </Log>
+      <Log>Bib 481  start assigned 12:28:11.098600 run 1                                   </Log>
+      <Log>Bib 125  finish assigned 12:28:22.178700 run 1                                  </Log>
+      <Log>Bib 125  elapsed    50.11                                                       </Log>
+      <Log>Bib 5    start assigned 12:28:47.603700 run 1                                   </Log>
+      <Log>Bib 481  finish assigned 12:29:00.063400 run 1                                  </Log>
+      <Log>Bib 481  elapsed    48.96                                                       </Log>
+      <Log>Bib 149  start assigned 12:29:22.383700 run 1                                   </Log>
+      <Log>Bib 5    finish assigned 12:29:39.725900 run 1                                  </Log>
+      <Log>Bib 5    elapsed    52.12                                                       </Log>
+      <Log>Bib 10   start assigned 12:29:57.238800 run 1                                   </Log>
+      <Log>Bib 149  finish assigned 12:30:20.861200 run 1                                  </Log>
+      <Log>Bib 149  elapsed    58.47                                                       </Log>
+      <Log>Bib 52   start assigned 12:30:33.913300 run 1                                   </Log>
+      <Log>Bib 10   finish assigned 12:30:54.322200 run 1                                  </Log>
+      <Log>Bib 10   elapsed    57.08                                                       </Log>
+      <Log>Bib 54   start assigned 12:31:09.014400 run 1                                   </Log>
+      <Log>Bib 52   finish assigned 12:31:29.247200 run 1                                  </Log>
+      <Log>Bib 52   elapsed    55.33                                                       </Log>
+      <Log>Bib 56   start assigned 12:31:46.634800 run 1                                   </Log>
+      <Log>Bib 54   finish assigned 12:31:56.624100 run 1                                  </Log>
+      <Log>Bib 54   elapsed    47.60                                                       </Log>
+      <Log>Bib 84   start assigned 12:32:19.919800 run 1                                   </Log>
+      <Log>Bib 56   finish assigned 12:32:29.978900 run 1                                  </Log>
+      <Log>Bib 56   elapsed    43.34                                                       </Log>
+      <Log>Bib 35   start assigned 12:32:53.905700 run 1                                   </Log>
+      <Log>Bib 84   finish assigned 12:33:12.234700 run 1                                  </Log>
+      <Log>Bib 84   elapsed    52.31                                                       </Log>
+      <Log>Bib 75   start assigned 12:33:30.389400 run 1                                   </Log>
+      <Log>Bib 35   finish assigned 12:33:44.346900 run 1                                  </Log>
+      <Log>Bib 35   elapsed    50.44                                                       </Log>
+      <Log>Bib 79   start assigned 12:34:04.173200 run 1                                   </Log>
+      <Log>Bib 75   finish assigned 12:34:21.352300 run 1                                  </Log>
+      <Log>Bib 75   elapsed    50.96                                                       </Log>
+      <Log>Bib 483  start assigned 12:34:41.358100 run 1                                   </Log>
+      <Log>Bib 79   finish assigned 12:34:51.878800 run 1                                  </Log>
+      <Log>Bib 79   elapsed    47.70                                                       </Log>
+      <Log>Bib 22   start assigned 12:35:17.891700 run 1                                   </Log>
+      <Log>Bib 483  finish assigned 12:35:38.558500 run 1                                  </Log>
+      <Log>Bib 483  elapsed    57.20                                                       </Log>
+      <Log>Bib 96   start assigned 12:35:50.865600 run 1                                   </Log>
+      <Log>Bib 22   finish assigned 12:36:04.319700 run 1                                  </Log>
+      <Log>Bib 22   elapsed    46.42                                                       </Log>
+      <Log>Bib 109  start assigned 12:36:28.054500 run 1                                   </Log>
+      <Log>Bib 96   finish assigned 12:36:38.082000 run 1                                  </Log>
+      <Log>Bib 96   elapsed    47.21                                                       </Log>
+      <Log>Bib 492  start assigned 12:37:04.349400 run 1                                   </Log>
+      <Log>Bib 109  finish assigned 12:37:19.411200 run 1                                  </Log>
+      <Log>Bib 109  elapsed    51.35                                                       </Log>
+      <Log>Bib 165  start assigned 12:37:39.959000 run 1                                   </Log>
+      <Log>Bib 492  finish assigned 12:37:49.198300 run 1                                  </Log>
+      <Log>Bib 492  elapsed    44.84                                                       </Log>
+      <Log>Bib 142  start assigned 12:38:17.450800 run 1                                   </Log>
+      <Log>Bib 165  finish assigned 12:38:38.643300 run 1                                  </Log>
+      <Log>Bib 165  elapsed    58.68                                                       </Log>
+      <Log>Bib 142  finish assigned 12:39:27.896200 run 1                                  </Log>
+      <Log>Bib 142  elapsed  1:10.44                                                       </Log>
+      <Log>Bib 485  start assigned 12:39:40.858800 run 1                                   </Log>
+      <Log>Bib 58   start assigned 12:40:18.613000 run 1                                   </Log>
+      <Log>Bib 485  finish assigned 12:40:36.232400 run 1                                  </Log>
+      <Log>Bib 485  elapsed    55.37                                                       </Log>
+      <Log>Bib 163  start assigned 12:40:57.142300 run 1                                   </Log>
+      <Log>Bib 58   finish assigned 12:41:16.294400 run 1                                  </Log>
+      <Log>Bib 58   elapsed    57.68                                                       </Log>
+      <Log>Bib 561  start assigned 12:41:35.459800 run 1                                   </Log>
+      <Log>Bib 163  finish assigned 12:41:44.473800 run 1                                  </Log>
+      <Log>Bib 163  elapsed    47.33                                                       </Log>
+      <Log>Bib 561  finish assigned 12:42:37.685900 run 1                                  </Log>
+      <Log>Bib 561  elapsed  1:02.22                                                       </Log>
+      <Log>Bib 197  start assigned 12:44:41.742000 run 1                                   </Log>
+      <Log>Bib 102  start assigned 12:45:20.676400 run 1                                   </Log>
+      <Log>Bib 197  finish assigned 12:45:41.009700 run 1                                  </Log>
+      <Log>Bib 197  elapsed    59.26                                                       </Log>
+      <Log>Bib 140  start assigned 12:45:55.120300 run 1                                   </Log>
+      <Log>Bib 102  finish assigned 12:46:04.438700 run 1                                  </Log>
+      <Log>Bib 102  elapsed    43.76                                                       </Log>
+      <Log>Bib 130  start assigned 12:46:27.608800 run 1                                   </Log>
+      <Log>Bib 140  finish assigned 12:46:44.430000 run 1                                  </Log>
+      <Log>Bib 140  elapsed    49.30                                                       </Log>
+      <Log>Bib 88   start assigned 12:47:05.454500 run 1                                   </Log>
+      <Log>Bib 130  finish assigned 12:47:16.155600 run 1                                  </Log>
+      <Log>Bib 130  elapsed    48.54                                                       </Log>
+      <Log>Bib 191  start assigned 12:47:40.105000 run 1                                   </Log>
+      <Log>Bib 88   finish assigned 12:47:52.456600 run 1                                  </Log>
+      <Log>Bib 88   elapsed    47.00                                                       </Log>
+      <Log>Bib 179  start assigned 12:48:20.170300 run 1                                   </Log>
+      <Log>Bib 191  finish assigned 12:48:29.912200 run 1                                  </Log>
+      <Log>Bib 191  elapsed    49.80                                                       </Log>
+      <Log>Bib 556  start assigned 12:48:59.350500 run 1                                   </Log>
+      <Log>Bib 179  finish assigned 12:49:01.369200 run 1                                  </Log>
+      <Log>Bib 179  elapsed    41.19                                                       </Log>
+      <Log>Bib 556  finish assigned 12:49:46.311700 run 1                                  </Log>
+      <Log>Bib 556  elapsed    46.96                                                       </Log>
+      <Log>Bib 143  start assigned 12:50:06.604200 run 1                                   </Log>
+      <Log>Bib 135  start assigned 12:50:42.551700 run 1                                   </Log>
+      <Log>Bib 143  finish assigned 12:50:55.166100 run 1                                  </Log>
+      <Log>Bib 143  elapsed    48.56                                                       </Log>
+      <Log>Bib 176  start assigned 12:51:17.180900 run 1                                   </Log>
+      <Log>Bib 135  finish assigned 12:51:29.041900 run 1                                  </Log>
+      <Log>Bib 135  elapsed    46.49                                                       </Log>
+      <Log>Bib 188  start assigned 12:51:50.242500 run 1                                   </Log>
+      <Log>Bib 176  finish assigned 12:52:08.193000 run 1                                  </Log>
+      <Log>Bib 176  elapsed    51.01                                                       </Log>
+      <Log>Bib 188  DNF run 1                                                              </Log>
+      <Log>Bib 117  start assigned 12:52:50.755800 run 1                                   </Log>
+      <Log>Bib 117  finish assigned 12:53:34.415300 run 1                                  </Log>
+      <Log>Bib 117  elapsed    43.65                                                       </Log>
+      <Log>                                                                                </Log>
+      <Log>Starting timing session, run 2, MASTERS                                         </Log>
+      <Log>                                                                                </Log>
+      <Log>Bib FA   start assigned 13:29:06.404100 run 2                                   </Log>
+      <Log>Bib FA   finish assigned 13:29:43.971600 run 2                                  </Log>
+      <Log>Bib FA   elapsed    37.56                                                       </Log>
+      <Log>Bib 20   start assigned 13:30:04.410600 run 2                                   </Log>
+      <Log>Bib 28   start assigned 13:30:41.735500 run 2                                   </Log>
+      <Log>Bib 20   finish assigned 13:31:11.137700 run 2                                  </Log>
+      <Log>Bib 20   elapsed  1:06.72                                                       </Log>
+      <Log>Bib 60   start assigned 13:31:31.503200 run 2                                   </Log>
+      <Log>Bib 28   finish assigned 13:31:33.681500 run 2                                  </Log>
+      <Log>Bib 28   elapsed    51.94                                                       </Log>
+      <Log>Bib 558  start assigned 13:32:05.353100 run 2                                   </Log>
+      <Log>Bib 60   finish assigned 13:32:23.438800 run 2                                  </Log>
+      <Log>Bib 60   elapsed    51.93                                                       </Log>
+      <Log>Bib 128  start assigned 13:32:40.781000 run 2                                   </Log>
+      <Log>Bib 558  finish assigned 13:33:00.246000 run 2                                  </Log>
+      <Log>Bib 558  elapsed    54.89                                                       </Log>
+      <Log>Bib 69   start assigned 13:33:16.211000 run 2                                   </Log>
+      <Log>Bib 128  finish assigned 13:33:39.049400 run 2                                  </Log>
+      <Log>Bib 128  elapsed    58.26                                                       </Log>
+      <Log>Bib 13   start assigned 13:33:59.041700 run 2                                   </Log>
+      <Log>Bib 69   finish assigned 13:34:13.257700 run 2                                  </Log>
+      <Log>Bib 69   elapsed    57.04                                                       </Log>
+      <Log>Bib 31   start assigned 13:34:38.860800 run 2                                   </Log>
+      <Log>Bib 13   finish assigned 13:34:53.970500 run 2                                  </Log>
+      <Log>Bib 13   elapsed    54.92                                                       </Log>
+      <Log>Bib 11   start assigned 13:35:18.035000 run 2                                   </Log>
+      <Log>Bib 31   finish assigned 13:35:27.816600 run 2                                  </Log>
+      <Log>Bib 31   elapsed    48.95                                                       </Log>
+      <Log>Bib 12   start assigned 13:35:53.937100 run 2                                   </Log>
+      <Log>Bib 11   finish assigned 13:36:12.332700 run 2                                  </Log>
+      <Log>Bib 11   elapsed    54.29                                                       </Log>
+      <Log>Bib 563  start assigned 13:36:29.669500 run 2                                   </Log>
+      <Log>Bib 12   finish assigned 13:36:42.887000 run 2                                  </Log>
+      <Log>Bib 12   elapsed    48.94                                                       </Log>
+      <Log>Bib 314  start assigned 13:37:10.300300 run 2                                   </Log>
+      <Log>Bib 563  finish assigned 13:37:35.044200 run 2                                  </Log>
+      <Log>Bib 563  elapsed  1:05.37                                                       </Log>
+      <Log>Bib 562  start assigned 13:37:45.397600 run 2                                   </Log>
+      <Log>Bib 314  DNF run 2                                                              </Log>
+      <Log>Bib 126  start assigned 13:38:25.795900 run 2                                   </Log>
+      <Log>Bib 562  finish assigned 13:38:46.506300 run 2                                  </Log>
+      <Log>Bib 562  elapsed  1:01.10                                                       </Log>
+      <Log>Bib 84   start assigned 13:39:12.607700 run 2                                   </Log>
+      <Log>Bib 126  finish assigned 13:39:18.697900 run 2                                  </Log>
+      <Log>Bib 126  elapsed    52.90                                                       </Log>
+      <Log>Bib 56   start assigned 13:39:52.845900 run 2                                   </Log>
+      <Log>Bib 84   finish assigned 13:40:03.456000 run 2                                  </Log>
+      <Log>Bib 84   elapsed    50.84                                                       </Log>
+      <Log>Bib 54   start assigned 13:40:27.687800 run 2                                   </Log>
+      <Log>Bib 56   finish assigned 13:40:35.038000 run 2                                  </Log>
+      <Log>Bib 56   elapsed    42.19                                                       </Log>
+      <Log>Bib 52   start assigned 13:41:01.536900 run 2                                   </Log>
+      <Log>Bib 54   finish assigned 13:41:15.699200 run 2                                  </Log>
+      <Log>Bib 54   elapsed    48.01                                                       </Log>
+      <Log>Bib 10   start assigned 13:41:34.471300 run 2                                   </Log>
+      <Log>Bib 52   finish assigned 13:41:55.265500 run 2                                  </Log>
+      <Log>Bib 52   elapsed    53.72                                                       </Log>
+      <Log>Bib 149  start assigned 13:42:12.966100 run 2                                   </Log>
+      <Log>Bib 10   finish assigned 13:42:32.884900 run 2                                  </Log>
+      <Log>Bib 10   elapsed    58.41                                                       </Log>
+      <Log>Bib 5    start assigned 13:42:50.253000 run 2                                   </Log>
+      <Log>Bib 149  finish assigned 13:42:59.389400 run 2                                  </Log>
+      <Log>Bib 149  elapsed    46.42                                                       </Log>
+      <Log>Bib 481  start assigned 13:43:27.037100 run 2                                   </Log>
+      <Log>Bib 5    finish assigned 13:43:44.519600 run 2                                  </Log>
+      <Log>Bib 5    elapsed    54.26                                                       </Log>
+      <Log>Bib 125  start assigned 13:44:01.622300 run 2                                   </Log>
+      <Log>Bib 481  finish assigned 13:44:15.518700 run 2                                  </Log>
+      <Log>Bib 481  elapsed    48.48                                                       </Log>
+      <Log>Bib 125  DNF run 2                                                              </Log>
+      <Log>Bib 32   start assigned 13:44:54.002700 run 2                                   </Log>
+      <Log>Bib 492  start assigned 13:45:33.550000 run 2                                   </Log>
+      <Log>Bib 32   finish assigned 13:45:46.950300 run 2                                  </Log>
+      <Log>Bib 32   elapsed    52.94                                                       </Log>
+      <Log>Bib 109  start assigned 13:46:12.044500 run 2                                   </Log>
+      <Log>Bib 492  finish assigned 13:46:17.671200 run 2                                  </Log>
+      <Log>Bib 492  elapsed    44.12                                                       </Log>
+      <Log>Bib 96   start assigned 13:46:45.418500 run 2                                   </Log>
+      <Log>Bib 109  finish assigned 13:47:01.807100 run 2                                  </Log>
+      <Log>Bib 109  elapsed    49.76                                                       </Log>
+      <Log>Bib 22   start assigned 13:47:23.531300 run 2                                   </Log>
+      <Log>Bib 96   finish assigned 13:47:30.819100 run 2                                  </Log>
+      <Log>Bib 96   elapsed    45.40                                                       </Log>
+      <Log>Bib 483  start assigned 13:48:01.563400 run 2                                   </Log>
+      <Log>Bib 22   finish assigned 13:48:08.880900 run 2                                  </Log>
+      <Log>Bib 22   elapsed    45.34                                                       </Log>
+      <Log>Bib 79   start assigned 13:48:38.793200 run 2                                   </Log>
+      <Log>Bib 483  finish assigned 13:48:58.073900 run 2                                  </Log>
+      <Log>Bib 483  elapsed    56.51                                                       </Log>
+      <Log>Bib 75   start assigned 13:49:16.539100 run 2                                   </Log>
+      <Log>Bib 79   finish assigned 13:49:25.814700 run 2                                  </Log>
+      <Log>Bib 79   elapsed    47.02                                                       </Log>
+      <Log>Bib 35   start assigned 13:49:51.565000 run 2                                   </Log>
+      <Log>Bib 75   finish assigned 13:50:05.957300 run 2                                  </Log>
+      <Log>Bib 75   elapsed    49.41                                                       </Log>
+      <Log>Bib 58   start assigned 13:50:36.520300 run 2                                   </Log>
+      <Log>Bib 35   finish assigned 13:50:40.862300 run 2                                  </Log>
+      <Log>Bib 35   elapsed    49.29                                                       </Log>
+      <Log>Bib 485  start assigned 13:51:12.064100 run 2                                   </Log>
+      <Log>Bib 58   finish assigned 13:51:31.544300 run 2                                  </Log>
+      <Log>Bib 58   elapsed    55.02                                                       </Log>
+      <Log>Bib 142  start assigned 13:51:54.571200 run 2                                   </Log>
+      <Log>Bib 485  finish assigned 13:52:06.820800 run 2                                  </Log>
+      <Log>Bib 485  elapsed    54.75                                                       </Log>
+      <Log>Bib 165  start assigned 13:52:39.180800 run 2                                   </Log>
+      <Log>Bib 142  finish assigned 13:52:41.040300 run 2                                  </Log>
+      <Log>Bib 142  elapsed    46.46                                                       </Log>
+      <Log>Bib 197  start assigned 13:53:14.802400 run 2                                   </Log>
+      <Log>Bib 165  finish assigned 13:53:40.525900 run 2                                  </Log>
+      <Log>Bib 165  elapsed  1:01.34                                                       </Log>
+      <Log>Bib 561  start assigned 13:53:57.211200 run 2                                   </Log>
+      <Log>Bib 197  finish assigned 13:54:13.839700 run 2                                  </Log>
+      <Log>Bib 197  elapsed    59.03                                                       </Log>
+      <Log>Bib 163  start assigned 13:54:47.798100 run 2                                   </Log>
+      <Log>Bib 561  finish assigned 13:54:48.856700 run 2                                  </Log>
+      <Log>Bib 561  elapsed    51.64                                                       </Log>
+      <Log>Bib 163  finish assigned 13:55:33.602500 run 2                                  </Log>
+      <Log>Bib 163  elapsed    45.80                                                       </Log>
+      <Log>Bib 140  start assigned 13:57:15.217200 run 2                                   </Log>
+      <Log>Bib 102  start assigned 13:57:50.633300 run 2                                   </Log>
+      <Log>Bib 140  finish assigned 13:58:05.112800 run 2                                  </Log>
+      <Log>Bib 140  elapsed    49.89                                                       </Log>
+      <Log>Bib 130  start assigned 13:58:28.441900 run 2                                   </Log>
+      <Log>Bib 102  DNF run 2                                                              </Log>
+      <Log>Bib 179  start assigned 13:59:09.167500 run 2                                   </Log>
+      <Log>Bib 130  finish assigned 13:59:15.585400 run 2                                  </Log>
+      <Log>Bib 130  elapsed    47.14                                                       </Log>
+      <Log>Bib 191  start assigned 13:59:40.961500 run 2                                   </Log>
+      <Log>Bib 179  finish assigned 13:59:49.518900 run 2                                  </Log>
+      <Log>Bib 179  elapsed    40.35                                                       </Log>
+      <Log>Bib 88   start assigned 14:00:17.641000 run 2                                   </Log>
+      <Log>Bib 191  finish assigned 14:00:29.003000 run 2                                  </Log>
+      <Log>Bib 191  elapsed    48.04                                                       </Log>
+      <Log>Bib 88   finish assigned 14:01:04.282000 run 2                                  </Log>
+      <Log>Bib 88   elapsed    46.64                                                       </Log>
+      <Log>Bib 117  start assigned 14:01:09.523100 run 2                                   </Log>
+      <Log>Bib 117  finish assigned 14:01:51.161000 run 2                                  </Log>
+      <Log>Bib 117  elapsed    41.63                                                       </Log>
+      <Log>Bib 176  start assigned 14:02:00.642900 run 2                                   </Log>
+      <Log>Bib 135  start assigned 14:02:35.563600 run 2                                   </Log>
+      <Log>Bib 176  DNF run 2                                                              </Log>
+      <Log>Bib 143  start assigned 14:03:15.713100 run 2                                   </Log>
+      <Log>Bib 135  finish assigned 14:03:21.555800 run 2                                  </Log>
+      <Log>Bib 135  elapsed    45.99                                                       </Log>
+      <Log>Bib 143  finish assigned 14:04:00.001700 run 2                                  </Log>
+      <Log>Bib 143  elapsed    44.28                                                       </Log>
+      <Log>Bib 556  start assigned 14:04:20.664300 run 2                                   </Log>
+      <Log>Bib 556  finish assigned 14:05:07.315500 run 2                                  </Log>
+      <Log>Bib 556  elapsed    46.65                                                       </Log>
+      <Log>Finish 14:05:49.785900 not assigned (nobody on course)                          </Log>
+      <Log>Finish 14:06:34.110000 not assigned (nobody on course)                          </Log>
+    </TimingLog>
+</SST_USSA_FIS_Race>
