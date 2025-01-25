@@ -85,6 +85,53 @@ with engine.connect() as connection:
 
 			st.dataframe(results)
 
+	if selected_race != None and software_selection == 'Vola':
+		# upload file
+		uploaded_file = st.file_uploader("Upload the Vola exported XML file", type=["xml"])
+
+		if uploaded_file is not None:
+			today = calendar.timegm(time.gmtime())
+			name = "race-results/vola_" + str(today) + ".json"
+			xml = uploaded_file.read()
+			json_data = json.dumps(xmltodict.parse(xml))
+
+
+			s3 = boto3.client(
+			service_name="s3",
+			region_name="us-east-1",
+			aws_access_key_id=aws_key,
+			aws_secret_access_key=aws_secret,
+			)
+
+			bucket_name = "mamasters-results"
+			s3.put_object(
+			Body=str(json_data),
+			Bucket=bucket_name,
+			Key=name
+			)
+			st.write("File successfully uploaded!")
+
+			context = {**globals(), **locals()}
+			insert_vola_query = ingestion_queries.q_insert_vola_temp.format(**context)
+			connection.execute(text(insert_vola_query))
+
+			context = {**globals(), **locals()}
+			insert_results_query = ingestion_queries.q_insert_vola_to_results.format(**context)
+			connection.execute(text(insert_results_query))
+
+			context = {**globals(), **locals()}
+			connection.execute(text(f"""
+				truncate table vola_results_temp
+				"""))
+			st.write("Results table has been refreshed!")
+
+			st.markdown("#### Preview of raw results data:")
+			context = {**globals(), **locals()}
+			show_results_query = ingestion_queries.q_show_results.format(**context)
+			results = connection.execute(text(show_results_query))
+
+			st.dataframe(results)
+
 	else:
 		st.write('Please select a race and timing software. You need to choose a race and timing software before you can upload results.')
 
