@@ -26,24 +26,30 @@ firebolt_secret = os.getenv('FIREBOLT_SECRET')
 secret = urllib.parse.quote_plus(firebolt_secret)
 engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/ingest_engine?account_name=mamasters")
 
+if "uploader_key" not in st.session_state:
+	st.session_state.uploader_key = 0
+
+def update_key():
+	st.session_state.uploader_key += 1
+
 with engine.connect() as connection:
 
 	col1, col2, col3 = st.columns(3)
 
 	with col1:
-		selected_season = st.selectbox('Season', ("2024-2025","2023-2024"), index=None, placeholder="Choose a season...")
+		selected_season = st.selectbox('Season', ("2024-2025","2023-2024"), index=None, placeholder="Choose a season...", on_change=update_key)
 		
 		context = {**globals(), **locals()}
 		races_list_query = ingestion_queries.q_races_list.format(**context)
 		races_list = connection.execute(text(races_list_query))
 
 	with col2:
-		selected_race = st.selectbox('Race Name', races_list, index=None, placeholder="Choose a race...")
+		selected_race = st.selectbox('Race Name', races_list, index=None, placeholder="Choose a race...", on_change=update_key)
 
 	with col3:
 		software_options = ["Split Second", "Vola"]
 		software_selection = st.segmented_control(
-			"Timing Software", software_options, selection_mode="single"
+			"Timing Software", software_options, selection_mode="single", on_change=update_key
 		)
 
 	if selected_race != None and software_selection == 'Split Second':
@@ -75,7 +81,8 @@ with engine.connect() as connection:
 			context = {**globals(), **locals()}
 			insert_results_query = ingestion_queries.q_insert_results.format(**context)
 			connection.execute(text(insert_results_query))
-			
+			update_key
+
 			st.write("Results table has been refreshed!")
 
 			st.markdown("#### Preview of raw results data:")
@@ -123,6 +130,7 @@ with engine.connect() as connection:
 			connection.execute(text(f"""
 				truncate table vola_results_temp
 				"""))
+			update_key
 			st.write("Results table has been refreshed!")
 
 			st.markdown("#### Preview of raw results data:")
