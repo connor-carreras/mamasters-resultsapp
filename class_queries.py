@@ -12,7 +12,7 @@ q_class_list = """
 select case when gender = 'F' then 'Women' when gender = 'M' then 'Men' end as gender_header, gender, raceclass::integer as raceclass
 from (
 select distinct gender, class as raceclass
-from results_vw where racekey='{selected_option}' and raceclass not like 'U%') order by 2, 3 desc
+from results_vw where racekey='{selected_option}' and class not like 'U%') order by 2, 3 desc
 """
 
 q_class_results_exist = """
