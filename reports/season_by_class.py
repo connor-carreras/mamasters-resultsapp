@@ -116,7 +116,7 @@ with engine.connect() as connection:
               gender = row.gender
               gender_header=row.gender_header
               raceclass = row.raceclass
-              keyid="2"+gender+raceclass
+              keyid="2"+gender+str(raceclass)
 
               st.markdown(f"##### {gender_header} Class {raceclass} - Overall Season Standings")
 
