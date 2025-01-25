@@ -5,7 +5,6 @@ import calendar
 import time
 import urllib.parse
 from sqlalchemy import text
-from sqlalchemy.ext.asyncio import create_async_engine
 from sqlalchemy import create_engine
 from tabulate import tabulate
 import season_queries
@@ -25,7 +24,9 @@ with st.expander("ℹ️ Understand seasonal scoring by class"):
     **Calculating Seasonal Standings by Class**
     1. Only Mid-Atlantic members can qualify for overall season awards. You can [purchase a membership](https://masters.adminskiracing.com/node/402199) up until the last race weekend of the season to become eligible for seasonal scoring.
     2. A racer's class is determined by their age on January 1 of the race season. For example, a racer born in September 1991 will be 33 on January 1, 2025, which will put that racer in Class 2 for the 2024-2025 race season.
-    3. If a racer moves up in class between seasons, any points scored in their previous class for any counting races for the current season will carry over to the current season. For example: A racer scores 80 world cup points in class 3 during a race held after the Mid-Atlantic seasonal finals during the 2023-2024 season (which means that the race counts towards seasonal scoring for the 2024-2025 season). For the 2024-2025 season, that racer moves up to class 5. The racer's 80 points will carry over to his 2024-2025 seasonal scoring. Points will not be retroactively re-calculated for any racers who move to a new class.
+    3. If a racer moves up in class between seasons, any points scored in their previous class for any counting races for the current season will carry over to the current season. 
+    For example: A racer scores 80 world cup points in class 4 during a race held after the Mid-Atlantic seasonal finals during the 2023-2024 season (which means that the race counts towards seasonal scoring for the 2024-2025 season). For the 2024-2025 season, that racer moves up to class 5. 
+    The racer's 80 points will carry over to his 2024-2025 seasonal scoring. Points will not be retroactively re-calculated for any racers who move to a new class.
     4. An individual racer must have at least 6 starts to qualify for overall season awards.
     5. Mid-ATL uses World Cup scoring down to 30th place (see table below for details). Points are awarded for position in 5-year age class, per race. 
     6. Standings are calculated by taking the best N scores for each racer and adding the total number of world cup points awarded across those N races. "N" is determined at the beginning of each season by dividing the total number of races in half and rounding up to the nearest whole number.
@@ -88,11 +89,21 @@ with engine.connect() as connection:
 
               st.markdown(f"##### {gender_header} Class {raceclass} - Overall Season Standings")
 
-              context = {**globals(), **locals()}
-              get_results_query2 = season_queries.q_2025_new_by_class.format(**context)
-              results2 = connection.execute(text(get_results_query2))
+              on = st.toggle("Show members only", key=row)
 
-              st.dataframe(results2)
+              if on:
+                context = {**globals(), **locals()}
+                get_results_query = season_queries.q_2025_members_by_class.format(**context)
+                results = connection.execute(text(get_results_query))
+
+                st.dataframe(results)
+
+              else:
+                context = {**globals(), **locals()}
+                get_results_query2 = season_queries.q_2025_new_by_class.format(**context)
+                results2 = connection.execute(text(get_results_query2))
+
+                st.dataframe(results2)
 
     with tab2:
 
@@ -105,14 +116,26 @@ with engine.connect() as connection:
               gender = row.gender
               gender_header=row.gender_header
               raceclass = row.raceclass
+              keyid="2"+gender+raceclass
 
               st.markdown(f"##### {gender_header} Class {raceclass} - Overall Season Standings")
 
-              context = {**globals(), **locals()}
-              get_results_query2 = season_queries.q_2025_by_class_details.format(**context)
-              results2 = connection.execute(text(get_results_query2))
+              on = st.toggle("Show members only", key=keyid)
 
-              st.dataframe(results2)
+              if on:
+                context = {**globals(), **locals()}
+                get_results_query = season_queries.q_2025_members_by_class_details.format(**context)
+                results = connection.execute(text(get_results_query))
+
+                st.dataframe(results)
+
+              else:
+
+                context = {**globals(), **locals()}
+                get_results_query2 = season_queries.q_2025_by_class_details.format(**context)
+                results2 = connection.execute(text(get_results_query2))
+
+                st.dataframe(results2)
 
   connection.close()
 

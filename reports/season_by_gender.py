@@ -7,7 +7,6 @@ import urllib.parse
 from sqlalchemy import text
 from sqlalchemy import create_engine
 from tabulate import tabulate
-from fpdf import FPDF
 import season_queries
 from datetime import datetime
 import os
@@ -84,11 +83,21 @@ with engine.connect() as connection:
 
               st.markdown(f"#### {gender_header} - Overall Season Standings")
 
-              context = {**globals(), **locals()}
-              get_results_query = season_queries.q_2025_new_by_gender.format(**context)
-              results = connection.execute(text(get_results_query))
+              on = st.toggle("Show members only", key=row)
 
-              st.dataframe(results)
+              if on:
+                context = {**globals(), **locals()}
+                get_results_query = season_queries.q_2025_members_by_gender.format(**context)
+                results = connection.execute(text(get_results_query))
+
+                st.dataframe(results)
+
+              else:
+                context = {**globals(), **locals()}
+                get_results_query = season_queries.q_2025_new_by_gender.format(**context)
+                results = connection.execute(text(get_results_query))
+
+                st.dataframe(results)
 
     with tab2:
       context = {**globals(), **locals()}
@@ -101,12 +110,23 @@ with engine.connect() as connection:
               gender_header=row.gender_header
 
               st.markdown(f"#### {gender_header} - Overall Season Standings")
+              keyid="2"+gender
+              on = st.toggle("Show members only", key=keyid)
 
-              context = {**globals(), **locals()}
-              get_results_query = season_queries.q_2025_by_gender_details.format(**context)
-              results = connection.execute(text(get_results_query))
+              if on:
 
-              st.dataframe(results)
+                context = {**globals(), **locals()}
+                get_results_query = season_queries.q_2025_members_by_gender_details.format(**context)
+                results = connection.execute(text(get_results_query))
+
+                st.dataframe(results)
+
+              else:
+                context = {**globals(), **locals()}
+                get_results_query = season_queries.q_2025_by_gender_details.format(**context)
+                results = connection.execute(text(get_results_query))
+
+                st.dataframe(results)
 
 
 connection.close()

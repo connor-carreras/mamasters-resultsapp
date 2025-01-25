@@ -28,7 +28,7 @@ engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/
 
 with engine.connect() as connection:
 
-	col1, col2 = st.columns(2)
+	col1, col2, col3 = st.columns(3)
 
 	with col1:
 		selected_season = st.selectbox('Season', ("2024-2025","2023-2024"), index=None, placeholder="Choose a season...")
@@ -40,10 +40,13 @@ with engine.connect() as connection:
 	with col2:
 		selected_race = st.selectbox('Race Name', races_list, index=None, placeholder="Choose a race...")
 
-	if selected_race == None:
-		st.write('Please select a race. You need to choose a race before you can upload results.')
+	with col3:
+		software_options = ["Split Second", "Vola"]
+		software_selection = st.segmented_control(
+			"Timing Software", software_options, selection_mode="single"
+		)
 
-	else:
+	if selected_race != None and software_selection == 'Split Second':
 		# upload file
 		uploaded_file = st.file_uploader("Upload the NATFis XML file", type=["xml"])
 
@@ -81,6 +84,56 @@ with engine.connect() as connection:
 			results = connection.execute(text(show_results_query))
 
 			st.dataframe(results)
+
+	if selected_race != None and software_selection == 'Vola':
+		# upload file
+		uploaded_file = st.file_uploader("Upload the Vola exported XML file", type=["xml"])
+
+		if uploaded_file is not None:
+			today = calendar.timegm(time.gmtime())
+			name = "race-results/vola_" + str(today) + ".json"
+			xml = uploaded_file.read()
+			json_data = json.dumps(xmltodict.parse(xml))
+
+
+			s3 = boto3.client(
+			service_name="s3",
+			region_name="us-east-1",
+			aws_access_key_id=aws_key,
+			aws_secret_access_key=aws_secret,
+			)
+
+			bucket_name = "mamasters-results"
+			s3.put_object(
+			Body=str(json_data),
+			Bucket=bucket_name,
+			Key=name
+			)
+			st.write("File successfully uploaded!")
+
+			context = {**globals(), **locals()}
+			insert_vola_query = ingestion_queries.q_insert_vola_temp.format(**context)
+			connection.execute(text(insert_vola_query))
+
+			context = {**globals(), **locals()}
+			insert_results_query = ingestion_queries.q_insert_vola_to_results.format(**context)
+			connection.execute(text(insert_results_query))
+
+			context = {**globals(), **locals()}
+			connection.execute(text(f"""
+				truncate table vola_results_temp
+				"""))
+			st.write("Results table has been refreshed!")
+
+			st.markdown("#### Preview of raw results data:")
+			context = {**globals(), **locals()}
+			show_results_query = ingestion_queries.q_show_results.format(**context)
+			results = connection.execute(text(show_results_query))
+
+			st.dataframe(results)
+
+	else:
+		st.write('Please select a race and timing software. You need to choose a race and timing software before you can upload results.')
 
 	connection.close()
 engine.dispose()
