@@ -89,11 +89,21 @@ with engine.connect() as connection:
 
               st.markdown(f"##### {gender_header} Class {raceclass} - Overall Season Standings")
 
-              context = {**globals(), **locals()}
-              get_results_query2 = season_queries.q_2025_new_by_class.format(**context)
-              results2 = connection.execute(text(get_results_query2))
+              on = st.toggle("Show members only", key=row)
 
-              st.dataframe(results2)
+              if on:
+                context = {**globals(), **locals()}
+                get_results_query = season_queries.q_2025_members_by_class.format(**context)
+                results = connection.execute(text(get_results_query))
+
+                st.dataframe(results)
+
+              else:
+                context = {**globals(), **locals()}
+                get_results_query2 = season_queries.q_2025_new_by_class.format(**context)
+                results2 = connection.execute(text(get_results_query2))
+
+                st.dataframe(results2)
 
     with tab2:
 
@@ -106,14 +116,26 @@ with engine.connect() as connection:
               gender = row.gender
               gender_header=row.gender_header
               raceclass = row.raceclass
+              keyid="2"+gender+raceclass
 
               st.markdown(f"##### {gender_header} Class {raceclass} - Overall Season Standings")
 
-              context = {**globals(), **locals()}
-              get_results_query2 = season_queries.q_2025_by_class_details.format(**context)
-              results2 = connection.execute(text(get_results_query2))
+              on = st.toggle("Show members only", key=keyid)
 
-              st.dataframe(results2)
+              if on:
+                context = {**globals(), **locals()}
+                get_results_query = season_queries.q_2025_members_by_class_details.format(**context)
+                results = connection.execute(text(get_results_query))
+
+                st.dataframe(results)
+
+              else:
+
+                context = {**globals(), **locals()}
+                get_results_query2 = season_queries.q_2025_by_class_details.format(**context)
+                results2 = connection.execute(text(get_results_query2))
+
+                st.dataframe(results2)
 
   connection.close()
 
