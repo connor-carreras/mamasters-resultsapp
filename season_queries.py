@@ -725,7 +725,7 @@ a.counting_race,
 b.total_wc_points,
 b.unique_starts,
 b.unique_finishes,
-row_number() over(partition by a.season, a.gender, a.class order by total_wc_points desc) as season_rank_by_gender_class
+dense_rank() over(partition by a.season, a.gender, a.class order by total_wc_points desc) as season_rank_by_gender_class
 from
 (select * from add_members) a
 inner join 
@@ -855,7 +855,7 @@ a.counting_race,
 b.total_wc_points,
 b.unique_starts,
 b.unique_finishes,
-row_number() over(partition by a.season, a.gender, a.class order by total_wc_points desc) as season_rank_by_gender_class
+dense_rank() over(partition by a.season, a.gender, a.class order by total_wc_points desc) as season_rank_by_gender_class
 from
 (select * from add_members) a
 inner join 
@@ -1122,7 +1122,7 @@ a.counting_race,
 b.total_wc_points,
 b.unique_starts,
 b.unique_finishes,
-row_number() over(partition by a.season, a.gender, a.class order by total_wc_points desc) as season_rank_by_gender_class
+dense_rank() over(partition by a.season, a.gender, a.class order by total_wc_points desc) as season_rank_by_gender_class
 from
 (select * from add_members) a
 inner join 
@@ -1274,7 +1274,7 @@ a.counting_race,
 b.total_wc_points,
 b.unique_starts,
 b.unique_finishes,
-row_number() over(partition by a.season, a.gender, a.class order by total_wc_points desc) as season_rank_by_gender_class
+dense_rank() over(partition by a.season, a.gender, a.class order by total_wc_points desc) as season_rank_by_gender_class
 from
 (select * from add_members) a
 inner join 
