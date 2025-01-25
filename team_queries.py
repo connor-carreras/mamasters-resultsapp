@@ -54,7 +54,7 @@ and a.class = b.class::text
 and a.gender = b.gender
 )
 
-, ghost as (
+  , ghost as (
 select * from
 (select 
 team,
@@ -73,6 +73,7 @@ group by all
 cross join
 (select distinct racekey, racedate, racetype, season from handicapped_times)
 )
+
 
 ,ranked_and_filtered as (
 select *, 
@@ -93,7 +94,6 @@ where
 (name not like 'Ghost Racer%')
 or (name like 'Ghost Racer%' and ranking <= 4)
 )
-
 
 ,team_totals as (
 select a.*, b.team_total, b.team_rank
@@ -138,16 +138,16 @@ class,
 gender,
 case when run1_dsq = '1' then 'DSQ'
 when run1_dnf = 1 then 'DNF'
-when run1 is null and run2 is null then 'DNS'
-when run1 is null and run2 is not null then 'DNS'
+when run1_adjusted is null and run2_adjusted is null then 'DNS'
+when run1_adjusted is null and run2_adjusted is not null then 'DNS'
 else 
   floor(run1_adjusted::integer/60000)::text || ':' ||
 substring(lpad(((run1_adjusted-(floor(run1_adjusted/60000)*60000))/1000)::text,12,'0') from 1 for 5) end as run1_adjusted,
 case 
 when run2_dsq = '1' then 'DSQ'
 when run2_dnf = 1 then 'DNF'
-when run1 is null and run2 is null then 'DNS'
-when run2 is null and run1 is not null then 'DNS' 
+when run1_adjusted is null and run2_adjusted is null then 'DNS'
+when run2_adjusted is null and run1_adjusted is not null then 'DNS' 
 else 
 floor(run2_adjusted::integer/60000)::text || ':' ||
 substring(lpad(((run2_adjusted-(floor(run2_adjusted/60000)*60000))/1000)::text,12,'0') from 1 for 5) end as run2_adjusted,
