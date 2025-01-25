@@ -665,14 +665,14 @@ from results_vw) order by 1 desc
 """
 
 q_class_list = """
-select case when gender = 'F' then 'Women' when gender = 'M' then 'Men' end as gender_header, gender, raceclass
+select case when gender = 'F' then 'Women' when gender = 'M' then 'Men' end as gender_header, gender, raceclass::integer as raceclass
 from (
 select distinct gender, class as raceclass
 from results_vw
 where season = '{selected_season}') 
   where raceclass not like 'U%'
   and raceclass is not null
-  order by 2, 3
+  order by 2, 3 desc
 """
 
 q_2025_new_by_class = """
