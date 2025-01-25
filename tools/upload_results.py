@@ -28,7 +28,7 @@ engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/
 
 with engine.connect() as connection:
 
-	col1, col2 = st.columns(2)
+	col1, col2, col3 = st.columns(3)
 
 	with col1:
 		selected_season = st.selectbox('Season', ("2024-2025","2023-2024"), index=None, placeholder="Choose a season...")
@@ -40,10 +40,13 @@ with engine.connect() as connection:
 	with col2:
 		selected_race = st.selectbox('Race Name', races_list, index=None, placeholder="Choose a race...")
 
-	if selected_race == None:
-		st.write('Please select a race. You need to choose a race before you can upload results.')
+	with col3:
+		software_options = ["Split Second", "Vola"]
+		software_selection = st.segmented_control(
+			"Timing Software", software_options, selection_mode="single"
+		)
 
-	else:
+	if selected_race != None and software_selection == 'Split Second':
 		# upload file
 		uploaded_file = st.file_uploader("Upload the NATFis XML file", type=["xml"])
 
@@ -81,6 +84,9 @@ with engine.connect() as connection:
 			results = connection.execute(text(show_results_query))
 
 			st.dataframe(results)
+
+	else:
+		st.write('Please select a race and timing software. You need to choose a race and timing software before you can upload results.')
 
 	connection.close()
 engine.dispose()
