@@ -1376,3 +1376,75 @@ where season_rank_by_gender_members is not null
 group by all
 order by season_rank_by_gender_members
 """
+
+q_team_season = """
+with unique_results as (
+select distinct team, racedate, racekey, team_total, team_rank, worldcup_points_by_team,
+from team_results
+  where season = '2024-2025')
+
+select 
+team_ranking,
+  team,
+  max(total_points) as total_points,
+case when max(goresl) is null then '--' else max(goresl) end as goresl,
+case when max(huntergs) is null then '--' else max(huntergs) end as huntergs,
+  case when max(huntersl1) is null then '--' else max(huntersl1) end as huntersl1,
+  case when max(huntersl2) is null then '--' else max(huntersl2) end as huntersl2,
+  case when max(mtsnowgs1) is null then '--' else max(mtsnowgs1) end as mtsnowgs1,
+  case when max(mtsnowgs2) is null then '--' else max(mtsnowgs2) end as mtsnowgs2,
+  case when max(willardsl) is null then '--' else max(willardsl) end as willardsl,
+  case when max(willardgs1) is null then '--' else max(willardgs1) end as willardgs1,
+  case when max(willardgs2) is null then '--' else max(willardgs2) end as willardgs2,
+  case when max(strattonsg1) is null then '--' else max(strattonsg1) end as strattonsg1,
+  case when max(strattonsg2) is null then '--' else max(strattonsg2) end as strattonsg2,
+  case when max(strattongs) is null then '--' else max(strattongs) end as strattongs,
+  case when max(labsl1) is null then '--' else max(labsl1) end as labsl1,
+  case when max(labsl2) is null then '--' else max(labsl2) end as labsl2,
+  case when max(greekgs1) is null then '--' else max(greekgs1) end as greekgs1,
+    case when max(greekgs2) is null then '--' else max(greekgs2) end as greekgs2,
+    case when max(westsg) is null then '--' else max(westsg) end as westsg,
+    case when max(westgs) is null then '--' else max(westgs) end as westgs,
+    case when max(westsl) is null then '--' else max(westsl) end as westsl,
+    case when max(bouldersl) is null then '--' else max(bouldersl) end as bouldersl,
+    case when max(montagegs) is null then '--' else max(montagegs) end as montagegs,
+    case when max(montagesl) is null then '--' else max(montagesl) end as montagesl,
+    case when max(catamountgs) is null then '--' else max(catamountgs) end as catamountgs,
+    case when max(finalsgs) is null then '--' else max(finalsgs) end as finalsgs,
+from
+(select *, dense_rank() over (order by total_points desc) as team_ranking
+  from
+  (
+select 
+team, 
+sum(worldcup_points_by_team) over (partition by team) as total_points, 
+case when racekey = 'GORE MOUNTAIN, SLALOM, 2024-03-10' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as goresl,
+case when racekey = 'HUNTER MOUNTAIN, GIANT SLALOM, 2025-01-10' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as huntergs,
+case when racekey = 'HUNTER MOUNTAIN, SLALOM 1, 2025-01-11' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as huntersl1,
+case when racekey = 'HUNTER MOUNTAIN, SLALOM 2, 2025-01-11' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as huntersl2,
+case when racekey = 'MOUNT SNOW GIANT SLALOM 1, 2025-01-17' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as mtsnowgs1,
+case when racekey = 'MOUNT SNOW GIANT SLALOM 2, 2025-01-17' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as mtsnowgs2,
+case when racekey = 'WILLARD MOUNTAIN, SLALOM, 2025-01-18' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as willardsl,
+case when racekey = 'WILLARD MOUNTAIN, GIANT SLALOM 1, 2025-01-19' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as willardgs1,
+case when racekey = 'WILLARD MOUNTAIN GIANT SLALOM 2, 2025-01-19' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as willardgs2,
+case when racekey = 'STRATTON MOUNTAIN, SUPERG 1, 2025-01-24' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as strattonsg1,
+case when racekey = 'STRATTON MOUNTAIN, SUPERG 2, 2025-01-24' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as strattonsg2,
+case when racekey = 'STRATTON MOUNTAIN, GIANT SLALOM, 2025-01-25' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as strattongs,
+case when racekey = 'LABRADOR MOUNTAIN, SLALOM 1, 2025-02-01' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as labsl1,
+case when racekey = 'LABRADOR MOUNTAIN, SLALOM 2, 2025-02-01' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as labsl2,
+case when racekey = 'GREEK PEAK, GIANT SLALOM 1, 2025-02-02' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as greekgs1,
+case when racekey = 'GREEK PEAK, GIANT SLALOM 2, 2025-02-02' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as greekgs2,
+case when racekey = 'WEST MOUNTAIN, SUPERG, 2025-02-14' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as westsg,
+case when racekey = 'WEST MOUNTAIN, GIANT SLALOM, 2025-02-15' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as westgs,
+case when racekey = 'WEST MOUNTAIN, SLALOM, 2025-02-16' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as westsl,
+case when racekey = 'BIG BOULDER, SLALOM, 2025-02-21' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as bouldersl,
+case when racekey = 'MONTAGE MOUNTAIN, GIANT SLALOM, 2025-02-23' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as montagegs,
+case when racekey = 'MONTAGE MOUNTAIN, SLALOM, 2025-02-23' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as montagesl,
+case when racekey = 'CATAMOUNT RESORT, GIANT SLALOM, 2025-03-02' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as catamountgs,
+case when racekey = 'HUNTER MOUNTAIN, FINALS GS 1, 2025-03-07' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as finalsgs
+from unique_results
+)
+  )
+group by all
+order by total_points desc
+"""
