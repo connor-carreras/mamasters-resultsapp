@@ -32,7 +32,7 @@ login_page = st.Page(login, title="Log in", icon=":material/login:")
 home_page = st.Page("tools/homepage.py", title="Instructions", icon=":material/info:", default=(role == "Admin"))
 upload_page = st.Page("tools/upload_results.py", title="Upload race results", icon=":material/add_circle:")
 members_page = st.Page("tools/upload_members.py", title="Update members file", icon=":material/group_add:")
-dsq_page = st.Page("tools/dsqs.py", title="Enter DSQs", icon=":material/delete:")
+# dsq_page = st.Page("tools/dsqs.py", title="Enter DSQs", icon=":material/delete:")
 team_scoring = st.Page("reports/team_scoring.py", title="Team results", icon=":material/downhill_skiing:")
 results_by_gender = st.Page("reports/results_by_gender.py", title="Results by gender", icon=":material/downhill_skiing:", default=(role == None))
 results_by_class = st.Page("reports/results_by_class.py", title="Results by class", icon=":material/downhill_skiing:")
@@ -42,7 +42,7 @@ season_by_class = st.Page("reports/season_by_class.py", title="Season standings 
 # iron_man = st.Page("reports/iron_man.py", title= "Iron Man standings", icon=":material/downhill_skiing:")
 race_pdfs = st.Page("tools/race_pdfs.py", title="Generate result PDFs", icon=":material/description:")
 
-data_tools = [home_page, upload_page, dsq_page, race_pdfs, members_page]
+data_tools = [home_page, upload_page, race_pdfs, members_page]
 race_reports = [results_by_gender, results_by_class, team_scoring]
 season_standings = [season_by_gender, season_by_class, season_by_team]
 account_pages = [login_page]
