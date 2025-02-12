@@ -56,6 +56,7 @@ regexp_replace_all(json_pointer_extract(results_array, '/MA_result/Totaltime'),'
 $source_file_timestamp as ingest_ts
 from ex_vola_results,
 unnest(JSON_POINTER_EXTRACT_ARRAY(full_text, '/Fisresults/MA_race/MA_classified/MA_ranked')) as r(results_array)
+where TO_YYYYMMDD($source_file_timestamp) = to_yyyymmdd(current_date())
 union all
 select
 '{selected_season}' as season,
@@ -79,6 +80,7 @@ regexp_replace_all(json_pointer_extract(results_array, '/MA_result/Totaltime'),'
 $source_file_timestamp as ingest_ts
 from ex_vola_results,
 unnest(JSON_POINTER_EXTRACT_ARRAY(full_text, '/Fisresults/MA_race/MA_notclassified/MA_notranked')) as r(results_array)
+where TO_YYYYMMDD($source_file_timestamp) = to_yyyymmdd(current_date())
 """
 
 q_insert_vola_to_results = """
