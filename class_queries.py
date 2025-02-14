@@ -46,7 +46,7 @@ run2,
 run2_dsq,
 run1,
 run1_dsq,
-total
+case when (run1_dsq is not null or run2_dsq is not null) then null else total end as total
 from results_vw where racekey = '{selected_option}'
 )
 
