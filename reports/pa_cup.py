@@ -57,7 +57,7 @@ with engine.connect() as connection:
 
   else:
     context = {**globals(), **locals()}
-    get_results_query = season_queries.q_pa_cup_2025.format(**context)
+    get_results_query = pacup_queries.q_pa_cup_2025.format(**context)
     results = connection.execute(text(get_results_query))
 
     st.dataframe(results)
