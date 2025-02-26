@@ -70,7 +70,7 @@ with engine.connect() as connection:
     st.markdown(f"""
       * Standings as of {racedatestring}. There have been {racecountstring} completed races so far.
       * Minimum 6 races required to qualify for season scoring.  
-      * 2024-2025 season has 24 races total. Best 12 finishes count.
+      * 2024-2025 season has 22 races total. Best 11 finishes count.
       """)
 
     tab1, tab2 = st.tabs(["Summary","Details"])
