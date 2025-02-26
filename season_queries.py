@@ -1,7 +1,7 @@
 q_2025_new_by_gender = """
 with ranked_points as (
 select season, name, ussanumber, gender, racekey, wc_points_ranking, run1, run2, total, race_rank_by_gender,  worldcup_points_by_gender,
-case when wc_points_ranking <=12 then 'count' else 'discard' end as counting_race
+case when wc_points_ranking <=11 then 'count' else 'discard' end as counting_race
 from (
 select *,
 row_number() over(partition by ussanumber, gender, season order by worldcup_points_by_gender desc) as wc_points_ranking
@@ -90,7 +90,6 @@ case when max(score2) is null then '--' else max(score2) end as score2,
   case when max(score9) is null then '--' else max(score9) end as score9,
   case when max(score10) is null then '--' else max(score10) end as score10,
   case when max(score11) is null then '--' else max(score11) end as score11,
-  case when max(score12) is null then '--' else max(score12) end as score12,
   case when max(discards) is null then null else array_to_string(array_filter(x -> x is not null, array_agg(discards)),', ') end as discards
 from(
 select  
@@ -110,8 +109,7 @@ select
   case when wc_points_ranking = 9 then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as score9,
   case when wc_points_ranking = 10 then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as score10,
   case when wc_points_ranking = 11 then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as score11,
-  case when wc_points_ranking = 12 then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as score12,
-  case when wc_points_ranking >12 then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as discards,
+  case when wc_points_ranking >11 then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as discards,
   counting_race,
   worldcup_points_by_gender,
   race_rank_by_gender,
@@ -125,7 +123,7 @@ order by season_rank_by_gender
 q_2025_members_by_gender = """
 with ranked_points as (
 select season, name, ussanumber, gender, racekey, wc_points_ranking, run1, run2, total, race_rank_by_gender,  worldcup_points_by_gender,
-case when wc_points_ranking <=12 then 'count' else 'discard' end as counting_race
+case when wc_points_ranking <=11 then 'count' else 'discard' end as counting_race
 from (
 select *,
 row_number() over(partition by ussanumber, gender, season order by worldcup_points_by_gender desc) as wc_points_ranking
@@ -214,7 +212,6 @@ case when max(score2) is null then '--' else max(score2) end as score2,
   case when max(score9) is null then '--' else max(score9) end as score9,
   case when max(score10) is null then '--' else max(score10) end as score10,
   case when max(score11) is null then '--' else max(score11) end as score11,
-  case when max(score12) is null then '--' else max(score12) end as score12,
   case when max(discards) is null then null else array_to_string(array_filter(x -> x is not null, array_agg(discards)),', ') end as discards
 from(
 select  
@@ -234,8 +231,7 @@ select
   case when wc_points_ranking = 9 then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as score9,
   case when wc_points_ranking = 10 then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as score10,
   case when wc_points_ranking = 11 then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as score11,
-  case when wc_points_ranking = 12 then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as score12,
-  case when wc_points_ranking >12 then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as discards,
+  case when wc_points_ranking >11 then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as discards,
   counting_race,
   worldcup_points_by_gender,
   race_rank_by_gender,
@@ -339,8 +335,6 @@ case when max(huntergs) is null then '--' else max(huntergs) end as huntergs,
   case when max(strattonsg1) is null then '--' else max(strattonsg1) end as strattonsg1,
   case when max(strattonsg2) is null then '--' else max(strattonsg2) end as strattonsg2,
   case when max(strattongs) is null then '--' else max(strattongs) end as strattongs,
-  case when max(labsl1) is null then '--' else max(labsl1) end as labsl1,
-  case when max(labsl2) is null then '--' else max(labsl2) end as labsl2,
   case when max(greekgs1) is null then '--' else max(greekgs1) end as greekgs1,
     case when max(greekgs2) is null then '--' else max(greekgs2) end as greekgs2,
     case when max(westsg) is null then '--' else max(westsg) end as westsg,
@@ -370,8 +364,6 @@ case when racekey = 'WILLARD MOUNTAIN GIANT SLALOM 2, 2025-01-19' then worldcup_
 case when racekey = 'STRATTON MOUNTAIN, SUPERG 1, 2025-01-24' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as strattonsg1,
 case when racekey = 'STRATTON MOUNTAIN, SUPERG 2, 2025-01-24' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as strattonsg2,
 case when racekey = 'STRATTON MOUNTAIN, GIANT SLALOM, 2025-01-25' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as strattongs,
-case when racekey = 'LABRADOR MOUNTAIN, SLALOM 1, 2025-02-01' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as labsl1,
-case when racekey = 'LABRADOR MOUNTAIN, SLALOM 2, 2025-02-01' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as labsl2,
 case when racekey = 'GREEK PEAK, GIANT SLALOM 1, 2025-02-02' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as greekgs1,
 case when racekey = 'GREEK PEAK, GIANT SLALOM 2, 2025-02-02' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as greekgs2,
 case when racekey = 'WEST MOUNTAIN, SUPERG, 2025-02-14' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as westsg,
@@ -480,8 +472,6 @@ case when max(huntergs) is null then '--' else max(huntergs) end as huntergs,
   case when max(strattonsg1) is null then '--' else max(strattonsg1) end as strattonsg1,
   case when max(strattonsg2) is null then '--' else max(strattonsg2) end as strattonsg2,
   case when max(strattongs) is null then '--' else max(strattongs) end as strattongs,
-  case when max(labsl1) is null then '--' else max(labsl1) end as labsl1,
-  case when max(labsl2) is null then '--' else max(labsl2) end as labsl2,
   case when max(greekgs1) is null then '--' else max(greekgs1) end as greekgs1,
     case when max(greekgs2) is null then '--' else max(greekgs2) end as greekgs2,
     case when max(westsg) is null then '--' else max(westsg) end as westsg,
@@ -511,8 +501,6 @@ case when racekey = 'WILLARD MOUNTAIN GIANT SLALOM 2, 2025-01-19' then worldcup_
 case when racekey = 'STRATTON MOUNTAIN, SUPERG 1, 2025-01-24' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as strattonsg1,
 case when racekey = 'STRATTON MOUNTAIN, SUPERG 2, 2025-01-24' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as strattonsg2,
 case when racekey = 'STRATTON MOUNTAIN, GIANT SLALOM, 2025-01-25' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as strattongs,
-case when racekey = 'LABRADOR MOUNTAIN, SLALOM 1, 2025-02-01' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as labsl1,
-case when racekey = 'LABRADOR MOUNTAIN, SLALOM 2, 2025-02-01' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as labsl2,
 case when racekey = 'GREEK PEAK, GIANT SLALOM 1, 2025-02-02' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as greekgs1,
 case when racekey = 'GREEK PEAK, GIANT SLALOM 2, 2025-02-02' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as greekgs2,
 case when racekey = 'WEST MOUNTAIN, SUPERG, 2025-02-14' then worldcup_points_by_gender || ' ('||(case when race_rank_by_gender is null then 'DNF' else race_rank_by_gender::text end)||')' else null end as westsg,
@@ -678,7 +666,7 @@ where season = '{selected_season}')
 q_2025_new_by_class = """
 with ranked_points as (
 select season, name, ussanumber, gender, racekey, wc_points_ranking, run1, run2, total, race_rank_by_gender_class,  worldcup_points_by_gender_class, class,
-case when wc_points_ranking <=12 then 'count' else 'discard' end as counting_race
+case when wc_points_ranking <=11 then 'count' else 'discard' end as counting_race
 from (
 select *,
 row_number() over(partition by ussanumber, gender, season, class order by worldcup_points_by_gender_class desc) as wc_points_ranking
@@ -774,7 +762,6 @@ case when max(score8) is null then '--' else max(score8) end as score8,
 case when max(score9) is null then '--' else max(score9) end as score9,
 case when max(score10) is null then '--' else max(score10) end as score10,
 case when max(score11) is null then '--' else max(score11) end as score11,
-case when max(score12) is null then '--' else max(score12) end as score12,
 case when max(discards) is null then null else array_to_string(array_filter(x -> x is not null, array_agg(discards)),', ') end as discards
 from
 (
@@ -797,8 +784,7 @@ case when wc_points_ranking = 1 then worldcup_points_by_gender_class || ' ('||(c
   case when wc_points_ranking = 9 then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as score9,
   case when wc_points_ranking = 10 then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as score10,
   case when wc_points_ranking = 11 then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as score11,
-  case when wc_points_ranking = 12 then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as score12,
-  case when wc_points_ranking >12 then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as discards,
+  case when wc_points_ranking >11 then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as discards,
 from final_results
 )
 group by all
@@ -808,7 +794,7 @@ order by season_rank_by_gender_class
 q_2025_members_by_class = """
 with ranked_points as (
 select season, name, ussanumber, gender, racekey, wc_points_ranking, run1, run2, total, race_rank_by_gender_class,  worldcup_points_by_gender_class, class,
-case when wc_points_ranking <=12 then 'count' else 'discard' end as counting_race
+case when wc_points_ranking <=11 then 'count' else 'discard' end as counting_race
 from (
 select *,
 row_number() over(partition by ussanumber, gender, season, class order by worldcup_points_by_gender_class desc) as wc_points_ranking
@@ -904,7 +890,6 @@ case when max(score8) is null then '--' else max(score8) end as score8,
 case when max(score9) is null then '--' else max(score9) end as score9,
 case when max(score10) is null then '--' else max(score10) end as score10,
 case when max(score11) is null then '--' else max(score11) end as score11,
-case when max(score12) is null then '--' else max(score12) end as score12,
 case when max(discards) is null then null else array_to_string(array_filter(x -> x is not null, array_agg(discards)),', ') end as discards
 from
 (
@@ -927,8 +912,7 @@ case when wc_points_ranking = 1 then worldcup_points_by_gender_class || ' ('||(c
   case when wc_points_ranking = 9 then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as score9,
   case when wc_points_ranking = 10 then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as score10,
   case when wc_points_ranking = 11 then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as score11,
-  case when wc_points_ranking = 12 then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as score12,
-  case when wc_points_ranking >12 then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as discards,
+  case when wc_points_ranking >11 then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as discards,
 from final_results
 where season_rank_by_gender_members is not null
 )
@@ -939,7 +923,7 @@ order by season_rank_by_gender_members
 q_2024_by_class = """
 with ranked_points as (
 select season, name, ussanumber, gender, racekey, wc_points_ranking, run1, run2, total, race_rank_by_gender_class,  worldcup_points_by_gender_class, class,
-case when wc_points_ranking <=12 then 'count' else 'discard' end as counting_race
+case when wc_points_ranking <=11 then 'count' else 'discard' end as counting_race
 from (
 select *,
 row_number() over(partition by ussanumber, gender, season, class order by worldcup_points_by_gender_class desc) as wc_points_ranking
@@ -1075,7 +1059,7 @@ order by season_rank_by_gender_class
 q_2025_by_class_details = """
 with ranked_points as (
 select season, name, ussanumber, gender, racekey, wc_points_ranking, run1, run2, total, race_rank_by_gender_class,  worldcup_points_by_gender_class, class,
-case when wc_points_ranking <=12 then 'count' else 'discard' end as counting_race
+case when wc_points_ranking <=11 then 'count' else 'discard' end as counting_race
 from (
 select *,
 row_number() over(partition by ussanumber, gender, season, class order by worldcup_points_by_gender_class desc) as wc_points_ranking
@@ -1172,8 +1156,6 @@ case when max(huntergs) is null then '--' else max(huntergs) end as huntergs,
   case when max(strattonsg1) is null then '--' else max(strattonsg1) end as strattonsg1,
   case when max(strattonsg2) is null then '--' else max(strattonsg2) end as strattonsg2,
   case when max(strattongs) is null then '--' else max(strattongs) end as strattongs,
-  case when max(labsl1) is null then '--' else max(labsl1) end as labsl1,
-  case when max(labsl2) is null then '--' else max(labsl2) end as labsl2,
   case when max(greekgs1) is null then '--' else max(greekgs1) end as greekgs1,
   case when max(greekgs2) is null then '--' else max(greekgs2) end as greekgs2,
   case when max(westsg) is null then '--' else max(westsg) end as westsg,
@@ -1206,8 +1188,6 @@ case when racekey = 'WILLARD MOUNTAIN GIANT SLALOM 2, 2025-01-19' then worldcup_
 case when racekey = 'STRATTON MOUNTAIN, SUPERG 1, 2025-01-24' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as strattonsg1,
 case when racekey = 'STRATTON MOUNTAIN, SUPERG 2, 2025-01-24' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as strattonsg2,
 case when racekey = 'STRATTON MOUNTAIN, GIANT SLALOM, 2025-01-25' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as strattongs,
-case when racekey = 'LABRADOR MOUNTAIN, SLALOM 1, 2025-02-01' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as labsl1,
-case when racekey = 'LABRADOR MOUNTAIN, SLALOM 2, 2025-02-01' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as labsl2,
 case when racekey = 'GREEK PEAK, GIANT SLALOM 1, 2025-02-02' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as greekgs1,
 case when racekey = 'GREEK PEAK, GIANT SLALOM 2, 2025-02-02' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as greekgs2,
 case when racekey = 'WEST MOUNTAIN, SUPERG, 2025-02-14' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as westsg,
@@ -1227,7 +1207,7 @@ order by season_rank_by_gender_class
 q_2025_members_by_class_details = """
 with ranked_points as (
 select season, name, ussanumber, gender, racekey, wc_points_ranking, run1, run2, total, race_rank_by_gender_class,  worldcup_points_by_gender_class, class,
-case when wc_points_ranking <=12 then 'count' else 'discard' end as counting_race
+case when wc_points_ranking <=11 then 'count' else 'discard' end as counting_race
 from (
 select *,
 row_number() over(partition by ussanumber, gender, season, class order by worldcup_points_by_gender_class desc) as wc_points_ranking
@@ -1324,8 +1304,6 @@ case when max(huntergs) is null then '--' else max(huntergs) end as huntergs,
   case when max(strattonsg1) is null then '--' else max(strattonsg1) end as strattonsg1,
   case when max(strattonsg2) is null then '--' else max(strattonsg2) end as strattonsg2,
   case when max(strattongs) is null then '--' else max(strattongs) end as strattongs,
-  case when max(labsl1) is null then '--' else max(labsl1) end as labsl1,
-  case when max(labsl2) is null then '--' else max(labsl2) end as labsl2,
   case when max(greekgs1) is null then '--' else max(greekgs1) end as greekgs1,
   case when max(greekgs2) is null then '--' else max(greekgs2) end as greekgs2,
   case when max(westsg) is null then '--' else max(westsg) end as westsg,
@@ -1358,8 +1336,6 @@ case when racekey = 'WILLARD MOUNTAIN GIANT SLALOM 2, 2025-01-19' then worldcup_
 case when racekey = 'STRATTON MOUNTAIN, SUPERG 1, 2025-01-24' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as strattonsg1,
 case when racekey = 'STRATTON MOUNTAIN, SUPERG 2, 2025-01-24' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as strattonsg2,
 case when racekey = 'STRATTON MOUNTAIN, GIANT SLALOM, 2025-01-25' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as strattongs,
-case when racekey = 'LABRADOR MOUNTAIN, SLALOM 1, 2025-02-01' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as labsl1,
-case when racekey = 'LABRADOR MOUNTAIN, SLALOM 2, 2025-02-01' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as labsl2,
 case when racekey = 'GREEK PEAK, GIANT SLALOM 1, 2025-02-02' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as greekgs1,
 case when racekey = 'GREEK PEAK, GIANT SLALOM 2, 2025-02-02' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as greekgs2,
 case when racekey = 'WEST MOUNTAIN, SUPERG, 2025-02-14' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as westsg,
@@ -1399,8 +1375,6 @@ case when max(huntergs) is null then '--' else max(huntergs) end as huntergs,
   case when max(strattonsg1) is null then '--' else max(strattonsg1) end as strattonsg1,
   case when max(strattonsg2) is null then '--' else max(strattonsg2) end as strattonsg2,
   case when max(strattongs) is null then '--' else max(strattongs) end as strattongs,
-  case when max(labsl1) is null then '--' else max(labsl1) end as labsl1,
-  case when max(labsl2) is null then '--' else max(labsl2) end as labsl2,
   case when max(greekgs1) is null then '--' else max(greekgs1) end as greekgs1,
     case when max(greekgs2) is null then '--' else max(greekgs2) end as greekgs2,
     case when max(westsg) is null then '--' else max(westsg) end as westsg,
@@ -1430,8 +1404,6 @@ case when racekey = 'WILLARD MOUNTAIN GIANT SLALOM 2, 2025-01-19' then worldcup_
 case when racekey = 'STRATTON MOUNTAIN, SUPERG 1, 2025-01-24' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as strattonsg1,
 case when racekey = 'STRATTON MOUNTAIN, SUPERG 2, 2025-01-24' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as strattonsg2,
 case when racekey = 'STRATTON MOUNTAIN, GIANT SLALOM, 2025-01-25' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as strattongs,
-case when racekey = 'LABRADOR MOUNTAIN, SLALOM 1, 2025-02-01' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as labsl1,
-case when racekey = 'LABRADOR MOUNTAIN, SLALOM 2, 2025-02-01' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as labsl2,
 case when racekey = 'GREEK PEAK, GIANT SLALOM 1, 2025-02-02' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as greekgs1,
 case when racekey = 'GREEK PEAK, GIANT SLALOM 2, 2025-02-02' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as greekgs2,
 case when racekey = 'WEST MOUNTAIN, SUPERG, 2025-02-14' then worldcup_points_by_team || ' ('||(team_rank)||')' else null end as westsg,
