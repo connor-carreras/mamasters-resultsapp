@@ -9,6 +9,11 @@ from results_by_gender_vw
 where run1 <> 'DNS'
 and gender = '{gender}'
 and season = '2024-2025'
+and racekey not in(
+  'HUNTER MOUNTAIN, FINALS SL 1, 2025-03-09',
+  'HUNTER MOUNTAIN, FINALS GS 2, 2025-03-08',
+  'HUNTER MOUNTAIN, FINALS SL 2, 2025-03-09'
+)
 )
 
 )
@@ -131,6 +136,11 @@ from results_by_gender_vw
 where run1 <> 'DNS'
 and gender = '{gender}'
 and season = '2024-2025'
+and racekey not in(
+  'HUNTER MOUNTAIN, FINALS SL 1, 2025-03-09',
+  'HUNTER MOUNTAIN, FINALS GS 2, 2025-03-08',
+  'HUNTER MOUNTAIN, FINALS SL 2, 2025-03-09'
+)
 )
 
 )
@@ -254,6 +264,11 @@ from results_by_gender_vw
 where run1 <> 'DNS'
 and gender = '{gender}'
 and season = '2024-2025'
+and racekey not in(
+  'HUNTER MOUNTAIN, FINALS SL 1, 2025-03-09',
+  'HUNTER MOUNTAIN, FINALS GS 2, 2025-03-08',
+  'HUNTER MOUNTAIN, FINALS SL 2, 2025-03-09'
+)
 )
 
 )
@@ -391,6 +406,11 @@ from results_by_gender_vw
 where run1 <> 'DNS'
 and gender = '{gender}'
 and season = '2024-2025'
+and racekey not in(
+  'HUNTER MOUNTAIN, FINALS SL 1, 2025-03-09',
+  'HUNTER MOUNTAIN, FINALS GS 2, 2025-03-08',
+  'HUNTER MOUNTAIN, FINALS SL 2, 2025-03-09'
+)
 )
 
 )
@@ -681,6 +701,11 @@ where run1 <> 'DNS'
 and gender = '{gender}'
 and class = '{raceclass}'
 and season = '2024-2025'
+and racekey not in(
+  'HUNTER MOUNTAIN, FINALS SL 1, 2025-03-09',
+  'HUNTER MOUNTAIN, FINALS GS 2, 2025-03-08',
+  'HUNTER MOUNTAIN, FINALS SL 2, 2025-03-09'
+)
 )
 
 )
@@ -809,6 +834,11 @@ where run1 <> 'DNS'
 and gender = '{gender}'
 and class = '{raceclass}'
 and season = '2024-2025'
+and racekey not in(
+  'HUNTER MOUNTAIN, FINALS SL 1, 2025-03-09',
+  'HUNTER MOUNTAIN, FINALS GS 2, 2025-03-08',
+  'HUNTER MOUNTAIN, FINALS SL 2, 2025-03-09'
+)
 )
 
 )
@@ -920,141 +950,7 @@ group by all
 order by season_rank_by_gender_members
 """
 
-q_2024_by_class = """
-with ranked_points as (
-select season, name, ussanumber, gender, racekey, wc_points_ranking, run1, run2, total, race_rank_by_gender_class,  worldcup_points_by_gender_class, class,
-case when wc_points_ranking <=11 then 'count' else 'discard' end as counting_race
-from (
-select *,
-row_number() over(partition by ussanumber, gender, season, class order by worldcup_points_by_gender_class desc) as wc_points_ranking
-  from   
-  (select r.* exclude class,
-  case when m.class is not null then m.class::text else r.class::text end as class
-  from results_by_class_vw r
-  left join members_vw m
-  on m.season = r.season 
-  and m.ussanum = r.ussanumber)
-where run1 <> 'DNS'
-and gender = '{gender}'
-and class = '{raceclass}'
-)
 
-)
-, add_members as (
-select r.*,
-case when m.ussanum is null then 'N' else 'Y' end as is_mid_atl_member
-from 
-ranked_points r
-left join 
-members_vw m
-on r.season = m.season
-and r.ussanumber = m.ussanum
-)
-
-, rankings as (
-select a.season, 
-b.name,
-a.ussanumber,
-a.gender,
-a.class,
-a.is_mid_atl_member,
-a.racekey,
-a.wc_points_ranking,  
-a.worldcup_points_by_gender_class,
-a.race_rank_by_gender_class,
-a.run1,
-a.run2,
-a.total,
-a.counting_race,
-b.total_wc_points,
-b.unique_starts,
-b.unique_finishes,
-dense_rank() over(partition by a.season, a.gender, a.class order by total_wc_points desc) as season_rank_by_gender_class
-from
-(select * from add_members) a
-inner join 
-(select season, any(name) as name, ussanumber, gender, 
-sum(case when counting_race = 'count' then worldcup_points_by_gender_class else 0 end) as total_wc_points, 
-count(distinct racekey) as unique_starts, 
-sum(case when total is not null then 1 else 0 end) as unique_finishes,
-from add_members
-group by all) b
-on a.season = b.season
-and a.ussanumber = b.ussanumber
-and a.gender = b.gender
-order by gender, season_rank_by_gender_class, wc_points_ranking
-)
-
-
-, final_results as (
-select r.*,
-m.season_rank_by_gender_members,
-date_trunc('second',current_timestamp()) as insert_ts
-from
-(select * from rankings) r
-left join
-(select season, ussanumber, dense_rank() over(partition by season, gender, class order by total_wc_points desc) as season_rank_by_gender_members
-from (select season, ussanumber, gender, class, is_mid_atl_member,max(total_wc_points) as total_wc_points from rankings group by all)
-where is_mid_atl_member = 'Y'
-) m
-on r.season=m.season
-and r.ussanumber=m.ussanumber
-)
-
-
-select 
-season_rank_by_gender_class, 
-name, 
-total_wc_points,
-unique_starts,
-unique_finishes,
-case when max(goresl) is null then '--' else max(goresl) end as goresl,
-case when max(huntersl1) is null then '--' else max(huntersl1) end as huntersl1,
-  case when max(huntersl2) is null then '--' else max(huntersl2) end as huntersl2,
-  case when max(huntergs) is null then '--' else max(huntergs) end as huntergs,
-  case when max(montagegs) is null then '--' else max(montagegs) end as montagegs,
-  case when max(montagesl) is null then '--' else max(montagesl) end as montagesl,
-  case when max(beargs) is null then '--' else max(beargs) end as beargs,
-  case when max(southsl1) is null then '--' else max(southsl1) end as southsl1,
-  case when max(southsl2) is null then '--' else max(southsl2) end as southsl2,
-  case when max(westsg) is null then '--' else max(westsg) end as westsg,
-  case when max(westgs) is null then '--' else max(westgs) end as westgs,
-  case when max(westsl) is null then '--' else max(westsl) end as westsl,
-  case when max(catamountgs) is null then '--' else max(catamountgs) end as catamountgs,
-  case when max(goresg1) is null then '--' else max(goresg1) end as goresg1,
-  case when max(goresg2) is null then '--' else max(goresg2) end as goresg2,
-    case when max(goregs) is null then '--' else max(goregs) end as goregs,
-from
-(
-select 
-season_rank_by_gender_class, 
-total_wc_points,
-name, 
-gender, 
-class,
-unique_starts,
-unique_finishes,
-case when racekey = 'GORE MOUNTAIN, SLALOM, 2023-03-05' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as goresl,
-case when racekey = 'HUNTER MOUNTAIN, SLALOM 1, 2024-01-06' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as huntersl1,
-case when racekey = 'HUNTER MOUNTAIN, SLALOM 2, 2024-01-06' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as huntersl2,
-case when racekey = 'HUNTER MOUNTAIN, GIANT SLALOM, 2024-01-07' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as huntergs,
-case when racekey = 'MONTAGE MOUNTAIN, GIANT SLALOM, 2024-01-20' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as montagegs,
-case when racekey = 'MONTAGE MOUNTAIN, SLALOM, 2024-01-20' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as montagesl,
-case when racekey = 'BEAR CREEK, GIANT SLALOM, 2024-01-21' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as beargs,
-case when racekey = 'MT. SOUTHINGTON, SLALOM 1, 2024-02-03' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as southsl1,
-case when racekey = 'MT. SOUTHINGTON, SLALOM 2, 2024-02-03' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as southsl2,
-case when racekey = 'WEST MOUNTAIN, SUPER G, 2024-02-16' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as westsg,
-case when racekey = 'WEST MOUNTAIN, GIANT SLALOM, 2024-02-17' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as westgs,
-case when racekey = 'WEST MOUNTAIN, SLALOM, 2024-02-18' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as westsl,
-case when racekey = 'CATAMOUNT RESORT, GIANT SLALOM, 2024-03-03' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as catamountgs,
-case when racekey = 'GORE MOUNTAIN, SUPER G 1, 2024-03-08' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as goresg1,
-case when racekey = 'GORE MOUNTAIN, SUPER G 2, 2024-03-08' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as goresg2,
-case when racekey = 'GORE MOUNTAIN, GIANT SLALOM, 2024-03-09' then worldcup_points_by_gender_class || ' ('||(case when race_rank_by_gender_class is null then 'DNF' else race_rank_by_gender_class::text end)||')' else null end as goregs
-from final_results
-)
-group by all
-order by season_rank_by_gender_class
-"""
 
 q_2025_by_class_details = """
 with ranked_points as (
@@ -1074,6 +970,11 @@ where run1 <> 'DNS'
 and gender = '{gender}'
 and class = '{raceclass}'
 and season = '2024-2025'
+and racekey not in(
+  'HUNTER MOUNTAIN, FINALS SL 1, 2025-03-09',
+  'HUNTER MOUNTAIN, FINALS GS 2, 2025-03-08',
+  'HUNTER MOUNTAIN, FINALS SL 2, 2025-03-09'
+)
 )
 
 )
@@ -1222,6 +1123,11 @@ where run1 <> 'DNS'
 and gender = '{gender}'
 and class = '{raceclass}'
 and season = '2024-2025'
+and racekey not in(
+  'HUNTER MOUNTAIN, FINALS SL 1, 2025-03-09',
+  'HUNTER MOUNTAIN, FINALS GS 2, 2025-03-08',
+  'HUNTER MOUNTAIN, FINALS SL 2, 2025-03-09'
+)
 )
 
 )
@@ -1357,7 +1263,12 @@ q_team_season = """
 with unique_results as (
 select distinct team, racedate, racekey, team_total, team_rank, worldcup_points_by_team,
 from team_results
-  where season = '2024-2025')
+  where season = '2024-2025'
+  and racekey not in(
+  'HUNTER MOUNTAIN, FINALS SL 1, 2025-03-09',
+  'HUNTER MOUNTAIN, FINALS GS 2, 2025-03-08',
+  'HUNTER MOUNTAIN, FINALS SL 2, 2025-03-09'
+))
 
 select 
 team_ranking,

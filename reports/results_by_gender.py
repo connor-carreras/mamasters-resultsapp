@@ -6,7 +6,6 @@ from sqlalchemy import text
 from sqlalchemy import create_engine
 
 from tabulate import tabulate
-from fpdf import FPDF
 import gender_queries
 import os
 

@@ -57,10 +57,24 @@ with engine.connect() as connection:
 
   else:
     context = {**globals(), **locals()}
-    get_results_query = pacup_queries.q_pa_cup_2025.format(**context)
-    results = connection.execute(text(get_results_query))
+    get_classes_query = pacup_queries.q_class_list.format(**context)
+    classes = connection.execute(text(get_classes_query))
 
-    st.dataframe(results)
+
+    for row in classes:
+        with st.container():
+          gender = row.gender
+          gender_header=row.gender_header
+          ability_class = row.ability_class
+
+
+          st.markdown(f"##### {gender_header} {ability_class} Results")
+
+          context = {**globals(), **locals()}
+          get_results_query = pacup_queries.q_pa_cup_2025.format(**context)
+          results = connection.execute(text(get_results_query))
+
+          st.dataframe(results)
 
   connection.close()
 
