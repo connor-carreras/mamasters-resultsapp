@@ -1,3 +1,10 @@
+q_class_list = """
+select case when gender = 'F' then 'Women' when gender = 'M' then 'Men' end as gender_header, gender, ability_class
+from (
+select distinct gender, ability_class
+from pa_cup where season='{selected_season}') order by 2, 3 desc
+"""
+
 q_pa_cup_2025 = """
 with results as (
 select racekey, name, ussanumber, gender, ingest_ts, season, 
