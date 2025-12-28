@@ -309,7 +309,7 @@ with engine.connect() as connection:
 	col1, col2 = st.columns(2)
 
 	with col1:
-		selected_season = st.selectbox('Season', ("2024-2025","2023-2024"), index=None, placeholder="Choose a season...")
+		selected_season = st.selectbox('Season', ("2025-2026","2024-2025","2023-2024"), index=None, placeholder="Choose a season...")
 
 	with col2:
 		options = connection.execute(text(f"""

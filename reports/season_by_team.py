@@ -22,7 +22,7 @@ engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/
 
 with engine.connect() as connection:
 
-  selected_season = st.selectbox('Season', ("2024-2025"), index=None, placeholder="Choose a season...")
+  selected_season = st.selectbox('Season', ("2025-2026","2024-2025"), index=None, placeholder="Choose a season...")
 
   if selected_season == None:
     st.write('No season selected.')

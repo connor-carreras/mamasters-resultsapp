@@ -27,7 +27,7 @@ with st.expander("ℹ️ Understand finals ability class scoring"):
 
 with engine.connect() as connection:
 
-	selected_season = st.selectbox('Season', ("2024-2025"), index=None, placeholder="Choose a season...")
+	selected_season = st.selectbox('Season', ("2025-2026","2024-2025"), index=None, placeholder="Choose a season...")
 
 
 	context = {**globals(), **locals()}
