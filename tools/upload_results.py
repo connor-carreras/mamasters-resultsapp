@@ -37,7 +37,7 @@ with engine.connect() as connection:
 	col1, col2, col3 = st.columns(3)
 
 	with col1:
-		selected_season = st.selectbox('Season', ("2024-2025","2023-2024"), index=None, placeholder="Choose a season...", on_change=update_key)
+		selected_season = st.selectbox('Season', ("2025-2026","2024-2025","2023-2024"), index=None, placeholder="Choose a season...", on_change=update_key)
 		
 		context = {**globals(), **locals()}
 		races_list_query = ingestion_queries.q_races_list.format(**context)
