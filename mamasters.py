@@ -45,8 +45,8 @@ season_by_class = st.Page("reports/season_by_class.py", title="Season standings 
 # iron_man = st.Page("reports/iron_man.py", title= "Iron Man standings", icon=":material/downhill_skiing:")
 race_pdfs = st.Page("tools/race_pdfs.py", title="Generate result PDFs", icon=":material/description:")
 
-data_tools = [home_page, upload_page, race_pdfs, members_page]
-race_reports = [results_by_gender, results_by_class, team_scoring, pa_cup_results, finals_ability_results, update_schedule]
+data_tools = [home_page, upload_page, race_pdfs, members_page, update_schedule]
+race_reports = [results_by_gender, results_by_class, team_scoring, pa_cup_results, finals_ability_results]
 season_standings = [season_by_gender, season_by_class, season_by_team]
 account_pages = [login_page]
 
