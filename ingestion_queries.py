@@ -169,7 +169,7 @@ last_update_ts $source_file_timestamp
 from 
 's3://mamasters-results/mam_members.csv'
 WITH 
-CREDENTIALS = (AWS_ROLE_ARN = 'arn:aws:iam::664418987828:role/firebolt-s3-access')
+
 TYPE=CSV HEADER=TRUE;
 """
 
