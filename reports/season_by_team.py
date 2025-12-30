@@ -11,13 +11,12 @@ import season_queries
 from datetime import datetime
 import os
 
-st.title("Team Results")
+st.set_page_config(page_title="Mid-Atlantic Masters: Team Season Standings")
 
-firebolt_id = os.getenv('FIREBOLT_ID')
-firebolt_secret = os.getenv('FIREBOLT_SECRET')
 
-secret = urllib.parse.quote_plus(firebolt_secret)
-engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/ingest_engine?account_name=mamasters")
+st.title("Team Season Standings")
+
+engine = create_engine("duckdb:///md:mamasters")
 
 
 with engine.connect() as connection:
@@ -29,16 +28,21 @@ with engine.connect() as connection:
 
   else:
     last_race_date = connection.execute(text(f"""
-      select max(racedate) as max_date, count(distinct racekey) as racenames from team_results where season = '{selected_season}'
+      select max(racedate) as max_date, count(distinct racekey) as racenames from team_results where racekey in(select racename from schedule where counting_season = '{selected_season}')
       """))
     racedate = last_race_date.fetchone()
     racedatestring = racedate._mapping["max_date"]
     racecountstring = racedate._mapping["racenames"]
+    schedule = connection.execute(text(f"""
+      select count(*) as total_races, round(count(*)/2)::integer as scored_races from schedule where counting_season = '{selected_season}'
+      """))
+    schedule_details = schedule.fetchone()
+    total_races = schedule_details._mapping["total_races"]
 
     st.markdown("#### Scoring Details")
     st.markdown(f"""
       * Standings as of {racedatestring}. There have been {racecountstring} completed races so far.
-      * 2024-2025 season has 24 races total. All races count.
+      * {selected_season} season has {total_races} races total. All races count.
       """)
 
     st.markdown(f"##### Teams - Overall Season Standings")

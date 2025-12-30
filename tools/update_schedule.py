@@ -13,14 +13,7 @@ st.title("Update Season Schedule")
 
 st.markdown("Use this page to update the season schedule. You can add, remove, and change races as long as the date of your change is on or before the date of the race.")
 
-
-aws_key = os.getenv("AWS_KEY")
-aws_secret =os.getenv("AWS_SECRET")
-firebolt_id = os.getenv('FIREBOLT_ID')
-firebolt_secret = os.getenv('FIREBOLT_SECRET')
-
-secret = urllib.parse.quote_plus(firebolt_secret)
-engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/ingest_engine?account_name=mamasters")
+engine = create_engine("duckdb:///md:mamasters")
 
 ##Put a dropdown in to choose the season
 ##Add a filter to the read sql table command to only display records from the selected season and only let you update records for future races
@@ -37,7 +30,7 @@ tabname = "schedule_test"
 @st.cache_data
 def get_schedule():
 	with engine.connect() as connection:
-		sql= f"select * from schedule_test where season = '{selected_season}';"
+		sql= f"select * from schedule where season = '{selected_season}';"
 		df= pd.read_sql(sql, engine)
 		return df
 		connection.close()
@@ -67,14 +60,12 @@ if selected_season != None:
 			st.write(delete_stmt)
 
 		with engine.connect() as connection:
-			connection.execute(text('BEGIN;'))
 			if 'delete_stmt' in locals():
 				connection.execute(text(delete_stmt))
 			if 'update_stmt' in locals():
 				connection.execute(text(update_stmt))
 			if 'insert_stmt' in locals():
 				connection.execute(text(insert_stmt))
-			connection.execute(text('COMMIT;'))
 			connection.close()
 		engine.dispose()
 		st.cache_data.clear()

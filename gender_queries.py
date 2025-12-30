@@ -85,19 +85,19 @@ case when run1_dsq = '1' then 'DSQ'
 when run1_dnf = 1 then 'DNF'
 when run1 is null and run2 is null then 'DNS'
 when run1 is null and run2 is not null then 'DNS'
-else substring(((a.run1/60000)::text || ':' || lpad((floor(((a.run1-((a.run1/60000)*60000))::decimal/1000),2)::text),12,'0')) from 1 for 7) end as run1,
+else floor(a.run1::integer/60000)::integer || ':' || substring(lpad((trunc(((a.run1::integer-(floor(a.run1::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) end as run1,
 case 
 when run2_dsq = '1' then 'DSQ'
 when run2_dnf = 1 then 'DNF'
 when run1 is null and run2 is null then 'DNS'
 when run2 is null and run1 is not null then 'DNS' 
-else substring(((a.run2/60000)::text || ':' || lpad((floor(((a.run2-((a.run2/60000)*60000))::decimal/1000),2)::text),12,'0')) from 1 for 7) end as run2,
-substring(((a.total/60000)::text || ':' || lpad((floor(((a.total-((a.total/60000)*60000))::decimal/1000),2)::text),12,'0')) from 1 for 7) as total,
+else floor(a.run2::integer/60000)::integer || ':' || substring(lpad((trunc(((a.run2::integer-(floor(a.run2::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) end as run2,
+floor(a.total::integer/60000)::integer || ':' || substring(lpad((trunc(((a.total::integer-(floor(a.total::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) as total,
 a.worldcup_points_by_gender,
 a.race_rank_by_gender,
 round((((a.total::numeric/1000)/(a.winning_time::numeric/1000))-1) * f.f_value,2) as race_points,
 a.member_status,
-date_trunc('second', current_timestamp()) as insert_ts
+date_trunc('second', current_localtimestamp()) as insert_ts
 from
 (select m.*, t.winning_time 
 from members m, fastest_total t 

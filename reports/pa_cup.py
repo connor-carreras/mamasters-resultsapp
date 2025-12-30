@@ -11,13 +11,12 @@ import pacup_queries
 from datetime import datetime
 import os
 
+st.set_page_config(page_title="Mid-Atlantic Masters: Pennsylvania Cup Standings")
+
+
 st.title("Pennsylvania Cup Standings")
 
-firebolt_id = os.getenv('FIREBOLT_ID')
-firebolt_secret = os.getenv('FIREBOLT_SECRET')
-
-secret = urllib.parse.quote_plus(firebolt_secret)
-engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/ingest_engine?account_name=mamasters")
+engine = create_engine("duckdb:///md:mamasters")
 
 with st.expander("ℹ️ Understand Pennsylvania Cup scoring"):
   st.markdown("""
@@ -67,14 +66,15 @@ with engine.connect() as connection:
           gender_header=row.gender_header
           ability_class = row.ability_class
 
-
           st.markdown(f"##### {gender_header} {ability_class} Results")
+          with engine.connect() as conn_inner:
+            context = {**globals(), **locals()}
+            get_results_query = pacup_queries.q_pa_cup_2025.format(**context)
+            results = conn_inner.execute(text(get_results_query))
 
-          context = {**globals(), **locals()}
-          get_results_query = pacup_queries.q_pa_cup_2025.format(**context)
-          results = connection.execute(text(get_results_query))
-
-          st.dataframe(results)
+            st.dataframe(results)
+            conn_inner.close()
+          engine.dispose()
 
   connection.close()
 

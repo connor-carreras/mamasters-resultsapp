@@ -11,13 +11,16 @@ import season_queries
 from datetime import datetime
 import os
 
+st.set_page_config(page_title="Mid-Atlantic Masters: Season Standings by Class")
+
+
 st.title("Season Standings by Class")
 
-firebolt_id = os.getenv('FIREBOLT_ID')
-firebolt_secret = os.getenv('FIREBOLT_SECRET')
+# firebolt_id = os.getenv('FIREBOLT_ID')
+# firebolt_secret = os.getenv('FIREBOLT_SECRET')
 
-secret = urllib.parse.quote_plus(firebolt_secret)
-engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/ingest_engine?account_name=mamasters")
+# secret = urllib.parse.quote_plus(firebolt_secret)
+engine = create_engine("duckdb:///md:mamasters")
 
 with st.expander("ℹ️ Understand seasonal scoring by class"):
   st.markdown("""
@@ -60,17 +63,23 @@ with engine.connect() as connection:
 
   else:
     last_race_date = connection.execute(text(f"""
-      select max(racedate) as max_date, count(distinct racename) as racenames from results_vw where season = '{selected_season}'
+      select max(racedate) as max_date, count(distinct racekey) as racenames from results_vw where racekey in(select racename from schedule where counting_season = '{selected_season}');
       """))
     racedate = last_race_date.fetchone()
     racedatestring = racedate._mapping["max_date"]
     racecountstring = racedate._mapping["racenames"]
+    schedule = connection.execute(text(f"""
+      select count(*) as total_races, round(count(*)/2)::integer as scored_races from schedule where counting_season = '{selected_season}'
+      """))
+    schedule_details = schedule.fetchone()
+    total_races = schedule_details._mapping["total_races"]
+    scored_races = schedule_details._mapping["scored_races"]
 
     st.markdown("#### Scoring Details")
     st.markdown(f"""
       * Standings as of {racedatestring}. There have been {racecountstring} completed races so far.
       * Minimum 6 races required to qualify for season scoring.  
-      * 2024-2025 season has 22 races total. Best 11 finishes count.
+      * {selected_season} season has {total_races} races total. Best {scored_races} finishes count.
       """)
 
     tab1, tab2 = st.tabs(["Summary","Details"])
@@ -90,20 +99,22 @@ with engine.connect() as connection:
               st.markdown(f"##### {gender_header} Class {raceclass} - Overall Season Standings")
 
               on = st.toggle("Show members only", key=row)
+              with engine.connect() as conn_inner:
+                if on:
+                  context = {**globals(), **locals()}
+                  get_results_query = season_queries.md_season_by_class_members.format(**context)
+                  results = conn_inner.execute(text(get_results_query))
 
-              if on:
-                context = {**globals(), **locals()}
-                get_results_query = season_queries.q_2025_members_by_class.format(**context)
-                results = connection.execute(text(get_results_query))
+                  st.dataframe(results)
 
-                st.dataframe(results)
+                else:
+                  context = {**globals(), **locals()}
+                  get_results_query2 = season_queries.md_season_by_class.format(**context)
+                  results2 = conn_inner.execute(text(get_results_query2))
 
-              else:
-                context = {**globals(), **locals()}
-                get_results_query2 = season_queries.q_2025_new_by_class.format(**context)
-                results2 = connection.execute(text(get_results_query2))
-
-                st.dataframe(results2)
+                  st.dataframe(results2)
+                conn_inner.close()
+              engine.dispose()
 
     with tab2:
 
@@ -121,21 +132,23 @@ with engine.connect() as connection:
               st.markdown(f"##### {gender_header} Class {raceclass} - Overall Season Standings")
 
               on = st.toggle("Show members only", key=keyid)
+              with engine.connect() as conn_inner:
+                if on:
+                  context = {**globals(), **locals()}
+                  get_results_query = season_queries.md_season_by_class_details_members.format(**context)
+                  results = conn_inner.execute(text(get_results_query))
 
-              if on:
-                context = {**globals(), **locals()}
-                get_results_query = season_queries.q_2025_members_by_class_details.format(**context)
-                results = connection.execute(text(get_results_query))
+                  st.dataframe(results)
 
-                st.dataframe(results)
+                else:
 
-              else:
+                  context = {**globals(), **locals()}
+                  get_results_query2 = season_queries.md_season_by_class_details.format(**context)
+                  results2 = conn_inner.execute(text(get_results_query2))
 
-                context = {**globals(), **locals()}
-                get_results_query2 = season_queries.q_2025_by_class_details.format(**context)
-                results2 = connection.execute(text(get_results_query2))
-
-                st.dataframe(results2)
+                  st.dataframe(results2)
+                conn_inner.close()
+              engine.dispose()
 
   connection.close()
 

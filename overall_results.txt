@@ -1,0 +1,67 @@
+GREEK PEAK, GIANT SLALOM 2, 2025-02-02: Overall Results
+
+  Place  Name                     Class  Gender    Run 1    Run 2    Combined
+-------  ---------------------  -------  --------  -------  -------  ----------
+      1  Morse, Ryan                  1  M         0:51.79  DNS      0:51.79
+      2  Mangold, Andrew              1  M         0:52.37  DNS      0:52.37
+      3  Migliori, Giacomo            3  M         0:52.42  DNS      0:52.42
+      4  Klimsa, Joshua               1  M         0:53.14  DNS      0:53.14
+      5  Beland, Jason                1  M         0:53.79  DNS      0:53.79
+      6  Weisiger, Grace              1  F         0:54.97  DNS      0:54.97
+      7  Erney, Nolan                 1  M         0:55.20  DNS      0:55.20
+      8  sertl, mark                  9  M         0:55.44  DNS      0:55.44
+      9  Sarkis, Greg                 8  M         0:56.13  DNS      0:56.13
+     10  Mitchell, Alexandra          3  F         0:56.41  DNS      0:56.41
+     11  Erney, Alexandra             1  F         0:56.76  DNS      0:56.76
+     12  Tomassetti, Jim              8  M         0:57.48  DNS      0:57.48
+     13  Yeung, Nathan                0  M         0:57.69  DNS      0:57.69
+     14  Lorino, Justin               4  M         0:58.09  DNS      0:58.09
+     15  Kanarowski, Emmy             1  F         0:59.00  DNS      0:59.00
+     16  Balinskiy, Natalie           1  F         0:59.02  DNS      0:59.02
+     17  Mann, Robb                   7  M         0:59.21  DNS      0:59.21
+     18  Mazzanti, Dawn               5  F         0:59.76  DNS      0:59.76
+     19  Baker, Cal                   9  M         1:00.48  DNS      1:00.48
+     20  Korolev, Ivan                3  M         1:00.65  DNS      1:00.65
+     21  Moucha, Robert               6  M         1:00.85  DNS      1:00.85
+     22  Priebke, Chris               7  M         1:01.07  DNS      1:01.07
+     23  Kent, Ryan                   2  M         1:01.40  DNS      1:01.40
+     24  D'Alessandro, Gregory        8  M         1:02.22  DNS      1:02.22
+     25  Knudsen, Hannah              1  F         1:03.27  DNS      1:03.27
+     26  Flaherty, Joe                1  M         1:03.64  DNS      1:03.64
+     27  Lenda, Don                   7  M         1:03.83  DNS      1:03.83
+     28  Andrews, Donald              9  M         1:03.95  DNS      1:03.95
+     29  Meyer, Tiffany               4  F         1:04.20  DNS      1:04.20
+     30  Linsler, Edward              8  M         1:04.44  DNS      1:04.44
+     31  Wise, David                 10  M         1:04.76  DNS      1:04.76
+     32  Fowser, Paul                 9  M         1:05.27  DNS      1:05.27
+     33  Mitchell, Katie              1  F         1:05.35  DNS      1:05.35
+     34  Weir, Ken                   10  M         1:05.40  DNS      1:05.40
+     35  Moore, Terence               9  M         1:05.80  DNS      1:05.80
+     36  LeMon, Jeffrey               9  M         1:05.95  DNS      1:05.95
+     37  Patterson, Amy               5  F         1:06.17  DNS      1:06.17
+     38  Witt, Michael                6  M         1:06.38  DNS      1:06.38
+     39  Zober, Rich                  7  M         1:06.59  DNS      1:06.59
+     40  Parker, Peter                9  M         1:06.61  DNS      1:06.61
+     41  Maximuk, Susan               7  F         1:06.92  DNS      1:06.92
+     42  Vyverberg, John             10  M         1:07.53  DNS      1:07.53
+     43  Elko, Kenny                  9  M         1:09.43  DNS      1:09.43
+     44  Kincaid, Russell             8  M         1:10.91  DNS      1:10.91
+     45  Wepplo, Peter               12  M         1:11.70  DNS      1:11.70
+     46  Tomassetti, Carol            9  F         1:11.89  DNS      1:11.89
+     47  LaFalce, Allegra             0  F         1:12.35  DNS      1:12.35
+     48  Piermarini, Stuart          10  M         1:14.49  DNS      1:14.49
+     49  Rosen, Jonathan              7  M         1:15.55  DNS      1:15.55
+     50  McDonough, Carl             12  M         1:16.63  DNS      1:16.63
+     51  Kolynich, James             10  M         1:18.37  DNS      1:18.37
+     52  Sanderson, Karen            11  F         1:19.12  DNS      1:19.12
+     53  Schwinzer, Sandra            6  F         1:21.03  DNS      1:21.03
+     54  Walsh, Dave                 10  M         1:21.79  DNS      1:21.79
+     55  Romaine, Robert              9  M         1:27.02  DNS      1:27.02
+         Gross, Steve                 8  M         DNF      DNS
+         Brooks, Linda                8  F         DNS      DNS
+         Brooks, Glenn                8  M         DNS      DNS
+         Grady, Jordyn                1  F         DNS      DNS
+         Zilli, Steven                9  M         DSQ      DNS
+         Tocke, Kevin                 6  M         DSQ      DNS
+         Eisenschmid, Jack            9  M         DSQ      DNS
+

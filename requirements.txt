@@ -16,3 +16,4 @@ langgraph
 langchain
 langchain_core
 typing
+duckdb-engine
