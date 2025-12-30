@@ -125,7 +125,7 @@ select
   team_total,
   team_rank,
   ifnull(p.points,0) as worldcup_points_by_team, 
-  date_trunc('second', current_timestamp()) as insert_ts
+  date_trunc('second', current_localtimestamp()) as insert_ts
   from (  
 select 
   season,
@@ -141,23 +141,19 @@ when run1_dnf = 1 then 'DNF'
 when run1_adjusted is null and run2_adjusted is null then 'DNS'
 when run1_adjusted is null and run2_adjusted is not null then 'DNS'
 else 
-  floor(run1_adjusted::integer/60000)::text || ':' ||
-substring(lpad(((run1_adjusted-(floor(run1_adjusted/60000)*60000))/1000)::text,12,'0') from 1 for 5) end as run1_adjusted,
+  floor(run1_adjusted::integer/60000)::integer || ':' || substring(lpad((trunc(((run1_adjusted::integer-(floor(run1_adjusted::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) end as run1_adjusted,
 case 
 when run2_dsq = '1' then 'DSQ'
 when run2_dnf = 1 then 'DNF'
 when run1_adjusted is null and run2_adjusted is null then 'DNS'
 when run2_adjusted is null and run1_adjusted is not null then 'DNS' 
 else 
-floor(run2_adjusted::integer/60000)::text || ':' ||
-substring(lpad(((run2_adjusted-(floor(run2_adjusted/60000)*60000))/1000)::text,12,'0') from 1 for 5) end as run2_adjusted,
-floor(total_adjusted::integer/60000)::text || ':' || 
-substring(lpad(((total_adjusted-(floor(total_adjusted/60000)*60000))/1000)::text,12,'0') from 1 for 5) as total_adjusted,
+floor(run2_adjusted::integer/60000)::integer || ':' || substring(lpad((trunc(((run2_adjusted::integer-(floor(run2_adjusted::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) end as run2_adjusted,
+floor(total_adjusted::integer/60000)::integer || ':' || substring(lpad((trunc(((total_adjusted::integer-(floor(total_adjusted::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) as total_adjusted,
 ranking,
 counting_score,
   team_rank,
-  floor(team_total::integer/60000)::text || ':' || 
-substring(lpad(((team_total-(floor(team_total/60000)*60000))/1000)::text,12,'0') from 1 for 5) as team_total
+floor(team_total::integer/60000)::integer || ':' || substring(lpad((trunc(((team_total::integer-(floor(team_total::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) as team_total
 from team_totals) t
 left join worldcup_points p
 on t.team_rank = p.place

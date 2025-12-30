@@ -11,9 +11,54 @@ from fpdf import FPDF
 import gender_queries
 import class_queries
 import team_queries
-import season_queries
+import overall_queries
 import os
 from datetime import datetime
+
+@st.cache_data
+def results_overall_pdf(selected_option):
+	context = {**globals(), **locals()}
+	overall_results_exist = overall_queries.q_overall_results_exist.format(**context)
+	results_exist = connection.execute(text(overall_results_exist))
+	resultscount = results_exist.fetchone()
+	resultscountstring = resultscount._mapping["num_records"]
+
+	if resultscountstring <= 0:
+		context = {**globals(), **locals()}
+		overall_insert_query = overall_queries.q_insert_overall_results.format(**context)
+		connection.execute(text(overall_insert_query))
+
+	else:
+		pass
+
+	with open("overall_results.txt", "w") as overall_file:
+		overall_file.write(f"{selected_option}: Overall Results\n\n")
+		with st.container():
+
+			context = {**globals(), **locals()}
+			get_overall_query = overall_queries.q_select_overall_results.format(**context)
+			overall_results = connection.execute(text(get_overall_query))
+
+			table = [r._asdict() for r in overall_results]
+			items = []
+			header = ['Place','Name','Class','Gender','Run 1','Run 2','Combined']
+			for row in table:
+				items.append(list(row.values()))
+			overall_file.write(tabulate(items, headers=header))
+			overall_file.write("\n\n")
+
+	overall_pdf = FPDF()
+	overall_pdf.add_page()
+	overall_pdf.add_font('Consolas', '', './static/CONSOLA.TTF', uni=True)
+	overall_pdf.set_font("Consolas", size=8)
+
+	overall_file2 = open("overall_results.txt", 'r+')
+
+	for x in overall_file2: 
+		overall_pdf.cell(40,5, txt = x, ln = 1, align = 'L')
+
+	overall_output_pdf=bytes(overall_pdf.output(dest='S'))
+	return overall_output_pdf
 
 @st.cache_data
 def results_by_gender_pdf(selected_option):
@@ -196,104 +241,11 @@ def results_by_team_pdf(selected_option):
 	teams_output_pdf=teams_pdf.output()
 	return teams_output_pdf
 
-
-@st.cache_data
-def season_results_by_gender(selected_option):
-	context = {**globals(), **locals()}
-	get_season_gender_query = season_queries.q_list_genders.format(**context)
-	season_genders = connection.execute(text(get_season_gender_query))
-
-	with open("season_gender_results.txt", "w") as season_genders_file:
-		season_genders_file.write(f"Mid-Atlantic Masters Season Standings by Gender (All Racers)\n\n")
-
-		season_genders_file.write(f"Standings as of {report_date}\n")
-		season_genders_file.write(f"Minimum 6 races required to qualify for season scoring.\n")
-		season_genders_file.write(f"2024-2025 season has 24 races total. Best 12 finishes count.\n\n")
-
-
-		for row in season_genders:
-			gender = row.gender
-			gender_header=row.gender_header
-
-			season_genders_file.write(f"{gender_header} - Overall Season Standings\n")
-
-			context = {**globals(), **locals()}
-			get_season_genders_results = season_queries.q_2025_new_by_gender.format(**context)
-			season_genders_results = connection.execute(text(get_season_genders_results))
-
-			table = [r._asdict() for r in season_genders_results]
-			items = []
-			header = ['Place','Name','Points','St','Fn','Score 1','Score 2','Score 3','Score 4','Score 5','Score 6','Score 7','Score 8','Score 9','Score 10','Score 11','Score 12','Discarded Scores']
-			for row in table:
-				items.append(list(row.values()))
-			season_genders_file.write(tabulate(items, headers=header))
-			season_genders_file.write("\n\n")
-
-	season_genders_pdf = FPDF(orientation="landscape")
-	season_genders_pdf.add_page()
-	season_genders_pdf.add_font('Consola', '', './static/CONSOLA.TTF', uni=True)
-	season_genders_pdf.set_font("Consola", size=6)
-
-	season_genders_file2 = open("season_gender_results.txt", 'r+')
-
-	for x in season_genders_file2: 
-		season_genders_pdf.cell(10,4, txt = x, ln = 1, align = 'L')
-
-	season_genders_output_pdf=season_genders_pdf.output()
-	return season_genders_output_pdf
-
-@st.cache_data
-def season_results_by_class(selected_option):
-	context = {**globals(), **locals()}
-	get_season_class_query = season_queries.q_class_list.format(**context)
-	season_classes = connection.execute(text(get_season_class_query))
-
-	with open("season_gender_results.txt", "w") as season_classes_file:
-		season_classes_file.write(f"Mid-Atlantic Masters Season Standings by Age Class (All Racers)\n\n")
-
-		season_classes_file.write(f"Standings as of {report_date}\n")
-		season_classes_file.write(f"Minimum 6 races required to qualify for season scoring.\n")
-		season_classes_file.write(f"2024-2025 season has 24 races total. Best 12 finishes count.\n\n")
-
-
-		for row in season_classes:
-			gender = row.gender
-			gender_header=row.gender_header
-			raceclass = row.raceclass
-
-			season_classes_file.write(f"{gender_header} Class {raceclass} - Overall Season Standings\n")
-
-			context = {**globals(), **locals()}
-			get_season_classes_results_query = season_queries.q_2025_new_by_class.format(**context)
-			season_classes_results = connection.execute(text(get_season_classes_results_query))
-
-			table = [r._asdict() for r in season_classes_results]
-			items = []
-			header = ['Place','Name','Points','St','Fn','Score 1','Score 2','Score 3','Score 4','Score 5','Score 6','Score 7','Score 8','Score 9','Score 10','Score 11','Score 12','Discarded Scores']
-			for row in table:
-				items.append(list(row.values()))
-			season_classes_file.write(tabulate(items, headers=header))
-			season_classes_file.write("\n\n")
-
-	season_classes_pdf = FPDF(orientation="landscape")
-	season_classes_pdf.add_page()
-	season_classes_pdf.add_font('Consola', '', './static/CONSOLA.TTF', uni=True)
-	season_classes_pdf.set_font("Consola", size=6)
-
-	season_classes_file2 = open("season_gender_results.txt", 'r+')
-
-	for x in season_classes_file2: 
-		season_classes_pdf.cell(10,4, txt = x, ln = 1, align = 'L')
-
-	season_classes_output_pdf=season_classes_pdf.output()
-	return season_classes_output_pdf
-
 def clear_cache():
 	results_by_gender_pdf.clear()
 	results_by_class_pdf.clear()
 	results_by_team_pdf.clear()
-	season_results_by_gender.clear()
-	season_results_by_class.clear()
+	results_overall_pdf.clear()
 
 st.title("Generate Result PDFs")
 
@@ -322,10 +274,10 @@ with engine.connect() as connection:
 
 	else:
 		st.button('Re-generate PDFs', on_click=clear_cache)
-		race_results, season_standings = st.columns(2)
+		race_results, team_results = st.columns(2)
 
 		with race_results:
-			st.markdown(f"#### Race Results")
+			st.markdown(f"#### Race Results (Individual)")
 
 			##Generate Results by Gender PDF
 			st.download_button(
@@ -343,6 +295,17 @@ with engine.connect() as connection:
 				mime="application/pdf",
 			)
 
+			##Generate overall results PDF
+			st.download_button(
+				label="Download Overall Results",
+				data=bytes(results_overall_pdf(selected_option)),
+				file_name="overall_results.pdf",
+				mime="application/pdf",
+			)
+
+		with team_results:
+			st.markdown(f"#### Race Results (Team)")
+
 			##Generate results by team PDF
 			st.download_button(
 				label="Download Results by Team",
@@ -351,23 +314,5 @@ with engine.connect() as connection:
 				mime="application/pdf",
 			)
 
-		with season_standings:
-			st.markdown(f"#### Season Standings")
-			
-			##Generate Season Standings by Gender PDF
-			st.download_button(
-				label="Download Season Standings by Gender",
-				data=bytes(season_results_by_gender(selected_option)),
-				file_name="season_results_by_gender.pdf",
-				mime="application/pdf",
-			)
-
-			##Generate Season Standings by Class PDF
-			st.download_button(
-				label="Download Season Standings by Class",
-				data=bytes(season_results_by_class(selected_option)),
-				file_name="season_results_by_class.pdf",
-				mime="application/pdf",
-			)
 		connection.close()
 engine.dispose()

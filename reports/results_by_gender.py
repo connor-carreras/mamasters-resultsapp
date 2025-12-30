@@ -2,20 +2,29 @@ import streamlit as st
 import pandas as pd
 
 import urllib.parse
+from urllib.parse import urlencode
 from sqlalchemy import text
 from sqlalchemy import create_engine
 
 from tabulate import tabulate
 import gender_queries
+import class_queries
+import overall_queries
 import os
 
-st.title("Race Results by Gender")
+def clear_params():
+	st.query_params.clear()
 
-firebolt_id = os.getenv('FIREBOLT_ID')
-firebolt_secret = os.getenv('FIREBOLT_SECRET')
+if st.query_params:
+	st.session_state.seasonkey=st.query_params["season"]
+	st.session_state.racekey=st.query_params["race"]
+	st.session_state.scoringkey=st.query_params["scoring"]
 
-secret = urllib.parse.quote_plus(firebolt_secret)
-engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/ingest_engine?account_name=mamasters")
+st.set_page_config(page_title="Mid-Atlantic Masters: Race Results (Individual)")
+
+st.title("Race Results (Individual)")
+
+engine = create_engine("duckdb:///md:mamasters")
 
 with st.expander("ℹ️ Understand race points and world cup points"):
 	st.markdown("""
@@ -50,21 +59,27 @@ with st.expander("ℹ️ Understand race points and world cup points"):
 	""")
 
 with engine.connect() as connection:
-	col1, col2 = st.columns(2)
+	col1, col2, col3 = st.columns(3)
 
 	with col1:
-		selected_season = st.selectbox('Season', ("2025-2026","2024-2025"), index=None, placeholder="Choose a season...")
+		selected_season = st.selectbox('Season', ("2025-2026","2024-2025"), key="seasonkey", index=None, placeholder="Choose a season...", on_change=clear_params)
+		st.query_params["season"]=selected_season
 
 	with col2:
 		options = connection.execute(text(f"""
 			select distinct(racekey) from results_by_gender_vw where season = '{selected_season}' order by 1;
 			"""))
-		selected_option = st.selectbox('Race', options, index=None, placeholder="Choose a race...")
+		selected_option = st.selectbox('Race', options, key="racekey", index=None, placeholder="Choose a race...", on_change=clear_params)
+		st.query_params["race"]=selected_option
+
+	with col3:
+		selected_scoring = st.selectbox('Scoring Report', ("Overall Results","Results by Gender", "Results by Class"), key="scoringkey", index=None, placeholder="Choose a scoring report...", on_change=clear_params)
+		st.query_params["scoring"]=selected_scoring
 
 	if selected_option == None:
 		st.write('No race selected.')
 
-	else:
+	elif selected_scoring == "Results by Gender":
 		context = {**globals(), **locals()}
 		get_genders_query = gender_queries.q_get_genders.format(**context)
 		genders = connection.execute(text(get_genders_query))
@@ -75,12 +90,49 @@ with engine.connect() as connection:
 				gender_header=row.gender_header
 
 				st.markdown(f"##### {gender_header} - Overall Individual Results")
+				with engine.connect() as conn_inner:
+					context = {**globals(), **locals()}
+					get_results_query = gender_queries.q_select_results_by_gender.format(**context)
+					results = conn_inner.execute(text(get_results_query))
 
-				context = {**globals(), **locals()}
-				get_results_query = gender_queries.q_select_results_by_gender.format(**context)
-				results = connection.execute(text(get_results_query))
+					st.dataframe(results)
+					conn_inner.close()
+				engine.dispose()
 
-				st.dataframe(results)
+	elif selected_scoring == "Results by Class":
+		context = {**globals(), **locals()}
+		get_classes_query = class_queries.q_class_list.format(**context)
+		classes = connection.execute(text(get_classes_query))
+
+		for row in classes:
+			with st.container():
+				gender = row.gender
+				gender_header=row.gender_header
+				raceclass = row.raceclass
+
+				st.markdown(f"##### {gender_header} Class {raceclass} Results")
+				with engine.connect() as conn_inner:
+					context = {**globals(), **locals()}
+					get_class_results = class_queries.q_class_results.format(**context)
+					results = conn_inner.execute(text(get_class_results))
+
+					st.dataframe(results)
+					conn_inner.close()
+				engine.dispose()
+
+	elif selected_scoring == "Overall Results":
+		context = {**globals(), **locals()}
+
+		st.markdown(f"##### Overall Results")
+
+		context = {**globals(), **locals()}
+		get_overall_results = overall_queries.q_select_overall_results.format(**context)
+		results = connection.execute(text(get_overall_results))
+
+		st.dataframe(results)
+
+	else:
+		st.write('Select a scoring report to see results from this race. Available options are overall results, results by gender, results by class.')
 
 	connection.close()
 

@@ -8,13 +8,11 @@ from tabulate import tabulate
 import os
 import team_queries
 
+st.set_page_config(page_title="Mid-Atlantic Masters: Race Results (Team)")
+
 st.title("Team Results")
 
-firebolt_id = os.getenv('FIREBOLT_ID')
-firebolt_secret = os.getenv('FIREBOLT_SECRET')
-
-secret = urllib.parse.quote_plus(firebolt_secret)
-engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/ingest_engine?account_name=mamasters")
+engine = create_engine("duckdb:///md:mamasters")
 
 with st.expander("ℹ️ Understand team scoring"):
 	st.markdown("""
@@ -73,11 +71,13 @@ with engine.connect() as connection:
 					st.markdown(f"##### Total Time: {total}")
 				with col3:
 					st.markdown(f"##### {points} Points")
-
-				context = {**globals(), **locals()}
-				get_team_results = team_queries.q_team_results.format(**context)
-				results = connection.execute(text(get_team_results))
-				st.dataframe(results)
+				with engine.connect() as conn_inner:
+					context = {**globals(), **locals()}
+					get_team_results = team_queries.q_team_results.format(**context)
+					results = conn_inner.execute(text(get_team_results))
+					st.dataframe(results)
+					conn_inner.close()
+				engine.dispose()
 
 	connection.close()
 

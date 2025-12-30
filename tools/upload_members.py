@@ -12,7 +12,6 @@ import urllib.parse
 from sqlalchemy import text
 from sqlalchemy.ext.asyncio import create_async_engine
 from sqlalchemy import create_engine
-import greenlet
 import os
 import ingestion_queries
 

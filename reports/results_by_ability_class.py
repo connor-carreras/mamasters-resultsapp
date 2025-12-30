@@ -9,13 +9,12 @@ from tabulate import tabulate
 import finals_ability_classes
 import os
 
+st.set_page_config(page_title="Mid-Atlantic Masters: Finals Ability Class Results")
+
+
 st.title("Finals Ability Class Results")
 
-firebolt_id = os.getenv('FIREBOLT_ID')
-firebolt_secret = os.getenv('FIREBOLT_SECRET')
-
-secret = urllib.parse.quote_plus(firebolt_secret)
-engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/ingest_engine?account_name=mamasters")
+engine = create_engine("duckdb:///md:mamasters")
 
 with st.expander("ℹ️ Understand finals ability class scoring"):
 	st.markdown("""
@@ -42,12 +41,14 @@ with engine.connect() as connection:
 
 
 			st.markdown(f"##### {gender_header} {ability_class} Results")
+			with engine.connect() as conn_inner:
+				context = {**globals(), **locals()}
+				get_results_query = finals_ability_classes.q_ability_scores.format(**context)
+				results = conn_inner.execute(text(get_results_query))
 
-			context = {**globals(), **locals()}
-			get_results_query = finals_ability_classes.q_ability_scores.format(**context)
-			results = connection.execute(text(get_results_query))
-
-			st.dataframe(results)
+				st.dataframe(results)
+				conn_inner.close()
+			engine.dispose()
 
 	connection.close()
 

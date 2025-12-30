@@ -37,14 +37,14 @@ select r.racekey, r.name, r.gender, r.ability_class,
 when run1_dnf = 1 then 'DNF'
 when run1 is null and run2 is null then 'DNS'
 when run1 is null and run2 is not null then 'DNS'
-else substring(((run1/60000)::text || ':' || lpad((floor(((run1-((run1/60000)*60000))::decimal/1000),2)::text),12,'0')) from 1 for 7) end as run1,
+else floor(run1::integer/60000)::integer || ':' || substring(lpad((trunc(((run1::integer-(floor(run1::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) end as run1,
 case 
 when run2_dsq = '1' then 'DSQ'
 when run2_dnf = 1 then 'DNF'
 when run1 is null and run2 is null then 'DNS'
 when run2 is null and run1 is not null then 'DNS' 
-else substring(((run2/60000)::text || ':' || lpad((floor(((run2-((run2/60000)*60000))::decimal/1000),2)::text),12,'0')) from 1 for 7) end as run2,
-substring(((total/60000)::text || ':' || lpad((floor(((total-((total/60000)*60000))::decimal/1000),2)::text),12,'0')) from 1 for 7) as total,
+else floor(run2::integer/60000)::integer || ':' || substring(lpad((trunc(((run2::integer-(floor(run2::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) end as run2,
+floor(total::integer/60000)::integer || ':' || substring(lpad((trunc(((total::integer-(floor(total::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) as total,
 
   from 
 (select *,

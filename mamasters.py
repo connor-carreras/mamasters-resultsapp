@@ -34,9 +34,10 @@ upload_page = st.Page("tools/upload_results.py", title="Upload race results", ic
 members_page = st.Page("tools/upload_members.py", title="Update members file", icon=":material/group_add:")
 update_schedule = st.Page("tools/update_schedule.py", title="Update season schedule", icon=":material/schedule:")
 # dsq_page = st.Page("tools/dsqs.py", title="Enter DSQs", icon=":material/delete:")
-team_scoring = st.Page("reports/team_scoring.py", title="Team results", icon=":material/downhill_skiing:")
-results_by_gender = st.Page("reports/results_by_gender.py", title="Results by gender", icon=":material/downhill_skiing:", default=(role == None))
-results_by_class = st.Page("reports/results_by_class.py", title="Results by class", icon=":material/downhill_skiing:")
+team_scoring = st.Page("reports/team_scoring.py", title="Race results (team)", icon=":material/downhill_skiing:")
+race_results = st.Page("reports/results_by_gender.py", title="Race results (individual)", icon=":material/downhill_skiing:", default=(role == None))
+racer_stats = st.Page("reports/racer_lookup.py", title="Racer lookup", icon=":material/downhill_skiing:")
+# results_by_class = st.Page("reports/results_by_class.py", title="Results by class", icon=":material/downhill_skiing:")
 pa_cup_results = st.Page("reports/pa_cup.py", title="Pennsylvania Cup results", icon=":material/downhill_skiing:")
 finals_ability_results = st.Page("reports/results_by_ability_class.py", title="Finals ability class results", icon=":material/downhill_skiing:")
 season_by_team = st.Page("reports/season_by_team.py", title="Team season standings", icon=":material/downhill_skiing:")
@@ -46,7 +47,7 @@ season_by_class = st.Page("reports/season_by_class.py", title="Season standings 
 race_pdfs = st.Page("tools/race_pdfs.py", title="Generate result PDFs", icon=":material/description:")
 
 data_tools = [home_page, upload_page, race_pdfs, members_page, update_schedule]
-race_reports = [results_by_gender, results_by_class, team_scoring, pa_cup_results, finals_ability_results]
+race_reports = [race_results, team_scoring, racer_stats, pa_cup_results, finals_ability_results]
 season_standings = [season_by_gender, season_by_class, season_by_team]
 account_pages = [login_page]
 
