@@ -8,7 +8,8 @@ a.gender,
 a.run1,
 a.run2,
 a.total,
-a.race_points as race_points_by_gender
+a.race_points as race_points_by_gender,
+a.season
 from results_by_gender a 
 inner join 
   (select racekey, gender, max(race_rank_by_gender) as total_participants from results_by_gender group by all) b
@@ -51,7 +52,8 @@ select
   a.race_points_by_gender,
   a.run1,
   a.run2,
-  a.total
+  a.total,
+  'https://mamasters-resultsapp.onrender.com/?season=' || a.season || '&race=' || url_encode(a.racekey) || '&scoring=None' as link
   from
 by_gender a 
 left join by_class b 
@@ -150,7 +152,8 @@ a.gender,
 a.run1,
 a.run2,
 a.total,
-a.race_points as race_points_by_gender
+a.race_points as race_points_by_gender,
+a.season
 from results_by_gender_vw a 
 inner join 
   (select racekey, gender, max(race_rank_by_gender) as total_participants from results_by_gender group by all) b
@@ -196,7 +199,8 @@ select
   a.race_points_by_gender,
   a.run1,
   a.run2,
-  a.total
+  a.total,
+  'https://mamasters-resultsapp.onrender.com/?season=' || a.season || '&race=' || url_encode(a.racekey) || '&scoring=None' as link
   from
 by_gender a 
 left join by_class b 

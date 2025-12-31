@@ -75,7 +75,7 @@ with engine.connect() as connection:
 					context = {**globals(), **locals()}
 					get_team_results = team_queries.q_team_results.format(**context)
 					results = conn_inner.execute(text(get_team_results))
-					st.dataframe(results)
+					st.dataframe(results, hide_index=True)
 					conn_inner.close()
 				engine.dispose()
 

@@ -16,10 +16,6 @@ st.set_page_config(page_title="Mid-Atlantic Masters: Season Standings by Class")
 
 st.title("Season Standings by Class")
 
-# firebolt_id = os.getenv('FIREBOLT_ID')
-# firebolt_secret = os.getenv('FIREBOLT_SECRET')
-
-# secret = urllib.parse.quote_plus(firebolt_secret)
 engine = create_engine("duckdb:///md:mamasters")
 
 with st.expander("ℹ️ Understand seasonal scoring by class"):
@@ -105,14 +101,14 @@ with engine.connect() as connection:
                   get_results_query = season_queries.md_season_by_class_members.format(**context)
                   results = conn_inner.execute(text(get_results_query))
 
-                  st.dataframe(results)
+                  st.dataframe(results, hide_index=True)
 
                 else:
                   context = {**globals(), **locals()}
                   get_results_query2 = season_queries.md_season_by_class.format(**context)
                   results2 = conn_inner.execute(text(get_results_query2))
 
-                  st.dataframe(results2)
+                  st.dataframe(results2, hide_index=True)
                 conn_inner.close()
               engine.dispose()
 
@@ -138,7 +134,7 @@ with engine.connect() as connection:
                   get_results_query = season_queries.md_season_by_class_details_members.format(**context)
                   results = conn_inner.execute(text(get_results_query))
 
-                  st.dataframe(results)
+                  st.dataframe(results, hide_index=True)
 
                 else:
 
@@ -146,7 +142,7 @@ with engine.connect() as connection:
                   get_results_query2 = season_queries.md_season_by_class_details.format(**context)
                   results2 = conn_inner.execute(text(get_results_query2))
 
-                  st.dataframe(results2)
+                  st.dataframe(results2, hide_index=True)
                 conn_inner.close()
               engine.dispose()
 

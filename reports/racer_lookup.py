@@ -80,7 +80,15 @@ with engine.connect() as connection:
 			get_racer_results = racer_queries.q_racer_results.format(**context)
 			results = connection.execute(text(get_racer_results))
 
-			st.dataframe(results)
+			st.dataframe(results,
+				column_config={
+					"link": st.column_config.LinkColumn(
+						"Link to Results",
+						display_text="View Results"
+						)
+					},
+				hide_index=True)
+
 
 		with tab2:
 			discipline="Slalom"
@@ -88,7 +96,14 @@ with engine.connect() as connection:
 			get_racer_results = racer_queries.q_by_discipline.format(**context)
 			results = connection.execute(text(get_racer_results))
 
-			st.dataframe(results)
+			st.dataframe(results,
+				column_config={
+					"link": st.column_config.LinkColumn(
+						"Link to Results",
+						display_text="View Results"
+						)
+					},
+				hide_index=True)
 
 		with tab3:
 			discipline="Giant Slalom"
@@ -96,7 +111,14 @@ with engine.connect() as connection:
 			get_racer_results = racer_queries.q_by_discipline.format(**context)
 			results = connection.execute(text(get_racer_results))
 
-			st.dataframe(results)
+			st.dataframe(results,
+				column_config={
+					"link": st.column_config.LinkColumn(
+						"Link to Results",
+						display_text="View Results"
+						)
+					},
+				hide_index=True)
 
 		with tab4:
 			discipline="Super-G"
@@ -104,7 +126,14 @@ with engine.connect() as connection:
 			get_racer_results = racer_queries.q_by_discipline.format(**context)
 			results = connection.execute(text(get_racer_results))
 
-			st.dataframe(results)
+			st.dataframe(results,
+				column_config={
+					"link": st.column_config.LinkColumn(
+						"Link to Results",
+						display_text="View Results"
+						)
+					},
+				hide_index=True)
 
 	connection.close()
 
