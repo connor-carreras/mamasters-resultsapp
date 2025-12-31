@@ -51,7 +51,7 @@ with engine.connect() as connection:
     get_results_query = season_queries.q_team_season.format(**context)
     results = connection.execute(text(get_results_query))
 
-    st.dataframe(results)
+    st.dataframe(results, hide_index=True)
 
   connection.close()
 

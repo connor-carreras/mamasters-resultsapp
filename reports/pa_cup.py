@@ -72,7 +72,7 @@ with engine.connect() as connection:
             get_results_query = pacup_queries.q_pa_cup_2025.format(**context)
             results = conn_inner.execute(text(get_results_query))
 
-            st.dataframe(results)
+            st.dataframe(results, hide_index=True)
             conn_inner.close()
           engine.dispose()
 

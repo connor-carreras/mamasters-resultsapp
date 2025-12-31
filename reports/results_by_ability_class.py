@@ -46,7 +46,7 @@ with engine.connect() as connection:
 				get_results_query = finals_ability_classes.q_ability_scores.format(**context)
 				results = conn_inner.execute(text(get_results_query))
 
-				st.dataframe(results)
+				st.dataframe(results, hide_index=True)
 				conn_inner.close()
 			engine.dispose()
 

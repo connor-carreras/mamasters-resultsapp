@@ -95,7 +95,7 @@ with engine.connect() as connection:
 					get_results_query = gender_queries.q_select_results_by_gender.format(**context)
 					results = conn_inner.execute(text(get_results_query))
 
-					st.dataframe(results)
+					st.dataframe(results, hide_index=True)
 					conn_inner.close()
 				engine.dispose()
 
@@ -116,7 +116,7 @@ with engine.connect() as connection:
 					get_class_results = class_queries.q_class_results.format(**context)
 					results = conn_inner.execute(text(get_class_results))
 
-					st.dataframe(results)
+					st.dataframe(results, hide_index=True)
 					conn_inner.close()
 				engine.dispose()
 
@@ -129,7 +129,7 @@ with engine.connect() as connection:
 		get_overall_results = overall_queries.q_select_overall_results.format(**context)
 		results = connection.execute(text(get_overall_results))
 
-		st.dataframe(results)
+		st.dataframe(results, hide_index=True)
 
 	else:
 		st.write('Select a scoring report to see results from this race. Available options are overall results, results by gender, results by class.')
