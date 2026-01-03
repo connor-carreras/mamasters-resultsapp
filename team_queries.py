@@ -19,7 +19,7 @@ run2_adjusted,
 total_adjusted,
 ranking,
 counting_score
-from team_results where racekey='{selected_option}' and insert_ts = (select max(insert_ts) from team_results where racekey='{selected_option}') and team='{team}'
+from team_results where racekey='{selected_option}' and insert_ts = (select max(insert_ts) from team_results where racekey='{selected_option}') and team='{team}' order by ranking
 """
 
 q_insert_teams = """

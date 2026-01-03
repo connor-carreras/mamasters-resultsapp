@@ -27,6 +27,7 @@ def results_overall_pdf(selected_option):
 		context = {**globals(), **locals()}
 		overall_insert_query = overall_queries.q_insert_overall_results.format(**context)
 		connection.execute(text(overall_insert_query))
+		connection.commit()
 
 	else:
 		pass
@@ -72,6 +73,7 @@ def results_by_gender_pdf(selected_option):
 		context = {**globals(), **locals()}
 		genders_insert_query = gender_queries.q_insert_results_by_gender.format(**context)
 		connection.execute(text(genders_insert_query))
+		connection.commit()
 
 	else:
 		pass
@@ -89,18 +91,21 @@ def results_by_gender_pdf(selected_option):
 				gender_header=row.gender_header
 
 				genders_file.write(f"{gender_header} - Overall Individual Results\n")
+				with engine.connect() as conn_inner:
 
-				context = {**globals(), **locals()}
-				get_results_query = gender_queries.q_select_results_by_gender.format(**context)
-				gender_results = connection.execute(text(get_results_query))
+					context = {**globals(), **locals()}
+					get_results_query = gender_queries.q_select_results_by_gender.format(**context)
+					gender_results = conn_inner.execute(text(get_results_query))
 
-				table = [r._asdict() for r in gender_results]
-				items = []
-				header = ['Place','Name','Class','Gender','Run 1','Run 2','Combined','WC Points','Race Points']
-				for row in table:
-					items.append(list(row.values()))
-				genders_file.write(tabulate(items, headers=header))
-				genders_file.write("\n\n")
+					table = [r._asdict() for r in gender_results]
+					items = []
+					header = ['Place','Name','Class','Gender','Run 1','Run 2','Combined','WC Points','Race Points']
+					for row in table:
+						items.append(list(row.values()))
+					genders_file.write(tabulate(items, headers=header))
+					genders_file.write("\n\n")
+					conn_inner.close()
+				engine.dispose()
 
 	gender_pdf = FPDF()
 	gender_pdf.add_page()
@@ -128,6 +133,7 @@ def results_by_class_pdf(selected_option):
 		context = {**globals(), **locals()}
 		classes_insert_query = class_queries.q_class_insert.format(**context)
 		connection.execute(text(classes_insert_query))
+		connection.commit()
 
 	else:
 		pass
@@ -135,20 +141,23 @@ def results_by_class_pdf(selected_option):
 	context = {**globals(), **locals()}
 	get_classes_query = class_queries.q_class_list.format(**context)
 	classes = connection.execute(text(get_classes_query))
-
-	with open("class_results.txt", "w") as classes_file:
-		classes_file.write(f"{selected_option}: Results by Age Class\n\n")
-
-		context = {**globals(), **locals()}
+	
+	with engine.connect() as medals_conn:
 		medals_count_query = class_queries.q_medals_list.format(**context)
-		medals_count = connection.execute(text(medals_count_query))
+		medals_count = medals_conn.execute(text(medals_count_query))
 		medalscount = medals_count.fetchone()
 		total_medals = medalscount._mapping["total_medals"]
 		total_gold = medalscount._mapping["total_gold"]
 		total_silver = medalscount._mapping["total_silver"]
 		total_bronze = medalscount._mapping["total_bronze"]
+		medals_conn.close()
+	engine.dispose()
+
+	with open("class_results.txt", "w") as classes_file:
+		classes_file.write(f"{selected_option}: Results by Age Class\n\n")
 
 		classes_file.write(f"{total_medals} Medals Needed: {total_gold} Gold, {total_silver} Silver, {total_bronze} Bronze\n\n")
+
 
 		for row in classes:
 			with st.container():
@@ -158,17 +167,20 @@ def results_by_class_pdf(selected_option):
 
 				classes_file.write(f"{gender_header} Class {raceclass} Results\n")
 
-				context = {**globals(), **locals()}
-				get_class_results = class_queries.q_class_results.format(**context)
-				classes_results = connection.execute(text(get_class_results))
+				with engine.connect() as conn_inner2:
+					context = {**globals(), **locals()}
+					get_class_results = class_queries.q_class_results.format(**context)
+					classes_results = conn_inner2.execute(text(get_class_results))
 
-				table = [r._asdict() for r in classes_results]
-				items = []
-				header = ['Place','Name','Class','Gender','Run 1','Run 2','Combined','WC Points','Race Points']
-				for row in table:
-					items.append(list(row.values()))
-				classes_file.write(tabulate(items, headers=header))
-				classes_file.write("\n\n")
+					table = [r._asdict() for r in classes_results]
+					items = []
+					header = ['Place','Name','Class','Gender','Run 1','Run 2','Combined','WC Points','Race Points']
+					for row in table:
+						items.append(list(row.values()))
+					classes_file.write(tabulate(items, headers=header))
+					classes_file.write("\n\n")
+					conn_inner2.close()
+				engine.dispose()
 
 
 	classes_pdf = FPDF()
@@ -197,6 +209,7 @@ def results_by_team_pdf(selected_option):
 		context = {**globals(), **locals()}
 		teams_insert_query = team_queries.q_insert_teams.format(**context)
 		connection.execute(text(teams_insert_query))
+		connection.commit()
 
 	else:
 		pass
@@ -216,17 +229,20 @@ def results_by_team_pdf(selected_option):
 
 				teams_file.write(f"Rank {rank}: {team}, Total Time: {total}, {points} Points\n")
 
-				context = {**globals(), **locals()}
-				get_team_results = team_queries.q_team_results.format(**context)
-				teams_results = connection.execute(text(get_team_results))
+				with engine.connect() as conn_inner3:
+					context = {**globals(), **locals()}
+					get_team_results = team_queries.q_team_results.format(**context)
+					teams_results = conn_inner3.execute(text(get_team_results))
 
-				table = [r._asdict() for r in teams_results]
-				items = []
-				header = ['Name','Class','Gender','Run 1','Run 2','Total','Rank','Count Score']
-				for row in table:
-					items.append(list(row.values()))
-				teams_file.write(tabulate(items, headers=header))
-				teams_file.write("\n\n")
+					table = [r._asdict() for r in teams_results]
+					items = []
+					header = ['Name','Class','Gender','Run 1','Run 2','Total','Rank','Count Score']
+					for row in table:
+						items.append(list(row.values()))
+					teams_file.write(tabulate(items, headers=header))
+					teams_file.write("\n\n")
+					conn_inner3.close()
+				engine.dispose()
 
 	teams_pdf = FPDF()
 	teams_pdf.add_page()
@@ -249,11 +265,7 @@ def clear_cache():
 
 st.title("Generate Result PDFs")
 
-firebolt_id = os.getenv('FIREBOLT_ID')
-firebolt_secret = os.getenv('FIREBOLT_SECRET')
-
-secret = urllib.parse.quote_plus(firebolt_secret)
-engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/ingest_engine?account_name=mamasters")
+engine = create_engine("duckdb:///md:mamasters")
 
 report_date = datetime.today().strftime('%Y-%m-%d')
 

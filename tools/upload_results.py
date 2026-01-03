@@ -20,11 +20,9 @@ st.markdown("Use this page to upload the results from the most recent race. Once
 
 aws_key = os.getenv("AWS_KEY")
 aws_secret =os.getenv("AWS_SECRET")
-firebolt_id = os.getenv('FIREBOLT_ID')
-firebolt_secret = os.getenv('FIREBOLT_SECRET')
 
-secret = urllib.parse.quote_plus(firebolt_secret)
-engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/ingest_engine?account_name=mamasters")
+
+engine = create_engine("duckdb:///md:mamasters")
 
 if "uploader_key" not in st.session_state:
 	st.session_state.uploader_key = 0
@@ -78,9 +76,11 @@ with engine.connect() as connection:
 			)
 			st.write("File successfully uploaded!")
 
+
 			context = {**globals(), **locals()}
 			insert_results_query = ingestion_queries.q_insert_results.format(**context)
 			connection.execute(text(insert_results_query))
+			connection.commit()
 			update_key
 
 			st.write("Results table has been refreshed!")
@@ -121,15 +121,18 @@ with engine.connect() as connection:
 			context = {**globals(), **locals()}
 			insert_vola_query = ingestion_queries.q_insert_vola_temp.format(**context)
 			connection.execute(text(insert_vola_query))
+			connection.commit()
 
 			context = {**globals(), **locals()}
 			insert_results_query = ingestion_queries.q_insert_vola_to_results.format(**context)
 			connection.execute(text(insert_results_query))
+			connection.commit()
 
 			context = {**globals(), **locals()}
 			connection.execute(text(f"""
 				truncate table vola_results_temp
 				"""))
+			connection.commit()
 			update_key
 			st.write("Results table has been refreshed!")
 
@@ -142,6 +145,6 @@ with engine.connect() as connection:
 
 	else:
 		st.write('Please select a race and timing software. You need to choose a race and timing software before you can upload results.')
-
+	connection.commit()
 	connection.close()
 engine.dispose()

@@ -66,6 +66,7 @@ if selected_season != None:
 				connection.execute(text(update_stmt))
 			if 'insert_stmt' in locals():
 				connection.execute(text(insert_stmt))
+			connection.commit()
 			connection.close()
 		engine.dispose()
 		st.cache_data.clear()
