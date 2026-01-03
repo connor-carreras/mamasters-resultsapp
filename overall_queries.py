@@ -19,7 +19,7 @@ order by race_rank_overall, run1, run2
 """
 
 q_insert_overall_results = """
-insert into results_overall as
+insert into results_overall
 with results_with_dsq as (
 select raceseries, division, mountain, racekey, racetype, racedate, bib, name, ussanumber, class, gender, ingest_ts, season, run1_dnf, run2_dnf,
 run2,
@@ -27,7 +27,7 @@ run2_dsq,
 run1,
 run1_dsq,
 case when (run1_dsq is not null or run2_dsq is not null) then null else total end as total
-from results_vw 
+from results_vw where racekey = '{selected_option}'
 )
   
 , ranked_results as (
@@ -57,15 +57,15 @@ case when run1_dsq = '1' then 'DSQ'
 when run1_dnf = 1 then 'DNF'
 when run1 is null and run2 is null then 'DNS'
 when run1 is null and run2 is not null then 'DNS'
-else substring(((a.run1/60000)::text || ':' || lpad((floor(((a.run1-((a.run1/60000)*60000))::decimal/1000),2)::text),12,'0')) from 1 for 7) end as run1,
+else floor(a.run1::integer/60000)::integer || ':' || substring(lpad((trunc(((a.run1::integer-(floor(a.run1::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) end as run1,
 case 
 when run2_dsq = '1' then 'DSQ'
 when run2_dnf = 1 then 'DNF'
 when run1 is null and run2 is null then 'DNS'
 when run2 is null and run1 is not null then 'DNS' 
-else substring(((a.run2/60000)::text || ':' || lpad((floor(((a.run2-((a.run2/60000)*60000))::decimal/1000),2)::text),12,'0')) from 1 for 7) end as run2,
-substring(((a.total/60000)::text || ':' || lpad((floor(((a.total-((a.total/60000)*60000))::decimal/1000),2)::text),12,'0')) from 1 for 7) as total,
-date_trunc('second', current_timestamp()) as insert_ts
+else floor(a.run2::integer/60000)::integer || ':' || substring(lpad((trunc(((a.run2::integer-(floor(a.run2::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) end as run2,
+floor(a.total::integer/60000)::integer || ':' || substring(lpad((trunc(((a.total::integer-(floor(a.total::integer/60000)::integer*60000)::integer)/1000)*100)/100)::decimal(4,2)::text, 12, '0'),8) as total,
+date_trunc('second', current_localtimestamp()) as insert_ts
 from
 corrected_points a;
 """
