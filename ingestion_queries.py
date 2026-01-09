@@ -3,7 +3,7 @@ insert into results
 with base as (
 select 
 '{selected_season}' as season,
-upper('{selected_race}') as racekey,
+'{selected_race}' as racekey,
 upper((json_extract_string(SST_USSA_FIS_Race, '/Men/Header/ClubName'))) as raceseries,  
 upper((json_extract_string(SST_USSA_FIS_Race, '/Men/Header/Division'))) as division,
 upper((json_extract_string(SST_USSA_FIS_Race, '/Men/Header/SkiAreaName'))) as mountain,
@@ -47,7 +47,7 @@ with base1 as (
 select
 '{filename}',
 '{selected_season}' as season,
-upper('{selected_race}') as racekey,
+'{selected_race}' as racekey,
 json_extract_string(Fisresults, '/Raceheader/Discipline') as racetype,  
 upper(json_extract_string(Fisresults, '/Raceheader/Place')) as mountain,
 json_extract_string(Fisresults, '/Raceheader/Eventname') as racename,
@@ -67,7 +67,7 @@ ignore_errors = true
 select
 '{filename}',
 '{selected_season}' as season,
-upper('{selected_race}') as racekey,
+'{selected_race}' as racekey,
 json_extract_string(Fisresults, '/Raceheader/Discipline') as racetype,  
 upper(json_extract_string(Fisresults, '/Raceheader/Place')) as mountain,
 json_extract_string(Fisresults, '/Raceheader/Eventname') as racename,
@@ -176,7 +176,7 @@ from add_classes;
 """
 
 q_races_list = """
-select upper(racename) as racename from schedule
+select racename as racename from schedule
 where season = '{selected_season}'
 order by racedate
 """
