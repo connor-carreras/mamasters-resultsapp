@@ -21,11 +21,8 @@ st.markdown("Use this page to upload the members CSV file from Admin Ski Racing.
 
 aws_key = os.getenv("AWS_KEY")
 aws_secret =os.getenv("AWS_SECRET")
-firebolt_id = os.getenv('FIREBOLT_ID')
-firebolt_secret = os.getenv('FIREBOLT_SECRET')
 
-secret = urllib.parse.quote_plus(firebolt_secret)
-engine = create_engine("firebolt://" + firebolt_id + ":" + secret + "@mamasters/ingest_engine?account_name=mamasters")
+engine = create_engine("duckdb:///md:mamasters")
 
 with engine.connect() as connection:
 
@@ -61,10 +58,7 @@ with engine.connect() as connection:
 			context = {**globals(), **locals()}
 			copy_members_query = ingestion_queries.q_copy_members.format(**context)
 			connection.execute(text(copy_members_query))
-
-			context = {**globals(), **locals()}
-			update_members_query = ingestion_queries.q_update_members.format(**context)
-			connection.execute(text(update_members_query))
+			connection.commit()
 
 			st.write("Members table has been refreshed!")
 

@@ -189,30 +189,28 @@ order by gender,class
 """
 
 q_copy_members = """
-copy members 
-(
-firstname $2,
-lastname $3,
-yob $4,
-gender $5,
-ussanum $6,
-team $9,
-registration_date $10,
-ussa_status $11,
-last_update_ts $source_file_timestamp
+insert into members
+select
+"First Name" as firstname,
+"Last Name" as lastname,
+"YOB" as yob,
+"Gender" as gender,
+"USSA#" as ussanum,
+"Team" as team,
+"Registration Date" as registration_date,
+"USSA# Status" as ussa_status,
+current_localtimestamp() as last_update_ts,
+'{selected_season}' as season
+from read_csv(
+'s3://mamasters-results/mam_members.csv',
+ignore_errors = true
 )
-from 
-'s3://mamasters-results/mam_members.csv'
-WITH 
-CREDENTIALS = (AWS_ROLE_ARN = 'arn:aws:iam::664418987828:role/firebolt-s3-access')
-TYPE=CSV HEADER=TRUE;
 """
 
 q_update_members = """
 update members 
 set season = '{selected_season}'
-where last_update_ts = (select max(last_update_ts) 
-from members);
+where last_update_ts = (select max(last_update_ts) from members);
 """
 
 q_show_members = """
