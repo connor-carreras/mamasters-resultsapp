@@ -45,7 +45,6 @@ q_insert_vola_temp = """
 insert into vola_results_temp 
 with base1 as (
 select
-'{filename}',
 '{selected_season}' as season,
 '{selected_race}' as racekey,
 json_extract_string(Fisresults, '/Raceheader/Discipline') as racetype,  
@@ -65,7 +64,6 @@ ignore_errors = true
 
 , base2 as (
 select
-'{filename}',
 '{selected_season}' as season,
 '{selected_race}' as racekey,
 json_extract_string(Fisresults, '/Raceheader/Discipline') as racetype,  
