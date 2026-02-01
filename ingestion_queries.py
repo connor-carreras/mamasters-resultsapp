@@ -73,7 +73,7 @@ strptime(json_extract_string(Fisresults, '/Raceheader/Racedate/Year')::text || '
     json_extract_string(Fisresults, '/Raceheader/Racedate/Month')::text || '-' ||
   json_extract_string(Fisresults, '/Raceheader/Racedate/Day')::text, '%Y-%m-%d'
 ) as racedate,
-unnest(json_extract(Fisresults, '/MA_race/MA_classified/MA_notranked')::json[]) as results_array
+unnest(json_extract(Fisresults, '/MA_race/MA_notclassified/MA_notranked')::json[]) as results_array
 from (select Fisresults from read_json(
 's3://mamasters-results/{name}',
 ignore_errors = true
