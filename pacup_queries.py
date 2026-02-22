@@ -20,8 +20,8 @@ select r.*, p.ability_class
 inner join mamasters.pa_cup p 
 on r.ussanumber = p.ussanum
 and r.season = p.season
-where gender = '{gender}'
-and class = '{ability_class}'
+where p.gender = '{gender}'
+and p.ability_class = '{ability_class}'
 )
 
 , ranked as (
