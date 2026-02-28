@@ -2,9 +2,10 @@ q_class_list = """
 select case when gender = 'F' then 'Women' when gender = 'M' then 'Men' end as gender_header, gender, 
 case when ability_class = 'Super Elite' then 1
 when ability_class = 'Elite' then 2
-when ability_class = 'Class A' then 3
-when ability_class = 'Class B' then 4
-when ability_class = 'Class C' then 5 end as ordering,
+when ability_class in('Class A','Class 1') then 3
+when ability_class in('Class B','Class 2') then 4
+when ability_class in('Class C','Class 3') then 5 
+when ability_class = 'Class 4' then 6 end as ordering,
 ability_class
 from (
 select distinct gender, ability_class
@@ -15,7 +16,9 @@ q_ability_scores = """
 with results as (
 select racekey, name, ussanumber, gender, ingest_ts, season, run1, run2, run1_dnf, run1_dsq, run2_dnf, run2_dsq,
 case when (run1_dsq is not null or run2_dsq is not null) then null else total end as total
-from results_vw where racekey in('HUNTER MOUNTAIN, FINALS GS 2, 2025-03-08')
+from results_vw where racekey in(
+select distinct racename from mamasters.schedule where is_ability_scored is true and season = '{selected_season}'
+)
 )
 
 , ability_participants as (
