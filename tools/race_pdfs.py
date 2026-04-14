@@ -270,7 +270,7 @@ st.title("Generate Result PDFs")
 
 racing_md_token =os.getenv("RACING_MD_TOKEN")
 
-engine = create_engine("duckdb:///md:mamasters?motherduck_token={racing_md_token}")
+engine = create_engine(f"duckdb:///md:mamasters?motherduck_token={racing_md_token}")
 
 report_date = datetime.today().strftime('%Y-%m-%d')
 
