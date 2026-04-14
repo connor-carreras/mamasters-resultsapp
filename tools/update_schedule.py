@@ -13,7 +13,9 @@ st.title("Update Season Schedule")
 
 st.markdown("Use this page to update the season schedule. You can add, remove, and change races as long as the date of your change is on or before the date of the race.")
 
-engine = create_engine("duckdb:///md:mamasters")
+racing_md_token =os.getenv("RACING_MD_TOKEN")
+
+engine = create_engine("duckdb:///md:mamasters?motherduck_token={racing_md_token}")
 
 ##Put a dropdown in to choose the season
 ##Add a filter to the read sql table command to only display records from the selected season and only let you update records for future races

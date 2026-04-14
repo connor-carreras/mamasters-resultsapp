@@ -14,7 +14,9 @@ st.set_page_config(page_title="Mid-Atlantic Masters: Finals Ability Class Result
 
 st.title("Finals Ability Class Results")
 
-engine = create_engine("duckdb:///md:mamasters")
+racing_md_token =os.getenv("RACING_MD_TOKEN")
+
+engine = create_engine("duckdb:///md:mamasters?motherduck_token={mamasters_token}")
 
 with st.expander("ℹ️ Understand finals ability class scoring"):
 	st.markdown("""

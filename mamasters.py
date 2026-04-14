@@ -8,6 +8,7 @@ if "role" not in st.session_state:
 ROLES = [None, "Admin"]
 
 app_password = os.environ.get("APP_PASSWORD")
+board_password = os.environ.get("BOARD_PASSWORD")
 
 def login():
 	st.header("Log in")
@@ -18,6 +19,9 @@ def login():
 		if submitted:
 			if password == app_password:
 				st.session_state.role = 'Admin'
+				st.rerun()
+			elif password == board_password:
+				st.session_state.role = 'Board'
 				st.rerun()
 			else:
 				st.error("Invalid password. Access denied.")
@@ -33,36 +37,37 @@ home_page = st.Page("tools/homepage.py", title="Instructions", icon=":material/i
 upload_page = st.Page("tools/upload_results.py", title="Upload race results", icon=":material/add_circle:")
 members_page = st.Page("tools/upload_members.py", title="Update members file", icon=":material/group_add:")
 update_schedule = st.Page("tools/update_schedule.py", title="Update season schedule", icon=":material/schedule:")
-# dsq_page = st.Page("tools/dsqs.py", title="Enter DSQs", icon=":material/delete:")
 team_scoring = st.Page("reports/team_scoring.py", title="Race results (team)", icon=":material/downhill_skiing:")
 race_results = st.Page("reports/results_by_gender.py", title="Race results (individual)", icon=":material/downhill_skiing:", default=(role == None))
 racer_stats = st.Page("reports/racer_lookup.py", title="Racer lookup", icon=":material/downhill_skiing:")
-# results_by_class = st.Page("reports/results_by_class.py", title="Results by class", icon=":material/downhill_skiing:")
 pa_cup_results = st.Page("reports/pa_cup.py", title="Pennsylvania Cup results", icon=":material/downhill_skiing:")
 finals_ability_results = st.Page("reports/results_by_ability_class.py", title="Finals ability class results", icon=":material/downhill_skiing:")
 season_by_team = st.Page("reports/season_by_team.py", title="Team season standings", icon=":material/downhill_skiing:")
 season_by_gender = st.Page("reports/season_by_gender.py", title="Season standings by gender", icon=":material/downhill_skiing:")
 season_by_class = st.Page("reports/season_by_class.py", title="Season standings by class", icon=":material/downhill_skiing:")
-# iron_man = st.Page("reports/iron_man.py", title= "Iron Man standings", icon=":material/downhill_skiing:")
 race_pdfs = st.Page("tools/race_pdfs.py", title="Generate result PDFs", icon=":material/description:")
+season_statistics = st.Page("reports/dive.py", title="Season Statistics", icon=":material/analytics:")
 
 data_tools = [home_page, upload_page, race_pdfs, members_page, update_schedule]
 race_reports = [race_results, team_scoring, racer_stats, pa_cup_results, finals_ability_results]
 season_standings = [season_by_gender, season_by_class, season_by_team]
 account_pages = [login_page]
+board_pages = [season_statistics]
 
 st.set_page_config(page_title="Mid-Atlantic Masters Results App", page_icon=":material/downhill_skiing:", layout="wide")
 
 st.logo("images/mam_logo_text_only.png", size="large")
 
 page_dict = {}
+if st.session_state.role in ["Board"]:
+	page_dict["Board Data"] = board_pages
 if st.session_state.role in ["Admin"]:
 	page_dict["Data Tools"] = data_tools
-if st.session_state.role in [None, "Admin"]:
+if st.session_state.role in [None, "Admin", "Board"]:
 	page_dict["Race Reports"] = race_reports
-if st.session_state.role in [None, "Admin"]:
+if st.session_state.role in [None, "Admin", "Board"]:
 	page_dict["Season Standings"] = season_standings
-if st.session_state.role in [None, "Admin"]:
+if st.session_state.role in [None, "Admin", "Board"]:
 	page_dict["Account"] = account_pages
 
 pg = st.navigation(page_dict)

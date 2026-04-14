@@ -8,12 +8,5 @@ firebolt-sqlalchemy==1.1.1
 boto3
 xmltodict
 setuptools
-chainlit
-mcp
-langchain_mcp_adapters
-langchain_aws
-langgraph
-langchain
-langchain_core
-typing
+duckdb==1.5.1
 duckdb-engine

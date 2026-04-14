@@ -22,7 +22,9 @@ st.markdown("Use this page to upload the members CSV file from Admin Ski Racing.
 aws_key = os.getenv("AWS_KEY")
 aws_secret =os.getenv("AWS_SECRET")
 
-engine = create_engine("duckdb:///md:mamasters")
+racing_md_token =os.getenv("RACING_MD_TOKEN")
+
+engine = create_engine("duckdb:///md:mamasters?motherduck_token={racing_md_token}")
 
 with engine.connect() as connection:
 

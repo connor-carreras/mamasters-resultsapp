@@ -15,6 +15,9 @@ import overall_queries
 import os
 from datetime import datetime
 
+racing_md_token = os.getenv("RACING_MD_TOKEN")
+
+
 @st.cache_data
 def results_overall_pdf(selected_option):
 	context = {**globals(), **locals()}
@@ -265,7 +268,9 @@ def clear_cache():
 
 st.title("Generate Result PDFs")
 
-engine = create_engine("duckdb:///md:mamasters")
+racing_md_token =os.getenv("RACING_MD_TOKEN")
+
+engine = create_engine("duckdb:///md:mamasters?motherduck_token={racing_md_token}")
 
 report_date = datetime.today().strftime('%Y-%m-%d')
 

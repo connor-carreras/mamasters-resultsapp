@@ -16,7 +16,9 @@ st.set_page_config(page_title="Mid-Atlantic Masters: Team Season Standings")
 
 st.title("Team Season Standings")
 
-engine = create_engine("duckdb:///md:mamasters")
+racing_md_token =os.getenv("RACING_MD_TOKEN")
+
+engine = create_engine("duckdb:///md:mamasters?motherduck_token={racing_md_token}")
 
 
 with engine.connect() as connection:
