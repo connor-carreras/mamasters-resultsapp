@@ -3,6 +3,23 @@ select count(*) as num_records from results_by_gender
 where racekey = '{selected_option}'
 """
 
+q_select_results_by_gender_archive = """
+select 
+place,
+name,
+class,
+gender,
+run1,
+run2,
+total,
+worldcup_points_by_gender,
+time_diff_gender
+from archive_results_by_gender
+where racename = '{selected_option}'
+and gender = '{gender}'
+order by place, run1, run2
+"""
+
 q_select_results_by_gender = """
 select 
 race_rank_by_gender,
@@ -112,4 +129,11 @@ select case when gender = 'F' then 'Women' when gender = 'M' then 'Men' end as g
 from (
 select distinct(gender) as gender
  from results_vw where racekey='{selected_option}') order by 1 desc
+"""
+
+q_get_genders_archive = """
+select case when gender = 'F' then 'Women' when gender = 'M' then 'Men' when gender = 'Junior F' then 'Junior Women' when gender = 'Junior M' then 'Junior Men' end as gender_header, gender
+from (
+select distinct(gender) as gender
+ from archive_results_by_gender where racename='{selected_option}') order by 1 desc
 """

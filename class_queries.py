@@ -15,6 +15,13 @@ select distinct gender, class as raceclass
 from results_vw where racekey='{selected_option}' and class not like 'U%') order by 2, 3 desc
 """
 
+q_class_list_archive = """
+select case when gender = 'F' then 'Women' when gender = 'M' then 'Men' when gender = 'Junior F' then 'Junior Women' when gender = 'Junior M' then 'Junior Men'end as gender_header, gender, raceclass as raceclass
+from (
+select distinct gender, class as raceclass
+from archive_results_by_class where racename='{selected_option}') order by 2, 3 desc
+"""
+
 q_class_results_exist = """
 select count(*) as num_records from results_by_class
 where racekey = '{selected_option}'
@@ -36,6 +43,24 @@ where racekey='{selected_option}' and insert_ts = (select max(insert_ts) from re
 and gender = '{gender}'
 and class = '{raceclass}'
 order by race_rank_by_gender_class, run1, run2
+"""
+
+q_class_results_archive = """
+select 
+place,
+name,
+class,
+gender,
+run1,
+run2,
+total,
+worldcup_points_by_class,
+time_diff_class
+from archive_results_by_class
+where racename = '{selected_option}'
+and gender = '{gender}'
+and class = '{raceclass}'
+order by place, run1, run2
 """
 
 q_class_insert = """
